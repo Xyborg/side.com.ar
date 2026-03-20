@@ -149,7 +149,50 @@ function getParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+// --- Disclaimer Modal ---
+function showDisclaimer() {
+  if (localStorage.getItem('side_disclaimer_accepted')) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'disclaimer-overlay';
+  overlay.innerHTML = `
+    <div class="disclaimer-modal">
+      <div class="disclaimer-icon"><i class="fa fa-exclamation-triangle"></i></div>
+      <h2>Aviso importante</h2>
+      <p>
+        Este <strong>no es un sitio oficial</strong> del Gobierno de la República Argentina
+        ni de la Secretaría de Inteligencia de Estado.
+      </p>
+      <p>
+        El único objetivo de este sitio es facilitar la navegación y consulta de los
+        documentos históricos ya publicados por el Estado argentino en el marco de la
+        desclasificación de archivos de la SIDE (1973–1983).
+      </p>
+      <div class="disclaimer-highlight">
+        Para acceder al sitio oficial de la Secretaría de Inteligencia y sus archivos,
+        visitá <strong>argentina.gob.ar/inteligencia/archivos</strong>.
+      </div>
+      <div class="disclaimer-actions">
+        <button class="btn btn-decline" id="disclaimer-decline">No acepto</button>
+        <button class="btn btn-primary" id="disclaimer-accept">Entendido, continuar</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  document.getElementById('disclaimer-accept').addEventListener('click', () => {
+    localStorage.setItem('side_disclaimer_accepted', '1');
+    overlay.remove();
+  });
+
+  document.getElementById('disclaimer-decline').addEventListener('click', () => {
+    window.location.href = 'https://www.argentina.gob.ar/inteligencia/archivos';
+  });
+}
+
 // --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  showDisclaimer();
 });
