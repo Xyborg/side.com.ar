@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Línea de Tiempo — Archivos SIDE</title>
+  <meta name="description" content="Línea de tiempo cronológica de los documentos desclasificados de la SIDE y eventos históricos del período 1973–1983.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Línea de Tiempo — Archivos SIDE">
+  <meta property="og:description" content="Línea de tiempo cronológica de los documentos desclasificados de la SIDE y eventos históricos del período 1973–1983.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/ui/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Archivos SIDE">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Línea de Tiempo — Archivos SIDE">
+  <meta name="twitter:description" content="Línea de tiempo cronológica de los documentos desclasificados de la SIDE y eventos históricos del período 1973–1983.">
+  <meta name="twitter:image" content="/images/ui/og-image.png">
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K9RSX85TLS');
+  </script>
+</head>
+<body>
+
+<div class="header-bar">
+  <div class="container">
+    <span>República Argentina</span>
+    <span class="pull-right">Secretaría de Inteligencia de Estado</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar navbar-default" style="border:none;margin:0;min-height:auto;background:transparent;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Menú</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-custom" href="/"><img src="/images/ui/logo-side.png" alt="SIDE"><span>SIDE</span><i class="brand-separator"></i>Archivos Desclasificados</a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/documentos/">Documentos</a></li>
+          <li><a href="/explorar-archivos/">Explorar Archivos</a></li>
+          <li><a href="/linea-de-tiempo/">Línea de Tiempo</a></li>
+          <li><a href="/acerca-desclasificacion/">Acerca de</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top:30px; padding-bottom:60px;">
+  <div class="timeline-page">
+    <h1 class="section-title">Línea de Tiempo (1973–1983)</h1>
+    <p class="section-subtitle">Documentos desclasificados y eventos históricos en contexto cronológico.</p>
+
+    <div class="timeline-controls">
+      <button class="btn btn-default timeline-filter active" data-filter="all">Todos</button>
+      <button class="btn btn-default timeline-filter" data-filter="documents">Solo documentos</button>
+      <button class="btn btn-default timeline-filter" data-filter="historical">Solo eventos históricos</button>
+    </div>
+
+    <div class="timeline-vertical" id="timeline-container">
+      <div class="loading">Cargando línea de tiempo</div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <img src="/images/ui/logo-side.png" alt="SIDE" style="height:50px;margin-bottom:12px;opacity:0.7;">
+    <p>Archivos Desclasificados SIDE (1973–1983) — Primera Etapa</p>
+    <div class="footer-disclaimer">
+      <p>Este no es un sitio oficial del Gobierno de la República Argentina. No asumimos responsabilidad alguna por el contenido de los documentos publicados. El único objetivo de este sitio es facilitar el acceso a información ya publicada por el Estado argentino.</p>
+      <p>Sitio creado por <a href="https://www.martinaberastegue.com" target="_blank" rel="noopener">Martin Aberastegue</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/js/app.js?v=3"></script>
+<script src="/js/timeline.js"></script>
+
+</body>
+</html>

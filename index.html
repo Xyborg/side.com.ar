@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Archivos Desclasificados SIDE (1973–1983)</title>
+  <meta name="description" content="Explorador de 26 documentos desclasificados de la Secretaría de Inteligencia de Estado de Argentina, período 1973-1983.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Archivos Desclasificados SIDE (1973–1983)">
+  <meta property="og:description" content="26 documentos oficiales desclasificados de la Secretaría de Inteligencia de Estado de Argentina. Resoluciones, directivas y circulares del período 1973–1983.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/ui/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Archivos SIDE">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Archivos Desclasificados SIDE (1973–1983)">
+  <meta name="twitter:description" content="26 documentos oficiales desclasificados de la Secretaría de Inteligencia de Estado de Argentina. Resoluciones, directivas y circulares del período 1973–1983.">
+  <meta name="twitter:image" content="/images/ui/og-image.png">
+  <!-- Poncho dependencies -->
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K9RSX85TLS');
+  </script>
+</head>
+<body>
+
+<!-- Government top bar -->
+<div class="header-bar">
+  <div class="container">
+    <span>República Argentina</span>
+    <span class="pull-right">Secretaría de Inteligencia de Estado</span>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar navbar-default" style="border:none;margin:0;min-height:auto;background:transparent;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-custom" href="/"><img src="/images/ui/logo-side.png" alt="SIDE"><span>SIDE</span><i class="brand-separator"></i>Archivos Desclasificados</a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/documentos/">Documentos</a></li>
+          <li><a href="/explorar-archivos/">Explorar Archivos</a></li>
+          <li><a href="/linea-de-tiempo/">Línea de Tiempo</a></li>
+          <li><a href="/acerca-desclasificacion/">Acerca de</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-logo">
+        <img src="/images/ui/logo-side.png" alt="Secretaría de Inteligencia de Estado">
+      </div>
+      <div class="hero-badge">Documentos Desclasificados — Primera Etapa</div>
+      <h1>Archivos Históricos de la<br><em>Secretaría de Inteligencia de Estado</em><br>(1973–1983)</h1>
+      <p class="hero-subtitle">
+        Primera entrega de documentos desclasificados por orden presidencial.
+        26 documentos oficiales — resoluciones, directivas, circulares y manuales — que revelan
+        la estructura, las misiones y los mecanismos de control ideológico de la SIDE
+        durante la última dictadura militar argentina.
+      </p>
+      <div class="hero-divider"></div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="number">26</span>
+          <span class="label">Documentos</span>
+        </div>
+        <div class="hero-stat">
+          <span class="number">492</span>
+          <span class="label">Páginas</span>
+        </div>
+        <div class="hero-stat">
+          <span class="number">3</span>
+          <span class="label">Carpetas temáticas</span>
+        </div>
+        <div class="hero-stat">
+          <span class="number">10</span>
+          <span class="label">Años (1973–1983)</span>
+        </div>
+      </div>
+      <div style="margin-top: 35px;">
+        <a href="/documentos/" class="btn btn-primary btn-lg">Explorar documentos</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="padding-top:40px;">
+    <!-- Carpetas -->
+    <section>
+      <h2 class="section-title">Carpetas Temáticas</h2>
+      <p class="section-subtitle">Los 26 documentos están organizados en tres agrupamientos temáticos.</p>
+      <div class="row" id="carpetas-grid"></div>
+    </section>
+
+    <!-- Mini Timeline -->
+    <section class="mini-timeline">
+      <h2 class="section-title">Distribución Cronológica</h2>
+      <p class="section-subtitle">Los documentos abarcan un período de transformación institucional profunda.</p>
+      <div id="mini-timeline-chart"></div>
+      <div style="text-align:center; margin-top:20px;">
+        <a href="/linea-de-tiempo/" class="btn btn-outline">Ver línea de tiempo completa</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <img src="/images/ui/logo-side.png" alt="SIDE" style="height:50px;margin-bottom:12px;opacity:0.7;">
+    <p>Archivos Desclasificados SIDE (1973–1983) — Primera Etapa</p>
+    <p>Desclasificación ordenada por el Presidente de la Nación Argentina para su publicación, conservación y traspaso al Archivo General de la Nación.</p>
+    <div class="footer-disclaimer">
+      <p>Este no es un sitio oficial del Gobierno de la República Argentina. No asumimos responsabilidad alguna por el contenido de los documentos publicados. El único objetivo de este sitio es facilitar el acceso a información ya publicada por el Estado argentino.</p>
+      <p>Sitio creado por <a href="https://www.martinaberastegue.com" target="_blank" rel="noopener">Martin Aberastegue</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/js/app.js?v=3"></script>
+<script>
+(async function() {
+  const [carpetas, documents] = await Promise.all([
+    loadJSON('/data/carpetas.json'),
+    loadJSON('/data/documents.json')
+  ]);
+
+  // Render carpeta cards
+  const grid = document.getElementById('carpetas-grid');
+  grid.innerHTML = carpetas.map(c => `
+    <div class="col-md-4">
+      <a href="/documentos/?carpeta=${c.id}" class="carpeta-card" data-carpeta="${c.id}">
+        <h3>Carpeta ${c.id}: ${c.title_short}</h3>
+        <div class="doc-count">${c.doc_count} documentos</div>
+        <p>${c.description}</p>
+      </a>
+    </div>
+  `).join('');
+
+  // Mini timeline chart
+  const chart = document.getElementById('mini-timeline-chart');
+  const years = {};
+  for (let y = 1973; y <= 1983; y++) years[y] = { c1: 0, c2: 0, c3: 0 };
+  documents.forEach(d => {
+    if (years[d.year]) years[d.year]['c' + d.carpeta]++;
+  });
+
+  const maxCount = Math.max(...Object.values(years).map(y => y.c1 + y.c2 + y.c3));
+
+  let html = '<div class="bar-chart">';
+  for (let y = 1973; y <= 1983; y++) {
+    const h1 = maxCount > 0 ? (years[y].c1 / maxCount) * 100 : 0;
+    const h2 = maxCount > 0 ? (years[y].c2 / maxCount) * 100 : 0;
+    const h3 = maxCount > 0 ? (years[y].c3 / maxCount) * 100 : 0;
+    html += '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;justify-content:flex-end;height:100%;">';
+    if (years[y].c3 > 0) html += '<div style="width:80%;max-width:40px;height:' + h3 + '%;background:var(--rojo);min-height:4px;"></div>';
+    if (years[y].c2 > 0) html += '<div style="width:80%;max-width:40px;height:' + h2 + '%;background:var(--verde);min-height:4px;"></div>';
+    if (years[y].c1 > 0) html += '<div style="width:80%;max-width:40px;height:' + h1 + '%;background:var(--brown);min-height:4px;"></div>';
+    html += '</div>';
+  }
+  html += '</div>';
+
+  html += '<div class="bar-chart-labels">';
+  for (let y = 1973; y <= 1983; y++) html += '<span>' + y + '</span>';
+  html += '</div>';
+
+  html += '<div class="chart-legend">';
+  html += '<span><span class="swatch" style="background:var(--brown);"></span>Carpeta 1: Orgánicas</span>';
+  html += '<span><span class="swatch" style="background:var(--verde);"></span>Carpeta 2: Normativa</span>';
+  html += '<span><span class="swatch" style="background:var(--rojo);"></span>Carpeta 3: CAA</span>';
+  html += '</div>';
+
+  chart.innerHTML = html;
+})();
+</script>
+
+</body>
+</html>

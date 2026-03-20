@@ -1,0 +1,759 @@
+[
+  {
+    "id": "doc-01",
+    "number": 1,
+    "title": "Resolución \"S\" N° 291/75",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1975-06-16",
+    "year": 1975,
+    "carpeta": 1,
+    "carpeta_number": 1,
+    "original_or_copy": "Original",
+    "description": "Aprueba la organización de la Secretaría (aún denominada \"Secretaría de Informaciones del Estado\"), aludiendo a un \"Anexo I\" que no se ha hallado en el Fondo Documental SIDE.",
+    "description_en": "Approves the organization of the Secretariat (still named 'Secretaría de Informaciones del Estado'), referencing an 'Annex I' not found in the SIDE Documentary Collection.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0389 pp 7-12",
+    "page_count": 12,
+    "tags": [
+      "organización",
+      "estructura orgánica",
+      "1975"
+    ],
+    "key_topics": [
+      "Organizational structure",
+      "Agency organization"
+    ],
+    "historical_period": "Gobierno de Isabel Perón",
+    "global_page_start": 1,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-02",
+    "number": 2,
+    "title": "Resolución \"S\" N° 855/75",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1975-12-30",
+    "year": 1975,
+    "carpeta": 1,
+    "carpeta_number": 2,
+    "original_or_copy": "Original (con anotaciones manuscritas)",
+    "description": "Normas para la puesta en funcionamiento del encubrimiento del personal y dependencias de la SIDE. Contiene las siglas de encubrimiento. Aporta a la codificación de las áreas dentro de la SIDE.",
+    "description_en": "Norms for implementing personnel and dependency cover operations at SIDE. Contains cover acronyms. Contributes to the internal coding of SIDE areas.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0399 pp 1-32",
+    "page_count": 38,
+    "tags": [
+      "encubrimiento",
+      "personal",
+      "codificación",
+      "siglas"
+    ],
+    "key_topics": [
+      "Personnel cover norms",
+      "Internal coding system"
+    ],
+    "historical_period": "Gobierno de Isabel Perón",
+    "global_page_start": 13,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-03",
+    "number": 3,
+    "title": "Resolución \"S\" N° 643/76",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1976-08-20",
+    "year": 1976,
+    "carpeta": 1,
+    "carpeta_number": 3,
+    "original_or_copy": "Original",
+    "description": "Organización de la SIDE 1976. Adjunta como Anexo I la orgánica donde se observa el organigrama de la Secretaría de Inteligencia de Estado.",
+    "description_en": "SIDE organization 1976. Attaches as Annex I the organizational chart of the Secretariat of State Intelligence.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0415 pp 7-11",
+    "page_count": 3,
+    "tags": [
+      "organización",
+      "organigrama",
+      "1976",
+      "estructura orgánica"
+    ],
+    "key_topics": [
+      "Organizational chart",
+      "Post-coup restructuring"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 52,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-04",
+    "number": 4,
+    "title": "Resolución \"S\" N° 734/76",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1976-09-23",
+    "year": 1976,
+    "carpeta": 1,
+    "carpeta_number": 4,
+    "original_or_copy": "Original",
+    "description": "Se aprueban las siglas de encubrimiento de las dependencias de la Secretaría de Inteligencia de Estado, en concordancia con la nueva estructura.",
+    "description_en": "Approves the cover acronyms for SIDE dependencies, in accordance with the new structure.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0416 pp 1-18",
+    "page_count": 8,
+    "tags": [
+      "encubrimiento",
+      "siglas",
+      "dependencias",
+      "codificación"
+    ],
+    "key_topics": [
+      "Cover acronyms",
+      "Dependency coding"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 46,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-05",
+    "number": 5,
+    "title": "Resolución \"S\" N° 1047/77",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1977-11-01",
+    "year": 1977,
+    "carpeta": 1,
+    "carpeta_number": 5,
+    "original_or_copy": "Original",
+    "description": "Se aprueba en carácter de experimentación la nueva estructura orgánica de la Secretaría de Inteligencia de Estado.",
+    "description_en": "Approves on an experimental basis the new organizational structure of the Secretariat of State Intelligence.",
+    "reference_code": "AR-AFI-SIDE-Int-002",
+    "page_count": 6,
+    "tags": [
+      "estructura orgánica",
+      "experimentación",
+      "reorganización"
+    ],
+    "key_topics": [
+      "Experimental restructuring",
+      "New organizational structure"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 66,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-06",
+    "number": 6,
+    "title": "Anexos de la Resolución \"S\" N° 1047/77",
+    "type": "Anexos de Resolución",
+    "classification": "ESC",
+    "date": "1977-11-01",
+    "year": 1977,
+    "carpeta": 1,
+    "carpeta_number": 6,
+    "original_or_copy": "Original",
+    "description": "Mediante Memorando se agrega como Anexo 3 un glosario y las misiones y funciones de la Secretaría y de las áreas que la componen. Incluye organigrama general y de la Dirección de Reunión Interior.",
+    "description_en": "Through a Memorandum, Annex 3 is added containing a glossary and the missions and functions of the Secretariat and its component areas. Includes general organizational chart and Interior Collection Directorate chart.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0450",
+    "page_count": 148,
+    "tags": [
+      "glosario",
+      "misiones",
+      "funciones",
+      "organigrama",
+      "reunión interior"
+    ],
+    "key_topics": [
+      "Glossary of intelligence terms",
+      "Missions and functions",
+      "Organizational charts"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 69,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-07",
+    "number": 7,
+    "title": "Resolución \"S\" N° 1231/77",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1977-12-20",
+    "year": 1977,
+    "carpeta": 1,
+    "carpeta_number": 7,
+    "original_or_copy": "Original",
+    "description": "Codificación de las dependencias de la Secretaría de Inteligencia de Estado. Se comienza a utilizar un sistema numérico: el \"Área SIDE\" pasa a denominarse \"5\", la Subsecretaría \"A\" pasa a ser \"8\", la \"B\" pasa a ser \"3\", la \"C\" pasa a ser \"9\" y la Secretaría General de la CNI se denomina \"4\".",
+    "description_en": "Coding of SIDE dependencies. A numeric system is introduced: 'SIDE Area' becomes '5', Subsecretariat 'A' becomes '8', 'B' becomes '3', 'C' becomes '9', and the CNI General Secretariat becomes '4'.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0457 pp 5-18",
+    "page_count": 28,
+    "tags": [
+      "codificación",
+      "sistema numérico",
+      "dependencias"
+    ],
+    "key_topics": [
+      "Numeric coding system",
+      "Dependency classification"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 230,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-08",
+    "number": 8,
+    "title": "Resolución \"ESC\" N° 764/79",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1979-11-02",
+    "year": 1979,
+    "carpeta": 1,
+    "carpeta_number": 8,
+    "original_or_copy": "Resolución original y Anexo copia",
+    "description": "Misiones, tareas y estructura orgánica de la SIDE. Deja sin efecto la estructura anterior (Res. 1047/77). Incluye glosario, descripción de misiones y funciones, y gráficos de la estructura orgánica de cada área. Aparece el Departamento de Contrasubversión.",
+    "description_en": "Missions, tasks and organizational structure of SIDE. Supersedes the previous structure (Res. 1047/77). Includes glossary, missions and functions description, and organizational charts. The Counter-subversion Department appears for the first time.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0521",
+    "page_count": 226,
+    "tags": [
+      "misiones",
+      "tareas",
+      "estructura orgánica",
+      "contrasubversión",
+      "glosario"
+    ],
+    "key_topics": [
+      "Counter-subversion Department",
+      "Comprehensive restructuring",
+      "Organizational charts"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 244,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-09",
+    "number": 9,
+    "title": "Resolución N° 928/80",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1980-01-04",
+    "year": 1980,
+    "carpeta": 1,
+    "carpeta_number": 9,
+    "original_or_copy": "Copia",
+    "description": "Modificación de las normas para la puesta en funcionamiento del encubrimiento del personal y dependencias de la SIDE, \"para precisar conceptos y usos y evitar de esta manera interpretaciones y procedimientos erróneos y equívocos\".",
+    "description_en": "Modification of personnel and dependency cover norms at SIDE, 'to clarify concepts and uses and thus avoid erroneous and equivocal interpretations and procedures'.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0399 pp 41-43",
+    "page_count": 6,
+    "tags": [
+      "encubrimiento",
+      "personal",
+      "normas",
+      "modificación"
+    ],
+    "key_topics": [
+      "Cover norm updates",
+      "Procedural clarification"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 460,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-10",
+    "number": 10,
+    "title": "Resolución \"ESC\" N° 815/83",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1983-08-30",
+    "year": 1983,
+    "carpeta": 1,
+    "carpeta_number": 10,
+    "original_or_copy": "Copia",
+    "description": "Se modifica la estructura orgánica de la Subsecretaría \"B\" (Exterior) que había sido aprobada por Resolución \"ESC\" N° 764/79. Incluye organigramas de la Subsecretaría B, Dirección de Inteligencia Interior y Dirección de Reunión Exterior.",
+    "description_en": "Modifies the organizational structure of Subsecretariat 'B' (Foreign Affairs) previously approved by Resolution 'ESC' No. 764/79. Includes organizational charts for Subsecretariat B, Interior Intelligence Directorate, and Foreign Collection Directorate.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0598 pp 806-815",
+    "page_count": 20,
+    "tags": [
+      "estructura orgánica",
+      "subsecretaría B",
+      "exterior",
+      "organigrama"
+    ],
+    "key_topics": [
+      "Foreign affairs restructuring",
+      "Subsecretariat B reorganization"
+    ],
+    "historical_period": "Dictadura militar — final del Proceso",
+    "global_page_start": 464,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-11",
+    "number": 11,
+    "title": "Resolución \"S\" N° 1261/83",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1983-11-28",
+    "year": 1983,
+    "carpeta": 1,
+    "carpeta_number": 11,
+    "original_or_copy": "Original",
+    "description": "Misiones y tareas de la Subsecretaría \"B\" (Exterior).",
+    "description_en": "Missions and tasks of Subsecretariat 'B' (Foreign Affairs).",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0598 pp 254-335",
+    "page_count": 154,
+    "tags": [
+      "misiones",
+      "tareas",
+      "subsecretaría B",
+      "exterior"
+    ],
+    "key_topics": [
+      "Foreign intelligence missions",
+      "Subsecretariat B tasks"
+    ],
+    "historical_period": "Transición democrática",
+    "global_page_start": 476,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-12",
+    "number": 12,
+    "title": "Manual de Funcionamiento de las Delegaciones Regionales",
+    "type": "Manual / Nota",
+    "classification": "S",
+    "date": "1974-02-22",
+    "year": 1974,
+    "carpeta": 2,
+    "carpeta_number": 1,
+    "original_or_copy": "Original",
+    "description": "Se envía mediante nota a Delegación Rosario para que emita opinión y lo estudie. Contiene misiones y funciones, orgánica y jurisdicciones de las delegaciones. Describe las tareas, funciones y equipos de trabajo de cada rol dentro de las delegaciones.",
+    "description_en": "Sent via note to the Rosario Delegation for review. Contains missions and functions, organizational structure, and jurisdictions of delegations. Describes the tasks, functions, and work teams for each role within delegations.",
+    "reference_code": "DelProv-ros-0409 pp 412-596",
+    "page_count": 182,
+    "tags": [
+      "delegaciones regionales",
+      "manual",
+      "funcionamiento",
+      "Rosario"
+    ],
+    "key_topics": [
+      "Regional delegations",
+      "Operational manual",
+      "Internal organization"
+    ],
+    "historical_period": "Gobierno de Perón",
+    "global_page_start": 557,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-13",
+    "number": 13,
+    "title": "Directiva N° 1/76",
+    "type": "Directiva",
+    "classification": "S",
+    "date": "1976-11-29",
+    "year": 1976,
+    "carpeta": 2,
+    "carpeta_number": 2,
+    "original_or_copy": "Copia",
+    "description": "Orientación y criterios del empleo de obtención de informaciones del Departamento Inspección Delegaciones Regionales y Provinciales hacia las delegaciones.",
+    "description_en": "Orientation and criteria for the use of information gathering by the Regional and Provincial Delegations Inspection Department towards the delegations.",
+    "reference_code": "DelProv-Ros-0047 pp 3-4",
+    "page_count": 4,
+    "tags": [
+      "directiva",
+      "delegaciones",
+      "obtención de informaciones"
+    ],
+    "key_topics": [
+      "Information gathering criteria",
+      "Delegation oversight"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 707,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-14",
+    "number": 14,
+    "title": "Circular \"ESC\" N° 3/76",
+    "type": "Circular",
+    "classification": "ESC",
+    "date": "1976-12-15",
+    "year": 1976,
+    "carpeta": 2,
+    "carpeta_number": 3,
+    "original_or_copy": "Copia",
+    "description": "Objeto: orientar sobre la verdadera misión de la SIDE y sus órganos integrantes. Aclara que la misión de la SIDE es únicamente informativa y no operativa, y que las Delegaciones Regionales deben colaborar con los Comandos Militares sólo en el orden informativo.",
+    "description_en": "Purpose: to clarify the true mission of SIDE and its component bodies. States that SIDE's mission is solely informational, not operational, and that Regional Delegations must collaborate with Military Commands only in informational matters.",
+    "reference_code": "DelProv-Ros-0047 pp 11-12",
+    "page_count": 4,
+    "tags": [
+      "circular",
+      "misión SIDE",
+      "informativa",
+      "delegaciones"
+    ],
+    "key_topics": [
+      "SIDE mission clarification",
+      "Informational vs operational role"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 745,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-15",
+    "number": 15,
+    "title": "Directiva \"ESC\" N° 1/80",
+    "type": "Directiva",
+    "classification": "ESC",
+    "date": "1980-03-17",
+    "year": 1980,
+    "carpeta": 2,
+    "carpeta_number": 4,
+    "original_or_copy": "Original, Ejemplar 14",
+    "description": "Coordinación entre delegaciones provinciales. Regula las relaciones funcionales de las Delegaciones Provinciales con las distintas Jefaturas de la estructura de la época, para la coordinación y colaboración en la lucha contra la subversión.",
+    "description_en": "Coordination between provincial delegations. Regulates functional relationships between Provincial Delegations and the various headquarters of the era's structure, for coordination and collaboration in the fight against subversion.",
+    "reference_code": "AR-AFI-SIDE-Int-007",
+    "page_count": 4,
+    "tags": [
+      "directiva",
+      "delegaciones provinciales",
+      "coordinación",
+      "contrasubversión"
+    ],
+    "key_topics": [
+      "Provincial coordination",
+      "Anti-subversion collaboration"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 747,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-16",
+    "number": 16,
+    "title": "Resolución N° 152/73",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1973-03-11",
+    "year": 1973,
+    "carpeta": 3,
+    "carpeta_number": 1,
+    "original_or_copy": "Original",
+    "description": "Asignación de recursos de la Secretaría de Informaciones del Estado a la Central Nacional de Inteligencia.",
+    "description_en": "Assignment of resources from the Secretariat of State Information to the National Intelligence Center.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0343 pp 7-10",
+    "page_count": 8,
+    "tags": [
+      "recursos",
+      "CNI",
+      "asignación"
+    ],
+    "key_topics": [
+      "Resource allocation",
+      "CNI establishment"
+    ],
+    "historical_period": "Gobierno de Lanusse (transición)",
+    "global_page_start": 754,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-17",
+    "number": 17,
+    "title": "Resolución N° 283/73",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1973-08-13",
+    "year": 1973,
+    "carpeta": 3,
+    "carpeta_number": 2,
+    "original_or_copy": "Copia",
+    "description": "Creación de la Comisión Asesora de Antecedentes de la Central Nacional de Inteligencia. La Comisión tendrá a su cargo el estudio de los antecedentes ideológicos marxistas de personas, entidades, organizaciones, publicaciones y medios de difusión.",
+    "description_en": "Creation of the Advisory Commission on Background Records (CAA) of the National Intelligence Center. The Commission shall study the Marxist ideological backgrounds of persons, entities, organizations, publications, and media.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0352 pp 1-4",
+    "page_count": 8,
+    "tags": [
+      "CAA",
+      "creación",
+      "antecedentes ideológicos",
+      "marxismo"
+    ],
+    "key_topics": [
+      "CAA creation",
+      "Ideological profiling",
+      "Marxist background checks"
+    ],
+    "historical_period": "Gobierno de Perón",
+    "global_page_start": 760,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-18",
+    "number": 18,
+    "title": "Resolución N° 120/75",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1975-01-01",
+    "year": 1975,
+    "carpeta": 3,
+    "carpeta_number": 3,
+    "original_or_copy": "Copia fiel",
+    "description": "Modificación de las fórmulas de calificación ideológica utilizadas por la Comisión Asesora de Antecedentes.",
+    "description_en": "Modification of the ideological qualification formulas used by the Advisory Commission on Background Records.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre (sin referencia exacta)",
+    "page_count": 16,
+    "tags": [
+      "calificación ideológica",
+      "fórmulas",
+      "CAA",
+      "modificación"
+    ],
+    "key_topics": [
+      "Ideological classification formulas",
+      "CAA procedures"
+    ],
+    "historical_period": "Gobierno de Isabel Perón",
+    "global_page_start": 762,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-19",
+    "number": 19,
+    "title": "Resolución \"S\" N° 599/78",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1978-07-29",
+    "year": 1978,
+    "carpeta": 3,
+    "carpeta_number": 4,
+    "original_or_copy": "Original",
+    "description": "Se destina personal de la Comisión Asesora de Antecedentes a la Delegación Provincial de Mendoza, con el objeto de que tome contacto con las comunidades informativas locales.",
+    "description_en": "CAA personnel assigned to the Mendoza Provincial Delegation to establish contact with local intelligence communities.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0481 pp 3-8",
+    "page_count": 12,
+    "tags": [
+      "CAA",
+      "Mendoza",
+      "delegación provincial",
+      "comunidades informativas"
+    ],
+    "key_topics": [
+      "CAA provincial expansion",
+      "Mendoza delegation"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 766,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-20",
+    "number": 20,
+    "title": "Resolución N° 247/79",
+    "type": "Resolución SIDE",
+    "classification": "S",
+    "date": "1979-03-08",
+    "year": 1979,
+    "carpeta": 3,
+    "carpeta_number": 5,
+    "original_or_copy": "Original",
+    "description": "Se modifican las fórmulas de calificación ideológica de publicaciones y medios de difusión, a fin de que las mismas contemplen todo tipo de doctrinas, sistemas políticos, económicos, sociales e ideológicos.",
+    "description_en": "Modifies the ideological classification formulas for publications and media, so they encompass all types of doctrines, political, economic, social, and ideological systems.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resge-060 pp 283-286",
+    "page_count": 8,
+    "tags": [
+      "calificación ideológica",
+      "publicaciones",
+      "medios de difusión",
+      "fórmulas"
+    ],
+    "key_topics": [
+      "Media ideological classification",
+      "Publication profiling"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 774,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-21",
+    "number": 21,
+    "title": "Resolución \"ESC\" N° 916/81",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1981-12-22",
+    "year": 1981,
+    "carpeta": 3,
+    "carpeta_number": 6,
+    "original_or_copy": "Original",
+    "description": "El Departamento de Comunicación Social pasa a ser una Dirección por imperio de la Resolución ESC N° 916/81, y se le asigna la División Asesoría Literaria. Presenta anexos con misiones y tareas.",
+    "description_en": "The Social Communication Department is elevated to a Directorate by Resolution ESC No. 916/81, and the Literary Advisory Division is assigned to it. Includes annexes with missions and tasks.",
+    "reference_code": "AR-AFI-SIDE-Arsi-Plani-resre-0566 pp 1-20",
+    "page_count": 20,
+    "tags": [
+      "comunicación social",
+      "asesoría literaria",
+      "dirección",
+      "misiones"
+    ],
+    "key_topics": [
+      "Social Communication Directorate",
+      "Literary advisory"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 778,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-22",
+    "number": 22,
+    "title": "Resolución \"ESC\" N° 921/81",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1981-12-28",
+    "year": 1981,
+    "carpeta": 3,
+    "carpeta_number": 7,
+    "original_or_copy": "Copia",
+    "description": "Se mantienen las funciones de la Comisión Asesora de Antecedentes. Se encomienda elaborar una propuesta de rectificación de las normas de funcionamiento.",
+    "description_en": "CAA functions are maintained. A proposal for rectification of operating norms is commissioned.",
+    "reference_code": "AR-AFI-SIDE-Apy-Pers-sum_0549-1 pp 137-140",
+    "page_count": 8,
+    "tags": [
+      "CAA",
+      "normas de funcionamiento",
+      "rectificación"
+    ],
+    "key_topics": [
+      "CAA function maintenance",
+      "Operational norm review"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 796,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-23",
+    "number": 23,
+    "title": "Resolución \"ESC\" N° 72/82",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1982-01-31",
+    "year": 1982,
+    "carpeta": 3,
+    "carpeta_number": 8,
+    "original_or_copy": "Copia",
+    "description": "Se readecúa la estructura. Se modifican las normas de asesoramiento ideológico. Traslada la División Asesoría Literaria a la órbita de la Dirección de Comunicación Social. En su Anexo 2, detalla el procedimiento para el estudio y calificación ideológica del material bibliográfico, discográfico, fílmico, etc.",
+    "description_en": "Structure readjusted. Ideological advisory norms modified. Transfers the Literary Advisory Division to the Social Communication Directorate. Annex 2 details procedures for ideological study and classification of bibliographic, discographic, filmic material, etc.",
+    "reference_code": "AR-AFI-SIDE-Apy-Pers-cominre-025",
+    "page_count": 16,
+    "tags": [
+      "asesoría literaria",
+      "comunicación social",
+      "calificación ideológica",
+      "material bibliográfico"
+    ],
+    "key_topics": [
+      "Literary censorship procedures",
+      "Ideological material classification"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 802,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-24",
+    "number": 24,
+    "title": "Resolución \"ESC\" N° 77/82",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1982-02-04",
+    "year": 1982,
+    "carpeta": 3,
+    "carpeta_number": 9,
+    "original_or_copy": "Copia fiel",
+    "description": "Modifica las fórmulas de calificación ideológica de publicaciones (escritos, grabados y fílmicos), derogando la Resolución \"S\" N° 247/79.",
+    "description_en": "Modifies the ideological classification formulas for publications (written, recorded, and filmic), repealing Resolution 'S' No. 247/79.",
+    "reference_code": "AR-AFI-SIDE-Int-029 pp 68-71",
+    "page_count": 8,
+    "tags": [
+      "calificación ideológica",
+      "publicaciones",
+      "fórmulas",
+      "derogación"
+    ],
+    "key_topics": [
+      "Updated classification formulas",
+      "Publication censorship"
+    ],
+    "historical_period": "Dictadura militar — Proceso de Reorganización Nacional",
+    "global_page_start": 834,
+    "page_start_confirmed": false
+  },
+  {
+    "id": "doc-25",
+    "number": 25,
+    "title": "Resolución \"ESC\" N° 480/83",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1983-06-01",
+    "year": 1983,
+    "carpeta": 3,
+    "carpeta_number": 10,
+    "original_or_copy": "Copia",
+    "description": "Nuevas normas de funcionamiento de la Comisión Asesora de Antecedentes. Reproduce el texto de la Resolución ESC N° 921/81 (que al mismo tiempo deroga) y finalmente aprueba un nuevo Anexo I con las normas detalladas. Incluye un \"Apéndice 1\" con un Glosario que describe las \"principales corrientes ideológicas totalitarias\".",
+    "description_en": "New operating norms for the CAA. Reproduces the text of Resolution ESC No. 921/81 (which it simultaneously repeals) and approves a new Annex I with detailed norms. Includes an 'Appendix 1' glossary describing 'the main totalitarian ideological currents'.",
+    "reference_code": "AR-AFI-SIDE-Apy-Pers-cominre-033",
+    "page_count": 26,
+    "tags": [
+      "CAA",
+      "normas de funcionamiento",
+      "glosario",
+      "corrientes ideológicas"
+    ],
+    "key_topics": [
+      "CAA operational norms",
+      "Totalitarian ideology glossary"
+    ],
+    "historical_period": "Dictadura militar — final del Proceso",
+    "global_page_start": 844,
+    "page_start_confirmed": true
+  },
+  {
+    "id": "doc-26",
+    "number": 26,
+    "title": "Resolución \"ESC\" N° 923/83",
+    "type": "Resolución SIDE",
+    "classification": "ESC",
+    "date": "1983-09-20",
+    "year": 1983,
+    "carpeta": 3,
+    "carpeta_number": 11,
+    "original_or_copy": "Copia fiel",
+    "description": "Se aprueba un gráfico de equivalencias entre las fórmulas de calificación ideológicas (Anexo 1) y un plan de trabajo interno (Anexo 2). Da cuenta del trabajo conjunto entre la Central Nacional de Inteligencia y la Comisión Asesora de Antecedentes para la conformación de la \"Base de Datos de Antecedentes\" mediante la inclusión en las \"microfichas de los causantes\".",
+    "description_en": "Approves a chart of equivalences between ideological classification formulas (Annex 1) and an internal work plan (Annex 2). Documents the joint work between the CNI and the CAA to build the 'Background Database' through inclusion in 'subject microfiches'.",
+    "reference_code": "AR-AFI-SIDE-Int-075",
+    "page_count": 14,
+    "tags": [
+      "calificación ideológica",
+      "equivalencias",
+      "base de datos",
+      "microfichas",
+      "CNI",
+      "CAA"
+    ],
+    "key_topics": [
+      "Ideological formula equivalences",
+      "Background database",
+      "Microfiches"
+    ],
+    "historical_period": "Dictadura militar — final del Proceso",
+    "global_page_start": 900,
+    "page_start_confirmed": true
+  }
+]

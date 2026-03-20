@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Orgánicas, Misiones y Funciones de la SIDE",
+    "title_short": "Orgánicas",
+    "description": "Once (11) Resoluciones SIDE que estructuran la organización de la Secretaría entre los años 1975 y 1983. Incluye organigramas, misiones y funciones, normas de codificación de dependencias y normas de encubrimiento del personal.",
+    "description_en": "Eleven (11) SIDE Resolutions structuring the organization of the Secretariat between 1975 and 1983. Includes organizational charts, missions and functions, dependency coding norms, and personnel cover norms.",
+    "doc_count": 11,
+    "color": "#5B3A29",
+    "color_light": "#8B6914",
+    "topics": [
+      "Estructura del organismo, sus misiones y funciones",
+      "Normas de codificación de las dependencias",
+      "Normas de encubrimiento del personal",
+      "Glosarios con definiciones conceptuales"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Normativa Interna: Misión de la SIDE y Delegaciones del Interior",
+    "title_short": "Normativa Interna",
+    "description": "Cuatro (4) documentos: un proyecto de manual de funcionamiento de las delegaciones regionales con su respectiva nota de elevación, una Circular SIDE de 1976 y dos Directivas SIDE de 1976 y 1980.",
+    "description_en": "Four (4) documents: a draft manual for regional delegations with its cover note, a 1976 SIDE Circular, and two SIDE Directives from 1976 and 1980.",
+    "doc_count": 4,
+    "color": "#4A6741",
+    "color_light": "#6B8E5A",
+    "topics": [
+      "Funcionamiento de delegaciones regionales",
+      "Orientación y criterios operativos",
+      "Coordinación entre delegaciones provinciales",
+      "Misión informativa de la SIDE"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Comisión Asesora de Antecedentes (CAA)",
+    "title_short": "Comisión Asesora",
+    "description": "Once (11) Resoluciones SIDE dictadas entre los años 1973 y 1983, que dan cuenta de la creación y funcionamiento de la Comisión Asesora de Antecedentes, así como de las normas utilizadas para la calificación ideológica de personas, entidades, organizaciones, publicaciones y medios de difusión.",
+    "description_en": "Eleven (11) SIDE Resolutions from 1973 to 1983 documenting the creation and operation of the Advisory Commission on Background Records (CAA), including the norms used for ideological profiling of persons, entities, organizations, publications, and media.",
+    "doc_count": 11,
+    "color": "#8B1A1A",
+    "color_light": "#B22222",
+    "topics": [
+      "Creación de la Comisión Asesora de Antecedentes",
+      "Fórmulas de calificación ideológica",
+      "Asesoramiento ideológico literario",
+      "Normas de funcionamiento de la CAA"
+    ]
+  }
+]

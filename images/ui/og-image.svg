@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2340"/>
+      <stop offset="100%" stop-color="#232D4F"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.06"/>
+    </pattern>
+    <clipPath id="stamp-clip">
+      <circle cx="980" cy="315" r="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Top accent line (celeste + white like Argentine flag) -->
+  <rect x="0" y="0" width="1200" height="4" fill="#75AADB"/>
+
+  <!-- Bottom accent line (red, like the SIDE seal) -->
+  <rect x="0" y="626" width="1200" height="4" fill="#C62828"/>
+
+  <!-- Decorative stamp circle (background element) -->
+  <circle cx="980" cy="315" r="200" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.06"/>
+  <circle cx="980" cy="315" r="185" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <circle cx="980" cy="315" r="170" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.03"/>
+
+  <!-- "SECRETO" diagonal stamp watermark -->
+  <g transform="translate(980, 315) rotate(-20)" opacity="0.06">
+    <rect x="-160" y="-30" width="320" height="60" rx="4" fill="none" stroke="#fff" stroke-width="3"/>
+    <text x="0" y="12" font-family="'Courier New', monospace" font-size="40" font-weight="bold" fill="#fff" text-anchor="middle" letter-spacing="12">SECRETO</text>
+  </g>
+
+  <!-- Vertical left accent bar -->
+  <rect x="60" y="140" width="4" height="350" fill="#C62828" opacity="0.8"/>
+
+  <!-- Main text content -->
+  <text x="84" y="200" font-family="'Encode Sans', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#75AADB" letter-spacing="3" text-transform="uppercase">ARCHIVOS DESCLASIFICADOS</text>
+
+  <text x="84" y="265" font-family="'Encode Sans', 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="800" fill="#ffffff" letter-spacing="-1">SIDE</text>
+
+  <text x="84" y="320" font-family="'Encode Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="300" fill="#ffffff" opacity="0.85">Secretaría de Inteligencia de Estado</text>
+
+  <!-- Period badge -->
+  <rect x="84" y="348" width="180" height="36" rx="3" fill="#C62828" opacity="0.9"/>
+  <text x="174" y="373" font-family="'Encode Sans', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">1973 – 1983</text>
+
+  <!-- Stats line -->
+  <text x="84" y="430" font-family="'Encode Sans', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#ffffff" opacity="0.5">
+    <tspan font-weight="700" fill="#75AADB" opacity="1">26</tspan> documentos  ·  <tspan font-weight="700" fill="#75AADB" opacity="1">492</tspan> páginas  ·  <tspan font-weight="700" fill="#75AADB" opacity="1">3</tspan> carpetas temáticas
+  </text>
+
+  <!-- Subtitle -->
+  <text x="84" y="468" font-family="'Encode Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#ffffff" opacity="0.4">Primera Etapa — Desclasificación ordenada por el Presidente de la Nación Argentina</text>
+
+  <!-- Footer bar -->
+  <rect x="0" y="560" width="1200" height="66" fill="#000000" opacity="0.25"/>
+  <text x="84" y="600" font-family="'Encode Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#ffffff" opacity="0.5">República Argentina · Archivo Histórico SIDE · Fondo Documental SIDE (FDS)</text>
+</svg>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Explorar Archivos — Archivos SIDE</title>
+  <meta name="description" content="Visor completo del archivo de 987 páginas de documentos desclasificados de la SIDE (1973–1983).">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Explorar Archivos — Archivos SIDE">
+  <meta property="og:description" content="Visor completo del archivo de 987 páginas de documentos desclasificados de la SIDE (1973–1983).">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/ui/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Archivos SIDE">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Explorar Archivos — Archivos SIDE">
+  <meta name="twitter:description" content="Visor completo del archivo de 987 páginas de documentos desclasificados de la SIDE (1973–1983).">
+  <meta name="twitter:image" content="/images/ui/og-image.png">
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <style>
+    .archive-viewer {
+      display: flex;
+      gap: 0;
+      height: calc(100vh - 90px);
+      overflow: hidden;
+    }
+
+    /* --- Sidebar: document index --- */
+    .av-sidebar {
+      width: 300px;
+      flex-shrink: 0;
+      background: #f7f7f7;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .av-sidebar-header {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .av-sidebar-header h3 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #666;
+      margin: 0 0 8px;
+    }
+
+    .av-sidebar-search {
+      width: 100%;
+      border: 1px solid #ddd;
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 0;
+    }
+
+    .av-sidebar-search:focus {
+      outline: none;
+      border-color: var(--azul);
+    }
+
+    .av-doc-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 0;
+    }
+
+    .av-carpeta-group {
+      margin-bottom: 4px;
+    }
+
+    .av-carpeta-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 8px 15px 4px;
+      color: #999;
+    }
+
+    .av-doc-item {
+      display: block;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      transition: all 0.15s;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .av-doc-item:hover {
+      background: #eee;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .av-doc-item.active {
+      background: #e8f0fe;
+      border-left-color: var(--azul);
+    }
+
+    .av-doc-item .av-doc-title {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--azul);
+    }
+
+    .av-doc-item .av-doc-meta {
+      font-size: 11px;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    .av-doc-item .av-doc-meta .badge-classification {
+      font-size: 9px;
+      padding: 1px 4px;
+      vertical-align: middle;
+    }
+
+    /* --- Main viewer area --- */
+    .av-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: #e8e8e8;
+    }
+
+    .av-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 15px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      flex-shrink: 0;
+    }
+
+    .av-toolbar .btn { padding: 5px 12px; font-size: 13px; }
+
+    .av-toolbar .av-page-input {
+      width: 60px;
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 5px;
+      font-size: 13px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .av-toolbar .av-page-total {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .av-toolbar .av-doc-indicator {
+      margin-left: auto;
+      font-size: 12px;
+      color: #666;
+      max-width: 300px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .av-toolbar .av-doc-indicator strong {
+      color: var(--azul);
+    }
+
+    .av-image-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .av-image-area img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      background: #fff;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+    }
+
+    .av-image-area img.zoomed {
+      max-width: none;
+      max-height: none;
+    }
+
+    .av-image-area .av-placeholder {
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .archive-viewer { flex-direction: column; height: auto; }
+      .av-sidebar {
+        width: 100%;
+        max-height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+      .av-image-area { min-height: 60vh; }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K9RSX85TLS');
+  </script>
+</head>
+<body>
+
+<div class="header-bar">
+  <div class="container">
+    <span>República Argentina</span>
+    <span class="pull-right">Secretaría de Inteligencia de Estado</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar navbar-default" style="border:none;margin:0;min-height:auto;background:transparent;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Menú</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-custom" href="/"><img src="/images/ui/logo-side.png" alt="SIDE"><span>SIDE</span><i class="brand-separator"></i>Archivos Desclasificados</a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/documentos/">Documentos</a></li>
+          <li><a href="/explorar-archivos/">Explorar Archivos</a></li>
+          <li><a href="/linea-de-tiempo/">Línea de Tiempo</a></li>
+          <li><a href="/acerca-desclasificacion/">Acerca de</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="archive-viewer">
+  <!-- Sidebar -->
+  <aside class="av-sidebar">
+    <div class="av-sidebar-header">
+      <h3>Índice de Documentos</h3>
+      <input type="text" class="av-sidebar-search" id="doc-search" placeholder="Buscar documento...">
+    </div>
+    <div class="av-doc-list" id="doc-list">
+      <div class="loading" style="padding:20px;">Cargando...</div>
+    </div>
+  </aside>
+
+  <!-- Main viewer -->
+  <div class="av-main">
+    <div class="av-toolbar">
+      <button class="btn btn-default" id="btn-prev" title="Página anterior (←)"><i class="fa fa-chevron-left"></i></button>
+      <input type="number" class="av-page-input" id="page-input" value="1" min="1" max="987">
+      <span class="av-page-total">/ 987</span>
+      <button class="btn btn-default" id="btn-next" title="Página siguiente (→)"><i class="fa fa-chevron-right"></i></button>
+
+      <span style="color:#ddd;margin:0 4px;">|</span>
+
+      <button class="btn btn-default btn-sm" id="btn-zoom-out" title="Alejar"><i class="fa fa-search-minus"></i></button>
+      <button class="btn btn-default btn-sm" id="btn-zoom-reset" title="Restablecer">1:1</button>
+      <button class="btn btn-default btn-sm" id="btn-zoom-in" title="Acercar"><i class="fa fa-search-plus"></i></button>
+
+      <div class="av-doc-indicator" id="doc-indicator"></div>
+    </div>
+
+    <div class="av-image-area" id="image-area">
+      <div class="av-placeholder">Cargando visor...</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/js/app.js?v=3"></script>
+<script>
+(async function () {
+  const TOTAL_PAGES = 987;
+
+  // Load data
+  const [documents, carpetas] = await Promise.all([
+    fetch('/data/documents.json?v=3').then(r => r.json()),
+    fetch('/data/carpetas.json?v=3').then(r => r.json())
+  ]);
+
+  // Sort documents by global_page_start
+  const sortedDocs = [...documents].sort((a, b) => a.global_page_start - b.global_page_start);
+
+  // State
+  let currentPage = 1;
+  const pz = initPanZoom(document.getElementById('image-area'));
+
+  // Check URL for starting doc or page
+  const params = new URLSearchParams(location.search);
+  const startDoc = params.get('doc');
+  const startPage = params.get('page');
+
+  if (startDoc) {
+    const d = documents.find(x => x.id === startDoc);
+    if (d) currentPage = d.global_page_start;
+  } else if (startPage) {
+    currentPage = Math.max(1, Math.min(TOTAL_PAGES, parseInt(startPage) || 1));
+  }
+
+  // DOM refs
+  const docList = document.getElementById('doc-list');
+  const docSearch = document.getElementById('doc-search');
+  const imageArea = document.getElementById('image-area');
+  const pageInput = document.getElementById('page-input');
+  const docIndicator = document.getElementById('doc-indicator');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+  const btnZoomIn = document.getElementById('btn-zoom-in');
+  const btnZoomOut = document.getElementById('btn-zoom-out');
+  const btnZoomReset = document.getElementById('btn-zoom-reset');
+
+  // --- Render sidebar ---
+  function renderDocList(filter) {
+    const q = (filter || '').toLowerCase();
+    let html = '';
+
+    for (const c of carpetas) {
+      const docs = sortedDocs.filter(d => d.carpeta === c.id &&
+        (!q || d.title.toLowerCase().includes(q) || d.description.toLowerCase().includes(q)));
+      if (docs.length === 0) continue;
+
+      html += `<div class="av-carpeta-group">`;
+      html += `<div class="av-carpeta-label" style="border-left:3px solid ${c.color}; padding-left:12px;">Carpeta ${c.id}: ${c.title_short}</div>`;
+
+      for (const d of docs) {
+        const cls = d.classification.toUpperCase();
+        const badgeHtml = cls === 'ESC'
+          ? '<span class="badge-classification badge-esc">ESC</span>'
+          : '<span class="badge-classification badge-s">S</span>';
+
+        const approx = d.page_start_confirmed ? '' : '~';
+        const approxClass = d.page_start_confirmed ? '' : ' style="opacity:0.6"';
+        html += `
+          <div class="av-doc-item" data-doc-id="${d.id}" data-page="${d.global_page_start}" onclick="goToDoc('${d.id}')">
+            <div class="av-doc-title">${d.title}</div>
+            <div class="av-doc-meta">${badgeHtml} ${d.date.substring(0, 4)} · <span${approxClass}>p.${approx}${d.global_page_start}</span></div>
+          </div>`;
+      }
+      html += `</div>`;
+    }
+
+    docList.innerHTML = html || '<p style="padding:15px;color:#999;">Sin resultados.</p>';
+    highlightActiveDoc();
+  }
+
+  function highlightActiveDoc() {
+    // Find which doc the current page belongs to
+    let activeDoc = sortedDocs[0];
+    for (const d of sortedDocs) {
+      if (d.global_page_start <= currentPage) activeDoc = d;
+      else break;
+    }
+
+    // Update sidebar highlight
+    docList.querySelectorAll('.av-doc-item').forEach(el => {
+      el.classList.toggle('active', el.dataset.docId === activeDoc.id);
+    });
+
+    // Update toolbar indicator
+    docIndicator.innerHTML = `<strong>${activeDoc.title}</strong>`;
+
+    // Scroll active item into view
+    const activeEl = docList.querySelector('.av-doc-item.active');
+    if (activeEl) activeEl.scrollIntoView({ block: 'nearest' });
+  }
+
+  // --- Image viewer ---
+  function getImagePath(page) {
+    return pageImageURL(page);
+  }
+
+  function updatePage() {
+    pageInput.value = currentPage;
+    btnPrev.disabled = currentPage <= 1;
+    btnNext.disabled = currentPage >= TOTAL_PAGES;
+
+    const img = imageArea.querySelector('img') || document.createElement('img');
+    const newSrc = getImagePath(currentPage);
+
+    if (img.src !== location.origin + newSrc) {
+      img.src = newSrc;
+      img.alt = `Página ${currentPage} de ${TOTAL_PAGES}`;
+    }
+
+    img.onerror = function () {
+      imageArea.innerHTML = `<div class="av-placeholder">
+        <p>Página ${currentPage} no disponible</p>
+      </div>`;
+    };
+
+    if (!img.parentNode) {
+      imageArea.innerHTML = '';
+      imageArea.appendChild(img);
+    }
+
+    pz.applyTransform();
+
+    highlightActiveDoc();
+
+    // Update URL without reload
+    const url = new URL(location);
+    url.searchParams.set('page', currentPage);
+    url.searchParams.delete('doc');
+    history.replaceState(null, '', url);
+  }
+
+  // --- Navigation ---
+  window.goToDoc = function (docId) {
+    const d = documents.find(x => x.id === docId);
+    if (d) {
+      currentPage = d.global_page_start;
+      pz.reset();
+      updatePage();
+    }
+  };
+
+  function goToPage(page) {
+    currentPage = Math.max(1, Math.min(TOTAL_PAGES, page));
+    updatePage();
+  }
+
+  btnPrev.addEventListener('click', () => goToPage(currentPage - 1));
+  btnNext.addEventListener('click', () => goToPage(currentPage + 1));
+
+  pageInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      goToPage(parseInt(pageInput.value) || 1);
+      pageInput.blur();
+    }
+  });
+
+  pageInput.addEventListener('change', () => {
+    goToPage(parseInt(pageInput.value) || 1);
+  });
+
+  // Zoom
+  btnZoomIn.addEventListener('click', () => pz.setZoom(Math.min(pz.getZoom() + 0.25, 3)));
+  btnZoomOut.addEventListener('click', () => pz.setZoom(Math.max(pz.getZoom() - 0.25, 0.5)));
+  btnZoomReset.addEventListener('click', () => pz.reset());
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goToPage(currentPage - 1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); goToPage(currentPage + 1); }
+    else if (e.key === '+' || e.key === '=') { pz.setZoom(Math.min(pz.getZoom() + 0.25, 3)); }
+    else if (e.key === '-') { pz.setZoom(Math.max(pz.getZoom() - 0.25, 0.5)); }
+    else if (e.key === 'Home') { e.preventDefault(); goToPage(1); }
+    else if (e.key === 'End') { e.preventDefault(); goToPage(TOTAL_PAGES); }
+  });
+
+  // Search
+  docSearch.addEventListener('input', () => renderDocList(docSearch.value));
+
+  // Init
+  renderDocList();
+  updatePage();
+})();
+</script>
+
+</body>
+</html>

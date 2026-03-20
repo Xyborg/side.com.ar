@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Catálogo de Documentos — Archivos SIDE</title>
+  <meta name="description" content="Catálogo de 26 documentos desclasificados de la SIDE, organizados en tres carpetas temáticas. Período 1973–1983.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Catálogo de Documentos — Archivos SIDE">
+  <meta property="og:description" content="Catálogo de 26 documentos desclasificados de la SIDE, organizados en tres carpetas temáticas. Período 1973–1983.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/ui/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Archivos SIDE">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Catálogo de Documentos — Archivos SIDE">
+  <meta name="twitter:description" content="Catálogo de 26 documentos desclasificados de la SIDE, organizados en tres carpetas temáticas. Período 1973–1983.">
+  <meta name="twitter:image" content="/images/ui/og-image.png">
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K9RSX85TLS');
+  </script>
+</head>
+<body>
+
+<div class="header-bar">
+  <div class="container">
+    <span>República Argentina</span>
+    <span class="pull-right">Secretaría de Inteligencia de Estado</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar navbar-default" style="border:none;margin:0;min-height:auto;background:transparent;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Menú</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-custom" href="/"><img src="/images/ui/logo-side.png" alt="SIDE"><span>SIDE</span><i class="brand-separator"></i>Archivos Desclasificados</a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/documentos/">Documentos</a></li>
+          <li><a href="/explorar-archivos/">Explorar Archivos</a></li>
+          <li><a href="/linea-de-tiempo/">Línea de Tiempo</a></li>
+          <li><a href="/acerca-desclasificacion/">Acerca de</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top:30px; padding-bottom:60px;">
+  <h1 class="section-title">Catálogo de Documentos</h1>
+  <p class="section-subtitle">26 documentos oficiales desclasificados, período 1973–1983.</p>
+
+  <div class="documents-layout">
+    <!-- Filter Sidebar -->
+    <aside class="filter-sidebar">
+      <div class="panel panel-default">
+        <div class="panel-heading">Buscar</div>
+        <div class="panel-body">
+          <input type="text" class="search-box form-control" id="search-box" placeholder="Título, descripción...">
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Carpeta</div>
+        <div class="panel-body">
+          <label><input type="checkbox" class="filter-carpeta" value="1"> Carpeta 1 — Orgánicas</label>
+          <label><input type="checkbox" class="filter-carpeta" value="2"> Carpeta 2 — Normativa</label>
+          <label><input type="checkbox" class="filter-carpeta" value="3"> Carpeta 3 — CAA</label>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Clasificación</div>
+        <div class="panel-body">
+          <label><input type="checkbox" class="filter-classification" value="S"> Secreto (S)</label>
+          <label><input type="checkbox" class="filter-classification" value="ESC"> Est. Secreto y Conf. (ESC)</label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="documents-main">
+      <div class="sort-bar">
+        <label>Ordenar por:
+          <select id="sort-select" class="form-control" style="display:inline-block;width:auto;">
+            <option value="date">Fecha (ascendente)</option>
+            <option value="date-desc">Fecha (descendente)</option>
+            <option value="title">Título</option>
+            <option value="pages">Páginas</option>
+          </select>
+        </label>
+        <span class="doc-count-label" id="doc-count-label"></span>
+      </div>
+      <div class="documents-grid" id="documents-grid">
+        <div class="loading">Cargando documentos</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <img src="/images/ui/logo-side.png" alt="SIDE" style="height:50px;margin-bottom:12px;opacity:0.7;">
+    <p>Archivos Desclasificados SIDE (1973–1983) — Primera Etapa</p>
+    <div class="footer-disclaimer">
+      <p>Este no es un sitio oficial del Gobierno de la República Argentina. No asumimos responsabilidad alguna por el contenido de los documentos publicados. El único objetivo de este sitio es facilitar el acceso a información ya publicada por el Estado argentino.</p>
+      <p>Sitio creado por <a href="https://www.martinaberastegue.com" target="_blank" rel="noopener">Martin Aberastegue</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/js/app.js?v=3"></script>
+<script src="/js/documents.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+[
+  {
+    "date": "1973-03-11",
+    "year": 1973,
+    "type": "document",
+    "doc_id": "doc-16",
+    "title": "Resolución N° 152/73",
+    "description": "Asignación de recursos a la CNI"
+  },
+  {
+    "date": "1973-05-25",
+    "year": 1973,
+    "type": "historical",
+    "title": "Asunción de Héctor Cámpora",
+    "description": "Cámpora asume la presidencia. Fin de la dictadura de Lanusse."
+  },
+  {
+    "date": "1973-08-13",
+    "year": 1973,
+    "type": "document",
+    "doc_id": "doc-17",
+    "title": "Resolución N° 283/73",
+    "description": "Creación de la Comisión Asesora de Antecedentes (CAA)"
+  },
+  {
+    "date": "1973-10-12",
+    "year": 1973,
+    "type": "historical",
+    "title": "Asunción de Juan Domingo Perón",
+    "description": "Perón asume su tercer mandato presidencial."
+  },
+  {
+    "date": "1974-02-22",
+    "year": 1974,
+    "type": "document",
+    "doc_id": "doc-12",
+    "title": "Manual de Delegaciones Regionales",
+    "description": "Manual de funcionamiento de las delegaciones regionales"
+  },
+  {
+    "date": "1974-07-01",
+    "year": 1974,
+    "type": "historical",
+    "title": "Fallecimiento de Perón",
+    "description": "Muere Juan Domingo Perón. Isabel Martínez de Perón asume la presidencia."
+  },
+  {
+    "date": "1975-01-01",
+    "year": 1975,
+    "type": "document",
+    "doc_id": "doc-18",
+    "title": "Resolución N° 120/75",
+    "description": "Modificación de fórmulas de calificación ideológica"
+  },
+  {
+    "date": "1975-06-16",
+    "year": 1975,
+    "type": "document",
+    "doc_id": "doc-01",
+    "title": "Resolución \"S\" N° 291/75",
+    "description": "Aprueba la organización de la Secretaría"
+  },
+  {
+    "date": "1975-12-30",
+    "year": 1975,
+    "type": "document",
+    "doc_id": "doc-02",
+    "title": "Resolución \"S\" N° 855/75",
+    "description": "Normas de encubrimiento del personal y dependencias"
+  },
+  {
+    "date": "1976-03-24",
+    "year": 1976,
+    "type": "historical",
+    "title": "Golpe de Estado",
+    "description": "Las Fuerzas Armadas derrocan a Isabel Perón. Comienza el autodenominado \"Proceso de Reorganización Nacional\"."
+  },
+  {
+    "date": "1976-05-01",
+    "year": 1976,
+    "type": "historical",
+    "title": "Decreto \"S\" N° 416/76",
+    "description": "Se cambia el nombre de \"Secretaría de Informaciones\" a \"Secretaría de Inteligencia de Estado\"."
+  },
+  {
+    "date": "1976-08-20",
+    "year": 1976,
+    "type": "document",
+    "doc_id": "doc-03",
+    "title": "Resolución \"S\" N° 643/76",
+    "description": "Organización de la SIDE 1976 — nuevo organigrama"
+  },
+  {
+    "date": "1976-09-23",
+    "year": 1976,
+    "type": "document",
+    "doc_id": "doc-04",
+    "title": "Resolución \"S\" N° 734/76",
+    "description": "Siglas de encubrimiento de las dependencias"
+  },
+  {
+    "date": "1976-11-29",
+    "year": 1976,
+    "type": "document",
+    "doc_id": "doc-13",
+    "title": "Directiva N° 1/76",
+    "description": "Orientación y criterios para las delegaciones regionales"
+  },
+  {
+    "date": "1976-12-15",
+    "year": 1976,
+    "type": "document",
+    "doc_id": "doc-14",
+    "title": "Circular \"ESC\" N° 3/76",
+    "description": "La misión de la SIDE es informativa, no operativa"
+  },
+  {
+    "date": "1977-11-01",
+    "year": 1977,
+    "type": "document",
+    "doc_id": "doc-05",
+    "title": "Resolución \"S\" N° 1047/77",
+    "description": "Nueva estructura orgánica (experimental)"
+  },
+  {
+    "date": "1977-11-01",
+    "year": 1977,
+    "type": "document",
+    "doc_id": "doc-06",
+    "title": "Anexos Res. \"S\" N° 1047/77",
+    "description": "Glosario, misiones y funciones, organigramas"
+  },
+  {
+    "date": "1977-12-20",
+    "year": 1977,
+    "type": "document",
+    "doc_id": "doc-07",
+    "title": "Resolución \"S\" N° 1231/77",
+    "description": "Codificación numérica de las dependencias"
+  },
+  {
+    "date": "1978-07-29",
+    "year": 1978,
+    "type": "document",
+    "doc_id": "doc-19",
+    "title": "Resolución \"S\" N° 599/78",
+    "description": "Se destina CAA a Delegación Provincial de Mendoza"
+  },
+  {
+    "date": "1979-03-08",
+    "year": 1979,
+    "type": "document",
+    "doc_id": "doc-20",
+    "title": "Resolución N° 247/79",
+    "description": "Modificación de fórmulas de calificación ideológica de publicaciones"
+  },
+  {
+    "date": "1979-11-02",
+    "year": 1979,
+    "type": "document",
+    "doc_id": "doc-08",
+    "title": "Resolución \"ESC\" N° 764/79",
+    "description": "Misiones, tareas y estructura orgánica. Aparece Contrasubversión."
+  },
+  {
+    "date": "1980-01-04",
+    "year": 1980,
+    "type": "document",
+    "doc_id": "doc-09",
+    "title": "Resolución N° 928/80",
+    "description": "Modificación de normas de encubrimiento"
+  },
+  {
+    "date": "1980-03-17",
+    "year": 1980,
+    "type": "document",
+    "doc_id": "doc-15",
+    "title": "Directiva \"ESC\" N° 1/80",
+    "description": "Coordinación entre delegaciones provinciales y lucha contra la subversión"
+  },
+  {
+    "date": "1981-12-22",
+    "year": 1981,
+    "type": "document",
+    "doc_id": "doc-21",
+    "title": "Resolución \"ESC\" N° 916/81",
+    "description": "Comunicación Social pasa a Dirección; se asigna Asesoría Literaria"
+  },
+  {
+    "date": "1981-12-28",
+    "year": 1981,
+    "type": "document",
+    "doc_id": "doc-22",
+    "title": "Resolución \"ESC\" N° 921/81",
+    "description": "Se mantienen funciones de la CAA; propuesta de rectificación"
+  },
+  {
+    "date": "1982-01-31",
+    "year": 1982,
+    "type": "document",
+    "doc_id": "doc-23",
+    "title": "Resolución \"ESC\" N° 72/82",
+    "description": "Traspaso de Asesoría Literaria; calificación ideológica de material"
+  },
+  {
+    "date": "1982-02-04",
+    "year": 1982,
+    "type": "document",
+    "doc_id": "doc-24",
+    "title": "Resolución \"ESC\" N° 77/82",
+    "description": "Modificación de fórmulas de calificación ideológica de publicaciones"
+  },
+  {
+    "date": "1982-04-02",
+    "year": 1982,
+    "type": "historical",
+    "title": "Guerra de Malvinas",
+    "description": "Argentina invade las Islas Malvinas. El conflicto con el Reino Unido dura hasta el 14 de junio."
+  },
+  {
+    "date": "1983-06-01",
+    "year": 1983,
+    "type": "document",
+    "doc_id": "doc-25",
+    "title": "Resolución \"ESC\" N° 480/83",
+    "description": "Nuevas normas de funcionamiento de la CAA; glosario de ideologías totalitarias"
+  },
+  {
+    "date": "1983-08-30",
+    "year": 1983,
+    "type": "document",
+    "doc_id": "doc-10",
+    "title": "Resolución \"ESC\" N° 815/83",
+    "description": "Se modifica estructura orgánica de Subsecretaría B (Exterior)"
+  },
+  {
+    "date": "1983-09-20",
+    "year": 1983,
+    "type": "document",
+    "doc_id": "doc-26",
+    "title": "Resolución \"ESC\" N° 923/83",
+    "description": "Equivalencias entre fórmulas de calificación ideológica; base de datos de antecedentes"
+  },
+  {
+    "date": "1983-10-30",
+    "year": 1983,
+    "type": "historical",
+    "title": "Elecciones democráticas",
+    "description": "Se celebran elecciones generales. Raúl Alfonsín gana la presidencia."
+  },
+  {
+    "date": "1983-11-28",
+    "year": 1983,
+    "type": "document",
+    "doc_id": "doc-11",
+    "title": "Resolución \"S\" N° 1261/83",
+    "description": "Misiones y tareas de la Subsecretaría B (Exterior)"
+  },
+  {
+    "date": "1983-12-10",
+    "year": 1983,
+    "type": "historical",
+    "title": "Retorno de la democracia",
+    "description": "Raúl Alfonsín asume la presidencia. Fin de la dictadura militar."
+  }
+]
