@@ -255,10 +255,15 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/">Inicio</a></li>
           <li><a href="/documentos/">Documentos</a></li>
-          <li><a href="/explorar-archivos/">Explorar Archivos</a></li>
           <li><a href="/linea-de-tiempo/">Línea de Tiempo</a></li>
-          <li><a href="/estadisticas/">Estadísticas</a></li>
-          <li><a href="/etiquetas/">Etiquetas</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Más <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/explorar-archivos/">Explorar Archivos</a></li>
+              <li><a href="/estadisticas/">Estadísticas</a></li>
+              <li><a href="/etiquetas/">Etiquetas</a></li>
+            </ul>
+          </li>
           <li><a href="/acerca-desclasificacion/">Acerca de</a></li>
         </ul>
       </div>
@@ -356,7 +361,7 @@
       if (docs.length === 0) continue;
 
       html += `<div class="av-carpeta-group">`;
-      html += `<div class="av-carpeta-label" style="border-left:3px solid ${c.color}; padding-left:12px;">Carpeta ${c.id}: ${c.title_short}</div>`;
+      html += `<div class="av-carpeta-label" style="border-left:3px solid ${c.color}; padding-left:12px;">Carpeta ${c.id}: ${escapeHtml(c.title_short)}</div>`;
 
       for (const d of docs) {
         const cls = d.classification.toUpperCase();
@@ -367,8 +372,8 @@
         const approx = d.page_start_confirmed ? '' : '~';
         const approxClass = d.page_start_confirmed ? '' : ' style="opacity:0.6"';
         html += `
-          <div class="av-doc-item" data-doc-id="${d.id}" data-page="${d.global_page_start}" onclick="goToDoc('${d.id}')">
-            <div class="av-doc-title">${d.title}</div>
+          <div class="av-doc-item" data-doc-id="${escapeAttr(d.id)}" data-page="${d.global_page_start}">
+            <div class="av-doc-title">${escapeHtml(d.title)}</div>
             <div class="av-doc-meta">${badgeHtml} ${d.date.substring(0, 4)} · <span${approxClass}>p.${approx}${d.global_page_start}</span></div>
           </div>`;
       }
@@ -376,6 +381,11 @@
     }
 
     docList.innerHTML = html || '<p style="padding:15px;color:#999;">Sin resultados.</p>';
+
+    docList.querySelectorAll('.av-doc-item[data-doc-id]').forEach(el => {
+      el.addEventListener('click', () => goToDoc(el.dataset.docId));
+    });
+
     highlightActiveDoc();
   }
 
@@ -393,7 +403,7 @@
     });
 
     // Update toolbar indicator
-    docIndicator.innerHTML = `<strong>${activeDoc.title}</strong>`;
+    docIndicator.innerHTML = `<strong>${escapeHtml(activeDoc.title)}</strong>`;
 
     // Scroll active item into view
     const activeEl = docList.querySelector('.av-doc-item.active');

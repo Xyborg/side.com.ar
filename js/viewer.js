@@ -50,7 +50,7 @@
   const contextEl = document.getElementById('doc-context');
   if (historicalEvents.length > 0) {
     contextEl.innerHTML = historicalEvents.map(e =>
-      `<p><strong>${formatDate(e.date)}:</strong> ${e.description}</p>`
+      `<p><strong>${formatDate(e.date)}:</strong> ${escapeHtml(e.description)}</p>`
     ).join('');
   } else {
     contextEl.innerHTML = '<p>Sin eventos históricos cercanos registrados.</p>';
@@ -60,7 +60,7 @@
   const tagsEl = document.getElementById('doc-tags');
   if (doc.tags && doc.tags.length > 0) {
     tagsEl.innerHTML = doc.tags.map(t =>
-      `<span class="doc-tag">${t}</span>`
+      `<span class="doc-tag">${escapeHtml(t)}</span>`
     ).join(' ');
   }
 
@@ -94,7 +94,7 @@
     if (related.length > 0) {
       relatedEl.innerHTML = '<ul class="related-docs-list">' +
         related.map(r =>
-          `<li><a href="/documentos/ver/?id=${r.id}">${r.title}</a><div class="related-meta">${carpetaBadge(r.carpeta)} ${formatDateShort(r.date)} · ${r.page_count} pág.</div></li>`
+          `<li><a href="/documentos/ver/?id=${escapeAttr(r.id)}">${escapeHtml(r.title)}</a><div class="related-meta">${carpetaBadge(r.carpeta)} ${formatDateShort(r.date)} · ${r.page_count} pág.</div></li>`
         ).join('') + '</ul>';
     } else {
       relatedEl.innerHTML = '<p style="color:#999;font-size:13px;">Sin documentos relacionados.</p>';
@@ -108,11 +108,11 @@
   const navLinks = document.getElementById('viewer-nav-links');
 
   navLinks.innerHTML = `
-    ${prevDoc ? `<a href="/documentos/ver/?id=${prevDoc.id}">
-      <span class="nav-label">Anterior</span>${truncate(prevDoc.title, 30)}
+    ${prevDoc ? `<a href="/documentos/ver/?id=${escapeAttr(prevDoc.id)}">
+      <span class="nav-label">Anterior</span>${escapeHtml(truncate(prevDoc.title, 30))}
     </a>` : '<span></span>'}
-    ${nextDoc ? `<a href="/documentos/ver/?id=${nextDoc.id}">
-      <span class="nav-label">Siguiente</span>${truncate(nextDoc.title, 30)}
+    ${nextDoc ? `<a href="/documentos/ver/?id=${escapeAttr(nextDoc.id)}">
+      <span class="nav-label">Siguiente</span>${escapeHtml(truncate(nextDoc.title, 30))}
     </a>` : '<span></span>'}
   `;
 

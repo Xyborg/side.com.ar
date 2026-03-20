@@ -36,8 +36,9 @@
       pill.addEventListener('click', () => {
         const yearHeader = container.querySelector(`.timeline-year-header[data-year="${pill.dataset.year}"]`);
         if (yearHeader) {
-          yearHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Highlight active pill briefly
+          const headerOffset = document.querySelector('.site-header')?.offsetHeight || 60;
+          const top = yearHeader.getBoundingClientRect().top + window.pageYOffset - headerOffset - 15;
+          window.scrollTo({ top, behavior: 'smooth' });
           pillsContainer.querySelectorAll('.timeline-year-pill').forEach(p => p.classList.remove('active'));
           pill.classList.add('active');
         }
@@ -71,19 +72,27 @@
         html += `
           <div class="timeline-entry ${event.type === 'historical' ? 'historical' : ''}"
                data-type="${event.type}"
-               ${isDoc && event.doc_id ? `onclick="window.location.href='/documentos/ver/?id=${event.doc_id}'"` : ''}>
+               ${isDoc && event.doc_id ? `data-doc-id="${escapeAttr(event.doc_id)}"` : ''}>
             <div class="entry-date">${formatDate(event.date)}</div>
             <h3>
               ${isDoc && doc ? carpetaBadge(doc.carpeta) + ' ' : ''}
-              ${event.title}
+              ${escapeHtml(event.title)}
             </h3>
-            <p>${event.description}</p>
+            <p>${escapeHtml(event.description)}</p>
           </div>
         `;
       }
     }
 
     container.innerHTML = html;
+
+    container.querySelectorAll('.timeline-entry[data-doc-id]').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => {
+        window.location.href = '/documentos/ver/?id=' + encodeURIComponent(el.dataset.docId);
+      });
+    });
+
     renderPills();
   }
 

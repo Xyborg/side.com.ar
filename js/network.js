@@ -15,6 +15,7 @@
   const tooltip = document.getElementById('network-tooltip');
   const width = container.clientWidth;
   const height = 500;
+  const pad = 30;
 
   const CARPETA_COLORS = {
     1: '#5B3A29',
@@ -63,13 +64,16 @@
     .append('svg')
     .attr('width', width)
     .attr('height', height)
-    .attr('viewBox', [0, 0, width, height]);
+    .attr('viewBox', [0, 0, width, height])
+    .style('overflow', 'visible');
 
   const simulation = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(d => d.id).distance(d => 100 / Math.sqrt(d.weight)))
     .force('charge', d3.forceManyBody().strength(-120))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(d => d.radius + 3));
+    .force('collision', d3.forceCollide().radius(d => d.radius + 3))
+    .force('x', d3.forceX(width / 2).strength(0.05))
+    .force('y', d3.forceY(height / 2).strength(0.08));
 
   const link = svg.append('g')
     .selectAll('line')
@@ -125,7 +129,7 @@
 
     if (tooltip) {
       tooltip.style.display = 'block';
-      tooltip.innerHTML = `<strong>${d.title}</strong><br>${d.pages} páginas · ${d.year}`;
+      tooltip.innerHTML = `<strong>${escapeHtml(d.title)}</strong><br>${d.pages} páginas · ${d.year}`;
     }
   })
   .on('mousemove', function (event) {
@@ -142,7 +146,7 @@
     if (tooltip) tooltip.style.display = 'none';
   })
   .on('click', function (event, d) {
-    window.location.href = '/documentos/ver/?id=' + d.id;
+    window.location.href = '/documentos/ver/?id=' + encodeURIComponent(d.id);
   });
 
   simulation.on('tick', () => {
@@ -153,8 +157,8 @@
       .attr('y2', d => d.target.y);
 
     node
-      .attr('cx', d => d.x = Math.max(d.radius, Math.min(width - d.radius, d.x)))
-      .attr('cy', d => d.y = Math.max(d.radius, Math.min(height - d.radius, d.y)));
+      .attr('cx', d => d.x = Math.max(d.radius + pad, Math.min(width - d.radius - pad, d.x)))
+      .attr('cy', d => d.y = Math.max(d.radius + pad, Math.min(height - d.radius - pad - 12, d.y)));
 
     label
       .attr('x', d => d.x)

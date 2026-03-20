@@ -31,8 +31,8 @@
       : sortedTags;
 
     tagListEl.innerHTML = filtered.map(({ tag, count }) =>
-      `<div class="tag-list-item${activeTag === tag ? ' active' : ''}" data-tag="${tag}">
-        ${tag}<span class="tag-item-count">${count}</span>
+      `<div class="tag-list-item${activeTag === tag ? ' active' : ''}" data-tag="${escapeAttr(tag)}">
+        ${escapeHtml(tag)}<span class="tag-item-count">${count}</span>
       </div>`
     ).join('') || '<p style="padding:12px;color:#999;">Sin resultados.</p>';
 
@@ -67,7 +67,7 @@
 
     let html = `
       <div class="tag-detail-header">
-        <h2>"${tag}"</h2>
+        <h2>"${escapeHtml(tag)}"</h2>
         <p style="color:#999;font-size:14px;">${docs.length} documento${docs.length !== 1 ? 's' : ''} con esta etiqueta</p>
       </div>
     `;
@@ -77,7 +77,7 @@
       html += '<h4 style="font-size:13px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.03em;margin:15px 0 8px;">Etiquetas co-ocurrentes</h4>';
       html += '<div class="cooccurrence-tags">';
       html += sortedCoTags.map(([t, c]) =>
-        `<span class="cooccurrence-tag" data-tag="${t}">${t} (${c})</span>`
+        `<span class="cooccurrence-tag" data-tag="${escapeAttr(t)}">${escapeHtml(t)} (${c})</span>`
       ).join('');
       html += '</div>';
     }
@@ -99,17 +99,17 @@
     html += '<div class="documents-grid">';
     docs.sort((a, b) => a.date.localeCompare(b.date)).forEach(doc => {
       html += `
-        <a href="/documentos/ver/?id=${doc.id}" class="doc-card">
+        <a href="/documentos/ver/?id=${escapeAttr(doc.id)}" class="doc-card">
           <div class="doc-card-header">
             <div>
-              <h3>${doc.title}</h3>
+              <h3>${escapeHtml(doc.title)}</h3>
               <div class="doc-date">${formatDate(doc.date)}</div>
             </div>
             <div class="doc-card-badges">
               ${classificationBadge(doc.classification)}
             </div>
           </div>
-          <p>${truncate(doc.description, 120)}</p>
+          <p>${escapeHtml(truncate(doc.description, 120))}</p>
           <div class="doc-card-footer">
             ${carpetaBadge(doc.carpeta)}
             <span>${doc.page_count} pág.</span>
@@ -132,10 +132,23 @@
     tagSearchEl.addEventListener('input', () => renderTagList(tagSearchEl.value));
   }
 
-  // Init — select from URL or first tag
+  function renderEmptyState() {
+    tagDetailEl.innerHTML = `
+      <div style="text-align:center;padding:60px 20px;color:#999;">
+        <i class="fa fa-tags" style="font-size:48px;margin-bottom:16px;display:block;opacity:0.3;"></i>
+        <h3 style="color:#666;font-weight:600;margin-bottom:8px;">Seleccioná una etiqueta</h3>
+        <p style="font-size:14px;">Elegí una etiqueta de la lista para ver los documentos asociados, co-ocurrencias y distribución temporal.</p>
+      </div>
+    `;
+  }
+
+  // Init — select from URL param or show empty state
   const urlTag = getParam('tag');
-  const initialTag = urlTag && tagIndex[urlTag] ? urlTag : (sortedTags[0] ? sortedTags[0].tag : null);
 
   renderTagList();
-  if (initialTag) selectTag(initialTag);
+  if (urlTag && tagIndex[urlTag]) {
+    selectTag(urlTag);
+  } else {
+    renderEmptyState();
+  }
 })();

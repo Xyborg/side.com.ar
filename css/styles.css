@@ -122,6 +122,55 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   background: transparent !important;
 }
 
+/* --- Nav Dropdown --- */
+.navbar-nav .dropdown-toggle .caret {
+  margin-left: 3px;
+}
+
+.navbar-nav .dropdown-menu {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--azul);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 4px 0;
+  min-width: 200px;
+  margin-top: -3px;
+}
+
+.navbar-nav .dropdown-menu > li > a {
+  color: var(--gris-medio);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 10px 20px;
+  transition: all 0.15s;
+}
+
+.navbar-nav .dropdown-menu > li > a:hover,
+.navbar-nav .dropdown-menu > li.active > a {
+  color: var(--azul);
+  background: var(--gris-niebla);
+}
+
+@media (max-width: 767px) {
+  .navbar-nav .dropdown-menu {
+    border: none;
+    border-top: none;
+    box-shadow: none;
+    padding: 0;
+    background: transparent;
+  }
+  .navbar-nav .dropdown-menu > li > a {
+    padding-left: 30px;
+    color: var(--gris-medio);
+  }
+  .navbar-nav .open .dropdown-menu > li > a:hover {
+    background: var(--gris-niebla);
+  }
+}
+
 /* --- Hero Section --- */
 .hero {
   background:
@@ -721,7 +770,7 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
 }
 
 /* --- Timeline --- */
-.timeline-page { max-width: 800px; margin: 0 auto; }
+.timeline-page { max-width: 1100px; margin: 0 auto; }
 
 .timeline-controls {
   display: flex;

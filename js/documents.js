@@ -28,10 +28,11 @@
 
   // --- Highlight helper ---
   function highlight(text, query) {
-    if (!query) return text;
+    if (!query || query.length > 100) return escapeHtml(text);
+    const safe = escapeHtml(text);
     const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp('(' + escaped + ')', 'gi');
-    return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+    return safe.replace(regex, '<mark class="search-highlight">$1</mark>');
   }
 
   // Render filter sidebar checkboxes
@@ -63,7 +64,7 @@
         .map(([tag, count]) => ({ tag, count }));
 
       tagContainer.innerHTML = sortedTags.map(({ tag, count }) =>
-        `<label><input type="checkbox" class="filter-tag" value="${tag}"${filters.tags.includes(tag) ? ' checked' : ''}> ${tag} <span class="tag-count">(${count})</span></label>`
+        `<label><input type="checkbox" class="filter-tag" value="${escapeAttr(tag)}"${filters.tags.includes(tag) ? ' checked' : ''}> ${escapeHtml(tag)} <span class="tag-count">(${count})</span></label>`
       ).join('');
       tagContainer.querySelectorAll('.filter-tag').forEach(cb => {
         cb.addEventListener('change', () => {
@@ -167,10 +168,10 @@
     }
 
     grid.innerHTML = docs.map(doc => {
-      const title = q ? highlight(doc.title, q) : doc.title;
-      const desc = q ? highlight(truncate(doc.description, 150), q) : truncate(doc.description, 150);
+      const title = q ? highlight(doc.title, q) : escapeHtml(doc.title);
+      const desc = q ? highlight(truncate(doc.description, 150), q) : escapeHtml(truncate(doc.description, 150));
       return `
-      <a href="/documentos/ver/?id=${doc.id}" class="doc-card">
+      <a href="/documentos/ver/?id=${escapeAttr(doc.id)}" class="doc-card">
         <div class="doc-card-header">
           <div>
             <h3>${title}</h3>

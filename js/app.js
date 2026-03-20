@@ -3,6 +3,18 @@
    Shared utilities and navigation
    ============================================= */
 
+// --- HTML escaping ---
+function escapeHtml(str) {
+  if (str == null) return '';
+  const div = document.createElement('div');
+  div.textContent = String(str);
+  return div.innerHTML;
+}
+
+function escapeAttr(str) {
+  return escapeHtml(str).replace(/"/g, '&quot;');
+}
+
 // --- Data loading ---
 async function loadJSON(path) {
   const res = await fetch(path + '?v=2');
@@ -12,14 +24,25 @@ async function loadJSON(path) {
 
 // --- Navigation ---
 function initNav() {
-  // Mark active nav link (Bootstrap handles the mobile toggle)
   const path = location.pathname;
-  document.querySelectorAll('.navbar-nav a').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href === '/' && (path === '/' || path === '/index.html')) {
-      a.parentElement.classList.add('active');
-    } else if (href !== '/' && path.startsWith(href)) {
-      a.parentElement.classList.add('active');
+  document.querySelectorAll('.navbar-nav > li').forEach(li => {
+    const link = li.querySelector(':scope > a');
+    if (!link) return;
+    const href = link.getAttribute('href');
+
+    if (li.classList.contains('dropdown')) {
+      const childLinks = li.querySelectorAll('.dropdown-menu a');
+      childLinks.forEach(a => {
+        const childHref = a.getAttribute('href');
+        if (childHref && path.startsWith(childHref)) {
+          a.parentElement.classList.add('active');
+          li.classList.add('active');
+        }
+      });
+    } else if (href === '/' && (path === '/' || path === '/index.html')) {
+      li.classList.add('active');
+    } else if (href && href !== '/' && path.startsWith(href)) {
+      li.classList.add('active');
     }
   });
 }

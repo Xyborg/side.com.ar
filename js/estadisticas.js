@@ -225,7 +225,7 @@
 
     container.innerHTML = entries.map(([tag, count]) => {
       const size = minSize + ((count / maxCount) * (maxSize - minSize));
-      return `<a href="/documentos/?tag=${encodeURIComponent(tag)}" style="font-size:${size.toFixed(1)}px;" title="${count} documento${count > 1 ? 's' : ''}">${tag}</a>`;
+      return `<a href="/etiquetas/?tag=${encodeURIComponent(tag)}" style="font-size:${size.toFixed(1)}px;" title="${count} documento${count > 1 ? 's' : ''}">${escapeHtml(tag)}</a>`;
     }).join('');
   })();
 
@@ -243,10 +243,17 @@
       const pct = (doc.page_count / TOTAL) * 100;
       const minPct = Math.max(pct, 0.4);
       const color = CARPETA_COLORS[doc.carpeta];
-      return `<div class="archive-map-segment" style="flex-basis:${minPct}%;background:${color};" onclick="window.location.href='/documentos/ver/?id=${doc.id}'">
-        <div class="archive-map-tooltip">${doc.title}<br>${doc.page_count} pág. (${pct.toFixed(1)}%)</div>
+      return `<div class="archive-map-segment" data-doc-id="${escapeAttr(doc.id)}" style="flex-basis:${minPct}%;background:${color};">
+        <div class="archive-map-tooltip">${escapeHtml(doc.title)}<br>${doc.page_count} pág. (${pct.toFixed(1)}%)</div>
       </div>`;
     }).join('');
+
+    mapContainer.querySelectorAll('.archive-map-segment[data-doc-id]').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => {
+        window.location.href = '/documentos/ver/?id=' + encodeURIComponent(el.dataset.docId);
+      });
+    });
 
     // Legend
     const legendEl = document.getElementById('archive-map-legend');
