@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/styles.css?v=4">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
   <script>
@@ -89,6 +89,20 @@
           <button class="btn btn-default btn-sm" id="btn-zoom-in" title="Acercar (+)"><i class="fa fa-search-plus"></i></button>
         </div>
       </div>
+      <div class="viewer-transcription" id="viewer-transcription">
+        <div class="transcription-header">
+          <button class="btn btn-default btn-sm" id="btn-toggle-transcription">
+            <i class="fa fa-file-text-o"></i> Transcripción
+          </button>
+          <span class="transcription-notice" id="transcription-notice"></span>
+        </div>
+        <div class="transcription-body" id="transcription-body" style="display:none;">
+          <p class="text-muted" style="font-size:12px;">
+            Texto extraído automáticamente mediante OCR. Puede contener errores.
+          </p>
+          <div id="transcription-text"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Sidebar -->
@@ -143,7 +157,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="/js/app.js?v=4"></script>
-<script src="/js/viewer.js?v=2"></script>
+<script src="/js/viewer.js?v=3"></script>
 
 </body>
 </html>

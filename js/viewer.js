@@ -117,7 +117,32 @@
     }
 
     pz.applyTransform();
+    loadTranscription(globalPage);
   }
+
+  async function loadTranscription(globalPage) {
+    const padded = String(globalPage).padStart(4, '0');
+    const textEl = document.getElementById('transcription-text');
+    const noticeEl = document.getElementById('transcription-notice');
+
+    try {
+      const res = await fetch(`/data/ocr/page-${padded}.json`);
+      if (!res.ok) throw new Error('not found');
+      const data = await res.json();
+
+      textEl.textContent = data.text || 'Sin texto disponible.';
+      noticeEl.textContent = data.confidence === 'low'
+        ? '(calidad baja — posible diagrama)' : '';
+    } catch (e) {
+      textEl.textContent = 'Transcripción no disponible para esta página.';
+      noticeEl.textContent = '';
+    }
+  }
+
+  document.getElementById('btn-toggle-transcription').addEventListener('click', () => {
+    const body = document.getElementById('transcription-body');
+    body.style.display = body.style.display === 'none' ? 'block' : 'none';
+  });
 
   btnPrev.addEventListener('click', () => {
     if (currentPage > 1) { currentPage--; pz.reset(); updatePage(); }
