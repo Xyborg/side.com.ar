@@ -967,7 +967,7 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   height: 48px;
   background: rgba(198,40,40,0.08);
   border: 1px solid rgba(198,40,40,0.15);
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .disclaimer-modal .disclaimer-icon .fa {
