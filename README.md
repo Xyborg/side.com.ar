@@ -55,7 +55,7 @@ Los documentos están organizados en tres carpetas temáticas:
 
 ## Tecnología
 
-Sitio estático construido con HTML, CSS y JavaScript vanilla. Utiliza [Bootstrap 3](https://getbootstrap.com/docs/3.4/) y la tipografía [Encode Sans](https://fonts.google.com/specimen/Encode+Sans), siguiendo los lineamientos de diseño de [Poncho](https://argob.github.io/poncho/) (sistema de diseño del Gobierno argentino).
+Sitio estático construido con HTML, CSS y JavaScript vanilla. Utiliza [Bootstrap 3](https://getbootstrap.com/docs/3.4/) y la tipografía [Encode Sans](https://fonts.google.com/specimen/Encode+Sans), siguiendo los lineamientos de diseño de [Poncho](https://argob.github.io/poncho/) (sistema de diseño del Gobierno argentino). Desplegado en [Cloudflare Pages](https://pages.cloudflare.com/).
 
 ## Abreviaturas
 
