@@ -702,6 +702,24 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   margin-bottom: 3px;
 }
 
+/* --- Transcription Panel --- */
+.viewer-transcription { margin-top: 15px; }
+.transcription-header { display: flex; align-items: center; gap: 10px; }
+.transcription-notice { font-size: 12px; color: var(--gris-claro); font-style: italic; }
+.transcription-body {
+  margin-top: 10px;
+  padding: 15px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  font-family: 'Encode Sans', sans-serif;
+}
+
 /* --- Timeline --- */
 .timeline-page { max-width: 800px; margin: 0 auto; }
 
