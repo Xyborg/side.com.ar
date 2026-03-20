@@ -10,6 +10,7 @@
 
   const container = document.getElementById('timeline-container');
   const filterBtns = document.querySelectorAll('.timeline-filter');
+  const pillsContainer = document.getElementById('timeline-year-pills');
 
   let activeFilter = 'all';
 
@@ -18,6 +19,30 @@
     if (activeFilter === 'documents') return timeline.filter(e => e.type === 'document');
     if (activeFilter === 'historical') return timeline.filter(e => e.type === 'historical');
     return timeline;
+  }
+
+  function renderPills() {
+    if (!pillsContainer) return;
+    const events = getFiltered();
+    const yearCounts = {};
+    events.forEach(e => { yearCounts[e.year] = (yearCounts[e.year] || 0) + 1; });
+    const sortedYears = Object.keys(yearCounts).sort();
+
+    pillsContainer.innerHTML = sortedYears.map(y =>
+      `<span class="timeline-year-pill" data-year="${y}">${y} <span class="pill-count">(${yearCounts[y]})</span></span>`
+    ).join('');
+
+    pillsContainer.querySelectorAll('.timeline-year-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const yearHeader = container.querySelector(`.timeline-year-header[data-year="${pill.dataset.year}"]`);
+        if (yearHeader) {
+          yearHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Highlight active pill briefly
+          pillsContainer.querySelectorAll('.timeline-year-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+        }
+      });
+    });
   }
 
   function render() {
@@ -35,14 +60,13 @@
     const sortedYears = Object.keys(years).sort();
 
     for (const year of sortedYears) {
-      html += `<div class="timeline-year-header">${year}</div>`;
+      html += `<div class="timeline-year-header" data-year="${year}">${year}</div>`;
 
       const yearEvents = years[year].sort((a, b) => a.date.localeCompare(b.date));
 
       for (const event of yearEvents) {
         const isDoc = event.type === 'document';
         const doc = isDoc ? documents.find(d => d.id === event.doc_id) : null;
-        const carpetaClass = doc ? `badge-carpeta-${doc.carpeta}` : '';
 
         html += `
           <div class="timeline-entry ${event.type === 'historical' ? 'historical' : ''}"
@@ -60,6 +84,7 @@
     }
 
     container.innerHTML = html;
+    renderPills();
   }
 
   // Filter buttons

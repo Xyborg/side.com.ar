@@ -3,10 +3,11 @@
    ============================================= */
 
 (async function () {
-  const [documents, carpetas, timeline] = await Promise.all([
+  const [documents, carpetas, timeline, themes] = await Promise.all([
     loadJSON('/data/documents.json'),
     loadJSON('/data/carpetas.json'),
-    loadJSON('/data/timeline.json')
+    loadJSON('/data/timeline.json'),
+    loadJSON('/data/themes.json')
   ]);
 
   const docId = getParam('id');
@@ -61,6 +62,43 @@
     tagsEl.innerHTML = doc.tags.map(t =>
       `<span class="doc-tag">${t}</span>`
     ).join(' ');
+  }
+
+  // Related documents
+  const relatedEl = document.getElementById('doc-related');
+  if (relatedEl) {
+    const docThemes = themes.filter(t => t.doc_ids.includes(doc.id));
+    const scores = {};
+
+    documents.forEach(other => {
+      if (other.id === doc.id) return;
+      let score = 0;
+      // +3 per shared tag
+      other.tags.forEach(t => { if (doc.tags.includes(t)) score += 3; });
+      // +2 if same carpeta
+      if (other.carpeta === doc.carpeta) score += 2;
+      // +2 if same theme
+      docThemes.forEach(theme => { if (theme.doc_ids.includes(other.id)) score += 2; });
+      // +1 if same year
+      if (other.year === doc.year) score += 1;
+      // +1 if same classification
+      if (other.classification === doc.classification) score += 1;
+      if (score > 0) scores[other.id] = score;
+    });
+
+    const related = Object.entries(scores)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([id]) => documents.find(d => d.id === id));
+
+    if (related.length > 0) {
+      relatedEl.innerHTML = '<ul class="related-docs-list">' +
+        related.map(r =>
+          `<li><a href="/documentos/ver/?id=${r.id}">${r.title}</a><div class="related-meta">${carpetaBadge(r.carpeta)} ${formatDateShort(r.date)} · ${r.page_count} pág.</div></li>`
+        ).join('') + '</ul>';
+    } else {
+      relatedEl.innerHTML = '<p style="color:#999;font-size:13px;">Sin documentos relacionados.</p>';
+    }
   }
 
   // Navigation between documents

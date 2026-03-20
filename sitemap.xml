@@ -17,6 +17,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://side.com.ar/estadisticas/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://side.com.ar/etiquetas/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://side.com.ar/acerca-desclasificacion/</loc>
     <priority>0.6</priority>
   </url>

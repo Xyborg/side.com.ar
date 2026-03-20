@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <title>Catálogo de Documentos — Archivos SIDE</title>
-  <meta name="description" content="Catálogo de 26 documentos desclasificados de la SIDE, organizados en tres carpetas temáticas. Período 1973–1983.">
+  <title>Explorador de Etiquetas — Archivos SIDE</title>
+  <meta name="description" content="Exploración de documentos desclasificados de la SIDE por etiquetas temáticas, con co-ocurrencias y distribución temporal.">
   <!-- Open Graph -->
-  <meta property="og:title" content="Catálogo de Documentos — Archivos SIDE">
-  <meta property="og:description" content="Catálogo de 26 documentos desclasificados de la SIDE, organizados en tres carpetas temáticas. Período 1973–1983.">
+  <meta property="og:title" content="Explorador de Etiquetas — Archivos SIDE">
+  <meta property="og:description" content="Exploración de documentos desclasificados de la SIDE por etiquetas temáticas.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/images/ui/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -18,13 +18,13 @@
   <meta property="og:site_name" content="Archivos SIDE">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Catálogo de Documentos — Archivos SIDE">
-  <meta name="twitter:description" content="Catálogo de 26 documentos desclasificados de la SIDE, organizados en tres carpetas temáticas. Período 1973–1983.">
+  <meta name="twitter:title" content="Explorador de Etiquetas — Archivos SIDE">
+  <meta name="twitter:description" content="Exploración de documentos desclasificados de la SIDE por etiquetas temáticas.">
   <meta name="twitter:image" content="/images/ui/og-image.png">
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/styles.css?v=4">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
   <script>
@@ -69,63 +69,26 @@
 </header>
 
 <main class="container" style="padding-top:30px; padding-bottom:60px;">
-  <h1 class="section-title">Catálogo de Documentos</h1>
-  <p class="section-subtitle">26 documentos oficiales desclasificados, período 1973–1983.</p>
+  <h1 class="section-title">Explorador de Etiquetas</h1>
+  <p class="section-subtitle">Seleccioná una etiqueta para ver sus documentos, co-ocurrencias y distribución temporal.</p>
 
-  <div class="documents-layout">
-    <!-- Filter Sidebar -->
-    <aside class="filter-sidebar">
+  <div class="tag-explorer-layout">
+    <!-- Sidebar: tag list -->
+    <aside class="tag-explorer-sidebar">
       <div class="panel panel-default">
-        <div class="panel-heading">Buscar</div>
-        <div class="panel-body">
-          <input type="text" class="search-box form-control" id="search-box" placeholder="Título, descripción...">
+        <div class="panel-heading" style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">Etiquetas</div>
+        <div class="panel-body" style="padding:8px;">
+          <input type="text" class="search-box form-control" id="tag-search" placeholder="Buscar etiqueta..." style="margin-bottom:8px;">
         </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">Carpeta</div>
-        <div class="panel-body">
-          <label><input type="checkbox" class="filter-carpeta" value="1"> Carpeta 1 — Orgánicas</label>
-          <label><input type="checkbox" class="filter-carpeta" value="2"> Carpeta 2 — Normativa</label>
-          <label><input type="checkbox" class="filter-carpeta" value="3"> Carpeta 3 — CAA</label>
+        <div class="tag-list-panel" id="tag-list">
+          <div class="loading" style="padding:20px;">Cargando...</div>
         </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">Año</div>
-        <div class="panel-body" id="year-filters"></div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">Clasificación</div>
-        <div class="panel-body">
-          <label><input type="checkbox" class="filter-classification" value="S"> Secreto (S)</label>
-          <label><input type="checkbox" class="filter-classification" value="ESC"> Est. Secreto y Conf. (ESC)</label>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">Etiquetas</div>
-        <div class="panel-body tag-filter-panel" id="tag-filters"></div>
       </div>
     </aside>
 
-    <!-- Main Content -->
-    <div class="documents-main">
-      <div class="sort-bar">
-        <label>Ordenar por:
-          <select id="sort-select" class="form-control" style="display:inline-block;width:auto;">
-            <option value="date">Fecha (ascendente)</option>
-            <option value="date-desc">Fecha (descendente)</option>
-            <option value="title">Título</option>
-            <option value="pages">Páginas</option>
-          </select>
-        </label>
-        <span class="doc-count-label" id="doc-count-label"></span>
-      </div>
-      <div class="documents-grid" id="documents-grid">
-        <div class="loading">Cargando documentos</div>
-      </div>
+    <!-- Main: tag detail -->
+    <div class="tag-explorer-main" id="tag-detail">
+      <div class="empty-state"><p>Seleccioná una etiqueta del panel izquierdo.</p></div>
     </div>
   </div>
 </main>
@@ -143,8 +106,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="/js/app.js?v=4"></script>
-<script src="/js/documents.js"></script>
+<script src="/js/app.js?v=5"></script>
+<script src="/js/tags.js"></script>
 
 </body>
 </html>
