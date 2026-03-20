@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <title>Línea de Tiempo — Archivos SIDE</title>
-  <meta name="description" content="Línea de tiempo cronológica de los documentos desclasificados de la SIDE y eventos históricos del período 1973–1983.">
+  <title>Estadísticas — Archivos SIDE</title>
+  <meta name="description" content="Visualización estadística de los 26 documentos desclasificados de la SIDE: distribución por año, clasificación, tipo y volumen.">
   <!-- Open Graph -->
-  <meta property="og:title" content="Línea de Tiempo — Archivos SIDE">
-  <meta property="og:description" content="Línea de tiempo cronológica de los documentos desclasificados de la SIDE y eventos históricos del período 1973–1983.">
+  <meta property="og:title" content="Estadísticas — Archivos SIDE">
+  <meta property="og:description" content="Visualización estadística de los 26 documentos desclasificados de la SIDE: distribución por año, clasificación, tipo y volumen.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/images/ui/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -18,13 +18,13 @@
   <meta property="og:site_name" content="Archivos SIDE">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Línea de Tiempo — Archivos SIDE">
-  <meta name="twitter:description" content="Línea de tiempo cronológica de los documentos desclasificados de la SIDE y eventos históricos del período 1973–1983.">
+  <meta name="twitter:title" content="Estadísticas — Archivos SIDE">
+  <meta name="twitter:description" content="Visualización estadística de los 26 documentos desclasificados de la SIDE.">
   <meta name="twitter:image" content="/images/ui/og-image.png">
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/styles.css?v=4">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
   <script>
@@ -74,22 +74,59 @@
 </header>
 
 <main class="container" style="padding-top:30px; padding-bottom:60px;">
-  <div class="timeline-page">
-    <h1 class="section-title">Línea de Tiempo (1973–1983)</h1>
-    <p class="section-subtitle">Documentos desclasificados y eventos históricos en contexto cronológico.</p>
+  <h1 class="section-title">Estadísticas del Archivo</h1>
+  <p class="section-subtitle">Visualización de la estructura, densidad y composición de los 26 documentos desclasificados (987 páginas).</p>
 
-    <div class="timeline-controls">
-      <button class="btn btn-default timeline-filter active" data-filter="all">Todos</button>
-      <button class="btn btn-default timeline-filter" data-filter="documents">Solo documentos</button>
-      <button class="btn btn-default timeline-filter" data-filter="historical">Solo eventos históricos</button>
+  <!-- Charts Grid -->
+  <div class="stats-grid">
+    <div class="stats-card">
+      <h3><i class="fa fa-bar-chart"></i> Documentos por Año</h3>
+      <div style="height:260px;"><canvas id="chart-year"></canvas></div>
     </div>
-
-    <div class="timeline-year-pills" id="timeline-year-pills"></div>
-
-    <div class="timeline-vertical" id="timeline-container">
-      <div class="loading">Cargando línea de tiempo</div>
+    <div class="stats-card">
+      <h3><i class="fa fa-lock"></i> Nivel de Clasificación</h3>
+      <div style="height:260px;"><canvas id="chart-classification"></canvas></div>
+    </div>
+    <div class="stats-card">
+      <h3><i class="fa fa-file-text-o"></i> Tipo de Documento</h3>
+      <div style="height:260px;"><canvas id="chart-type"></canvas></div>
+    </div>
+    <div class="stats-card">
+      <h3><i class="fa fa-pie-chart"></i> Páginas por Carpeta</h3>
+      <div style="height:260px;"><canvas id="chart-carpeta-pages"></canvas></div>
+    </div>
+    <div class="stats-card stats-card-wide">
+      <h3><i class="fa fa-sort-amount-desc"></i> Páginas por Documento</h3>
+      <div style="height:300px;"><canvas id="chart-pages"></canvas></div>
     </div>
   </div>
+
+  <!-- Archive Map -->
+  <div class="archive-map-container" style="margin-bottom:30px;">
+    <h3><i class="fa fa-th"></i> Mapa del Archivo — 987 Páginas</h3>
+    <p style="font-size:13px;color:#999;margin-bottom:15px;">Cada segmento representa un documento. El ancho es proporcional a su cantidad de páginas. Click para ver el documento.</p>
+    <div class="archive-map" id="archive-map"></div>
+    <div class="archive-map-legend" id="archive-map-legend"></div>
+  </div>
+
+  <!-- Network Graph -->
+  <section id="network-section" style="margin-bottom:30px;">
+    <h2 class="section-title" style="font-size:22px;">Grafo de Relaciones</h2>
+    <p class="section-subtitle">Documentos conectados por etiquetas y temas compartidos. Tamaño proporcional al número de páginas.</p>
+    <div class="network-container" id="network-container">
+      <div class="network-tooltip" id="network-tooltip"></div>
+      <div class="loading" style="height:500px;">Cargando grafo</div>
+    </div>
+  </section>
+
+  <!-- Tag Cloud -->
+  <section style="margin-bottom:30px;">
+    <h2 class="section-title" style="font-size:22px;">Nube de Etiquetas</h2>
+    <p class="section-subtitle">Tamaño proporcional a la frecuencia. Click en una etiqueta para ver los documentos asociados.</p>
+    <div class="tag-cloud" id="tag-cloud">
+      <div class="loading">Cargando etiquetas</div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -106,8 +143,11 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="/js/app.js?v=4"></script>
-<script src="/js/timeline.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="/js/app.js?v=5"></script>
+<script src="/js/estadisticas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="/js/network.js"></script>
 
 </body>
 </html>
