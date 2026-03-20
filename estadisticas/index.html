@@ -77,15 +77,29 @@
   <h1 class="section-title">Estadísticas del Archivo</h1>
   <p class="section-subtitle">Visualización de la estructura, densidad y composición de los 26 documentos desclasificados (987 páginas).</p>
 
+  <!-- KPI Cards -->
+  <div class="kpi-row" id="kpi-row"></div>
+
   <!-- Charts Grid -->
   <div class="stats-grid">
     <div class="stats-card">
       <h3><i class="fa fa-bar-chart"></i> Documentos por Año</h3>
       <div style="height:260px;"><canvas id="chart-year"></canvas></div>
+      <div class="stats-insight" id="insight-year"></div>
     </div>
     <div class="stats-card">
-      <h3><i class="fa fa-lock"></i> Nivel de Clasificación</h3>
-      <div style="height:260px;"><canvas id="chart-classification"></canvas></div>
+      <h3><i class="fa fa-area-chart"></i> Páginas Producidas por Año</h3>
+      <div style="height:260px;"><canvas id="chart-pages-year"></canvas></div>
+      <div class="stats-insight" id="insight-pages-year"></div>
+    </div>
+    <div class="stats-card">
+      <h3><i class="fa fa-lock"></i> Clasificación por Año</h3>
+      <div style="height:260px;"><canvas id="chart-classification-year"></canvas></div>
+      <div class="stats-insight" id="insight-classification"></div>
+    </div>
+    <div class="stats-card">
+      <h3><i class="fa fa-history"></i> Período Histórico</h3>
+      <div style="height:290px;"><canvas id="chart-period"></canvas></div>
     </div>
     <div class="stats-card">
       <h3><i class="fa fa-file-text-o"></i> Tipo de Documento</h3>
@@ -95,9 +109,22 @@
       <h3><i class="fa fa-pie-chart"></i> Páginas por Carpeta</h3>
       <div style="height:260px;"><canvas id="chart-carpeta-pages"></canvas></div>
     </div>
+    <div class="stats-card">
+      <h3><i class="fa fa-copy"></i> Original vs. Copia</h3>
+      <div style="height:260px;"><canvas id="chart-original-copy"></canvas></div>
+    </div>
+    <div class="stats-card">
+      <h3><i class="fa fa-tags"></i> Temas Transversales</h3>
+      <div style="height:260px;"><canvas id="chart-themes"></canvas></div>
+    </div>
     <div class="stats-card stats-card-wide">
       <h3><i class="fa fa-sort-amount-desc"></i> Páginas por Documento</h3>
       <div style="height:300px;"><canvas id="chart-pages"></canvas></div>
+      <div class="stats-insight" id="insight-pages"></div>
+    </div>
+    <div class="stats-card stats-card-wide">
+      <h3><i class="fa fa-th"></i> Temas × Carpetas</h3>
+      <div id="theme-heatmap-container"></div>
     </div>
   </div>
 
@@ -144,6 +171,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
 <script src="/js/app.js?v=5"></script>
 <script src="/js/estadisticas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
