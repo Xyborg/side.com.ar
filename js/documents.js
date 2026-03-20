@@ -19,12 +19,28 @@
   // Filters state
   let filters = {
     carpetas: urlCarpeta ? [parseInt(urlCarpeta)] : [],
+    years: [],
     classifications: [],
     search: ''
   };
 
   // Render filter sidebar checkboxes
   function initFilters() {
+    // Year filters — build dynamically from data
+    const yearContainer = document.getElementById('year-filters');
+    if (yearContainer) {
+      const years = [...new Set(documents.map(d => d.year))].sort();
+      yearContainer.innerHTML = years.map(y =>
+        `<label><input type="checkbox" class="filter-year" value="${y}"> ${y}</label>`
+      ).join('');
+      yearContainer.querySelectorAll('.filter-year').forEach(cb => {
+        cb.addEventListener('change', () => {
+          filters.years = [...document.querySelectorAll('.filter-year:checked')].map(c => parseInt(c.value));
+          render();
+        });
+      });
+    }
+
     // Carpeta filters
     document.querySelectorAll('.filter-carpeta').forEach(cb => {
       if (urlCarpeta && cb.value === urlCarpeta) cb.checked = true;
@@ -62,6 +78,11 @@
     // Filter by carpeta
     if (filters.carpetas.length > 0) {
       docs = docs.filter(d => filters.carpetas.includes(d.carpeta));
+    }
+
+    // Filter by year
+    if (filters.years.length > 0) {
+      docs = docs.filter(d => filters.years.includes(d.year));
     }
 
     // Filter by classification
