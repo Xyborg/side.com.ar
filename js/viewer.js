@@ -175,8 +175,8 @@
   const totalPages = doc.page_count;
   const requestedPage = parseInt(getParam('page') || '1', 10);
   let currentPage = Number.isFinite(requestedPage) ? Math.min(Math.max(requestedPage, 1), totalPages) : 1;
-  let transcriptData = null;
   let transcriptVisible = true;
+  let currentTranscriptText = '';
 
   const imgContainer = document.getElementById('viewer-image');
   const pageIndicator = document.getElementById('page-indicator');
@@ -231,11 +231,6 @@
     window.history.replaceState({}, '', next.pathname + next.search);
   }
 
-  function getTranscriptEntry(pageNum) {
-    if (!transcriptData || !Array.isArray(transcriptData.pages)) return null;
-    return transcriptData.pages.find(entry => entry.page === pageNum) || null;
-  }
-
   function renderTranscript() {
     if (!transcriptBody) return;
 
@@ -244,23 +239,8 @@
       transcriptPageLabel.textContent = `Página ${currentPage} · Original ${globalPage}`;
     }
 
-    if (!transcriptData || !Array.isArray(transcriptData.pages)) {
-      loadTranscription(globalPage);
-      if (btnCopyTranscript) btnCopyTranscript.disabled = true;
-      return;
-    }
-
-    const entry = getTranscriptEntry(currentPage);
-    if (!entry || !entry.text || !entry.text.trim()) {
-      transcriptBody.innerHTML = '<div class="viewer-transcript-empty"><p>No hay texto transcripto para esta página.</p></div>';
-      if (transcriptNotice) transcriptNotice.textContent = '';
-      if (btnCopyTranscript) btnCopyTranscript.disabled = true;
-      return;
-    }
-
-    transcriptBody.innerHTML = `<pre class="viewer-transcript-text">${escapeHTML(entry.text)}</pre>`;
-    if (transcriptNotice) transcriptNotice.textContent = '(OCR corregido)';
-    if (btnCopyTranscript) btnCopyTranscript.disabled = false;
+    loadTranscription(globalPage);
+    if (btnCopyTranscript) btnCopyTranscript.disabled = true;
   }
 
   function setTranscriptVisibility(visible) {
@@ -311,15 +291,19 @@
       const res = await fetch(`/data/ocr/page-${padded}.json`);
       if (!res.ok) throw new Error('not found');
       const data = await res.json();
+      currentTranscriptText = data.text || '';
 
-      textEl.innerHTML = `<pre class="viewer-transcript-text">${escapeHTML(data.text || 'Sin texto disponible.')}</pre>`;
+      textEl.innerHTML = `<pre class="viewer-transcript-text">${escapeHTML(currentTranscriptText || 'Sin texto disponible.')}</pre>`;
       if (noticeEl) {
         noticeEl.textContent = data.confidence === 'low'
           ? '(calidad baja — posible diagrama)' : '(OCR automático)';
       }
+      if (btnCopyTranscript) btnCopyTranscript.disabled = !currentTranscriptText.trim();
     } catch (e) {
+      currentTranscriptText = '';
       textEl.innerHTML = '<div class="viewer-transcript-empty"><p>Transcripción no disponible para esta página.</p></div>';
       if (noticeEl) noticeEl.textContent = '';
+      if (btnCopyTranscript) btnCopyTranscript.disabled = true;
     }
   }
 
@@ -429,10 +413,9 @@
   btnZoomReset.addEventListener('click', () => pz.reset());
   btnToggleTranscript.addEventListener('click', () => setTranscriptVisibility(!transcriptVisible));
   btnCopyTranscript.addEventListener('click', async () => {
-    const entry = getTranscriptEntry(currentPage);
-    if (!entry || !entry.text) return;
+    if (!currentTranscriptText) return;
     try {
-      await navigator.clipboard.writeText(entry.text);
+      await navigator.clipboard.writeText(currentTranscriptText);
       btnCopyTranscript.textContent = 'Texto copiado';
       window.setTimeout(() => {
         btnCopyTranscript.textContent = 'Copiar texto';
@@ -460,7 +443,6 @@
     }
   });
 
-  transcriptData = await loadOptionalJSON(`/data/transcripts/${doc.id}.json`, null);
   if (btnToggleTranscript) setTranscriptVisibility(true);
   updatePage();
 })();
