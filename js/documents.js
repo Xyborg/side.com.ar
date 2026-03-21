@@ -171,7 +171,7 @@
       const title = q ? highlight(doc.title, q) : escapeHtml(doc.title);
       const desc = q ? highlight(truncate(doc.description, 150), q) : escapeHtml(truncate(doc.description, 150));
       return `
-      <a href="/documentos/ver/?id=${escapeAttr(doc.id)}" class="doc-card">
+      <a href="/documentos/ver/${escapeAttr(doc.id)}/" class="doc-card">
         <div class="doc-card-header">
           <div>
             <h3>${title}</h3>

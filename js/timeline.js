@@ -89,7 +89,7 @@
     container.querySelectorAll('.timeline-entry[data-doc-id]').forEach(el => {
       el.style.cursor = 'pointer';
       el.addEventListener('click', () => {
-        window.location.href = '/documentos/ver/?id=' + encodeURIComponent(el.dataset.docId);
+        window.location.href = '/documentos/ver/' + encodeURIComponent(el.dataset.docId) + '/';
       });
     });
 

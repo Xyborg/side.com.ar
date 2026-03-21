@@ -146,7 +146,7 @@
     if (tooltip) tooltip.style.display = 'none';
   })
   .on('click', function (event, d) {
-    window.location.href = '/documentos/ver/?id=' + encodeURIComponent(d.id);
+    window.location.href = '/documentos/ver/' + encodeURIComponent(d.id) + '/';
   });
 
   simulation.on('tick', () => {

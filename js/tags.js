@@ -99,7 +99,7 @@
     html += '<div class="documents-grid">';
     docs.sort((a, b) => a.date.localeCompare(b.date)).forEach(doc => {
       html += `
-        <a href="/documentos/ver/?id=${escapeAttr(doc.id)}" class="doc-card">
+        <a href="/documentos/ver/${escapeAttr(doc.id)}/" class="doc-card">
           <div class="doc-card-header">
             <div>
               <h3>${escapeHtml(doc.title)}</h3>
