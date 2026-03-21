@@ -976,10 +976,9 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
 .site-footer {
   background: var(--azul);
   color: rgba(255,255,255,0.7);
-  padding: 30px 0;
+  padding: 0;
   margin-top: 60px;
   font-size: 13px;
-  text-align: center;
   line-height: 1.8;
 }
 
@@ -987,22 +986,172 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   color: var(--celeste);
 }
 
-.footer-disclaimer {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.12);
+.footer-top-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--rojo-dark), var(--celeste), var(--rojo-dark));
+}
+
+.footer-main {
+  padding: 40px 0 30px;
+}
+
+.footer-grid {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-brand {
+  flex: 1.2;
+  min-width: 0;
+}
+
+.footer-brand img {
+  height: 40px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.footer-brand-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.footer-brand-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-nav {
+  flex: 0.8;
+  min-width: 0;
+}
+
+.footer-nav-title {
   font-size: 11px;
+  font-weight: 700;
   color: rgba(255,255,255,0.4);
-  line-height: 1.7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 12px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-list li {
+  margin-bottom: 6px;
+}
+
+.footer-nav-list a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.15s;
+}
+
+.footer-nav-list a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links-col {
+  flex: 0.8;
+  min-width: 0;
+}
+
+.footer-link-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-link-item a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.15s;
+}
+
+.footer-link-item a:hover {
+  color: #fff;
+}
+
+.footer-link-item i {
+  font-size: 16px;
+  color: rgba(255,255,255,0.4);
+  width: 18px;
+  text-align: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  text-align: left;
 }
 
 .footer-disclaimer a {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.5);
   text-decoration: underline;
 }
 
 .footer-disclaimer a:hover {
   color: #fff;
+}
+
+.footer-badge {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+  .footer-brand, .footer-nav, .footer-links-col {
+    flex: none;
+    width: 100%;
+  }
+  .footer-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
+  }
+  .footer-link-item {
+    justify-content: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .footer-disclaimer {
+    text-align: center;
+  }
 }
 
 /* --- Disclaimer Modal --- */
