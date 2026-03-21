@@ -705,7 +705,7 @@
       updateSelectionHtml(
         'Cómo leer este diagrama',
         'Cada rama une una función represiva con un grupo afectado. El ancho del flujo indica cuántos documentos del archivo sostienen esa relación. Hacé click en una rama para ver los documentos asociados.',
-        ['doc-08', 'doc-17', 'doc-20', 'doc-24']
+        []
       );
     }
 
