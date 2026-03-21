@@ -135,3 +135,8 @@ La información proviene de la *Guía sobre la Desclasificación de Documentos H
 ## Autor
 
 Sitio creado por [Martin Aberastegue](https://www.martinaberastegue.com).
+
+## Colaboradores
+
+- [Carlos Dugarte](https://github.com/cardugarte)
+- [Daniel Oliva](https://github.com/dbianco)
