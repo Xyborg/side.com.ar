@@ -1,0 +1,230 @@
+{
+  "nodes": [
+    {
+      "id": "side",
+      "label": "SIDE",
+      "category": "central",
+      "description": "Órgano central del archivo. En los documentos aparece como centro de coordinación, emisión normativa, transferencia de recursos y articulación represiva."
+    },
+    {
+      "id": "cni",
+      "label": "CNI",
+      "category": "central",
+      "description": "Central Nacional de Inteligencia. Funciona como articuladora supra-agencia y espacio formal de coordinación entre servicios."
+    },
+    {
+      "id": "caa",
+      "label": "CAA",
+      "category": "coordination",
+      "description": "Comisión Asesora de Antecedentes. Estructura dedicada al fichaje y la calificación ideológica de personas, organizaciones, publicaciones y medios."
+    },
+    {
+      "id": "delegaciones",
+      "label": "Delegaciones Regionales",
+      "category": "territorial",
+      "description": "Despliegue territorial de la SIDE. Ejecutan directivas, recolectan información y enlazan con ámbitos provinciales."
+    },
+    {
+      "id": "comunidades-locales",
+      "label": "Comunidades Informativas Locales",
+      "category": "territorial",
+      "description": "Espacios provinciales de coordinación donde confluyen SIDE, fuerzas armadas, fuerzas de seguridad y policías locales."
+    },
+    {
+      "id": "ejercito-601",
+      "label": "Batallón 601",
+      "category": "military",
+      "description": "Servicio de inteligencia del Ejército mencionado como integrante permanente de la CAA."
+    },
+    {
+      "id": "si-naval",
+      "label": "SI Naval",
+      "category": "military",
+      "description": "Servicio de Inteligencia Naval con participación permanente en la CAA."
+    },
+    {
+      "id": "jefatura-ii-faa",
+      "label": "Jefatura II F. Aérea",
+      "category": "military",
+      "description": "Área de inteligencia de la Fuerza Aérea integrada a la coordinación de antecedentes."
+    },
+    {
+      "id": "ssf",
+      "label": "Seguridad Federal",
+      "category": "security",
+      "description": "Superintendencia de Seguridad Federal, incorporada como participante permanente en la CAA."
+    },
+    {
+      "id": "gendarmeria",
+      "label": "Gendarmería",
+      "category": "security",
+      "description": "Servicio de inteligencia de Gendarmería, con participación contributiva en la CAA."
+    },
+    {
+      "id": "prefectura",
+      "label": "Prefectura",
+      "category": "security",
+      "description": "Servicio de inteligencia de Prefectura Naval, integrado como miembro contributivo de la CAA."
+    },
+    {
+      "id": "policia-bonaerense",
+      "label": "Policía Bonaerense",
+      "category": "security",
+      "description": "Servicio de inteligencia de la Policía de la Provincia de Buenos Aires, mencionado en la red de antecedentes."
+    },
+    {
+      "id": "aduana",
+      "label": "Aduanas",
+      "category": "civil",
+      "description": "Administración Nacional de Aduanas, receptora de asesoramiento ideológico para controlar circulación de materiales."
+    },
+    {
+      "id": "obras-publicas",
+      "label": "Obras Públicas",
+      "category": "civil",
+      "description": "Ministerio de Obras y Servicios Públicos, destinatario del asesoramiento ideológico de la SIDE."
+    },
+    {
+      "id": "encotel",
+      "label": "Correos y Telecom.",
+      "category": "civil",
+      "description": "Empresa Nacional de Correos y Telecomunicaciones, vinculada al circuito de control de circulación y comunicaciones."
+    },
+    {
+      "id": "ente-cine",
+      "label": "Calificación Cinematográfica",
+      "category": "civil",
+      "description": "Ente estatal de calificación cinematográfica mencionado en la trama de censura y control cultural."
+    }
+  ],
+  "links": [
+    {
+      "source": "side",
+      "target": "cni",
+      "relationship": "transfiere recursos y estructura",
+      "doc_ids": ["doc-16"],
+      "weight": 3,
+      "evidence_summary": "La SIDE transfiere personal, bienes, vehículos, locales y partidas secretas para constituir el órgano de trabajo de la CNI."
+    },
+    {
+      "source": "side",
+      "target": "caa",
+      "relationship": "crea, norma y conduce",
+      "doc_ids": ["doc-16", "doc-17", "doc-24"],
+      "weight": 4,
+      "evidence_summary": "La SIDE crea la CAA, aprueba su funcionamiento y mantiene su control durante distintos gobiernos y la dictadura."
+    },
+    {
+      "source": "cni",
+      "target": "caa",
+      "relationship": "marco coordinador supra-agencia",
+      "doc_ids": ["doc-16", "doc-24"],
+      "weight": 3,
+      "evidence_summary": "La CAA aparece como comisión asesora de la CNI y mecanismo de coordinación estable entre organismos."
+    },
+    {
+      "source": "side",
+      "target": "delegaciones",
+      "relationship": "despliegue territorial y mando central",
+      "doc_ids": ["doc-12", "doc-19"],
+      "weight": 3,
+      "evidence_summary": "La SIDE define directivas, fondos y requerimientos desde Buenos Aires; las delegaciones ejecutan y relevan información en el territorio."
+    },
+    {
+      "source": "delegaciones",
+      "target": "comunidades-locales",
+      "relationship": "articulación provincial",
+      "doc_ids": ["doc-12", "doc-19"],
+      "weight": 3,
+      "evidence_summary": "Las delegaciones toman contacto con comunidades informativas locales donde convergen estructuras militares, policiales y provinciales."
+    },
+    {
+      "source": "caa",
+      "target": "ejercito-601",
+      "relationship": "integración permanente",
+      "doc_ids": ["doc-16", "doc-17", "doc-24"],
+      "weight": 3,
+      "evidence_summary": "El Batallón de Inteligencia 601 integra la CAA como miembro permanente."
+    },
+    {
+      "source": "caa",
+      "target": "si-naval",
+      "relationship": "integración permanente",
+      "doc_ids": ["doc-16", "doc-17", "doc-24"],
+      "weight": 3,
+      "evidence_summary": "El Servicio de Inteligencia Naval figura como integrante estable del circuito de antecedentes."
+    },
+    {
+      "source": "caa",
+      "target": "jefatura-ii-faa",
+      "relationship": "integración permanente",
+      "doc_ids": ["doc-16", "doc-17", "doc-24"],
+      "weight": 3,
+      "evidence_summary": "La inteligencia de la Fuerza Aérea participa en la CAA y aporta a la coordinación represiva."
+    },
+    {
+      "source": "caa",
+      "target": "ssf",
+      "relationship": "integración permanente",
+      "doc_ids": ["doc-16", "doc-24"],
+      "weight": 3,
+      "evidence_summary": "La Superintendencia de Seguridad Federal aparece incorporada de modo permanente a la CAA."
+    },
+    {
+      "source": "caa",
+      "target": "gendarmeria",
+      "relationship": "participación contributiva",
+      "doc_ids": ["doc-16", "doc-24"],
+      "weight": 2,
+      "evidence_summary": "Gendarmería integra la red como miembro contributivo y aportante de información."
+    },
+    {
+      "source": "caa",
+      "target": "prefectura",
+      "relationship": "participación contributiva",
+      "doc_ids": ["doc-16", "doc-24"],
+      "weight": 2,
+      "evidence_summary": "Prefectura Naval aparece como participante contributiva en la coordinación de antecedentes."
+    },
+    {
+      "source": "caa",
+      "target": "policia-bonaerense",
+      "relationship": "participación contributiva",
+      "doc_ids": ["doc-16", "doc-24"],
+      "weight": 2,
+      "evidence_summary": "La Policía Bonaerense se integra al circuito de la CAA como fuerza aportante."
+    },
+    {
+      "source": "side",
+      "target": "aduana",
+      "relationship": "asesoramiento ideológico para censura",
+      "doc_ids": ["doc-20", "doc-24"],
+      "weight": 2,
+      "evidence_summary": "La SIDE fija criterios de clasificación ideológica para materiales que ingresan o circulan por el país."
+    },
+    {
+      "source": "side",
+      "target": "obras-publicas",
+      "relationship": "asesoramiento ideológico para control de circulación",
+      "doc_ids": ["doc-24"],
+      "weight": 1,
+      "evidence_summary": "La resolución de 1982 ordena informar al ministerio los nuevos criterios de clasificación ideológica."
+    },
+    {
+      "source": "side",
+      "target": "encotel",
+      "relationship": "coordinación para vigilancia de circulación",
+      "doc_ids": ["doc-20"],
+      "weight": 1,
+      "evidence_summary": "La Empresa Nacional de Correos y Telecomunicaciones aparece como parte del circuito estatal de control cultural y comunicacional."
+    },
+    {
+      "source": "side",
+      "target": "ente-cine",
+      "relationship": "coordinación para censura cultural",
+      "doc_ids": ["doc-20"],
+      "weight": 1,
+      "evidence_summary": "El Ente de Calificación Cinematográfica integra la trama de asesoramiento ideológico estatal."
+    }
+  ]
+}
