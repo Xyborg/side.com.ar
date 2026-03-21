@@ -22,6 +22,17 @@ async function loadJSON(path) {
   return res.json();
 }
 
+async function loadOptionalJSON(path, fallback = null) {
+  try {
+    const res = await fetch(path + '?v=2');
+    if (res.status === 404) return fallback;
+    if (!res.ok) throw new Error(`Failed to load ${path}`);
+    return res.json();
+  } catch (err) {
+    return fallback;
+  }
+}
+
 // --- Navigation ---
 function initNav() {
   const path = location.pathname;
@@ -82,6 +93,33 @@ function carpetaBadge(carpetaNum) {
 function truncate(text, max) {
   if (!text || text.length <= max) return text;
   return text.substring(0, max).trim() + '...';
+}
+
+function normalizeSearchText(text) {
+  if (!text) return '';
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function escapeHTML(text) {
+  if (text == null) return '';
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function buildViewerURL(docId, page) {
+  const url = new URL(`/documentos/ver/${docId}/`, window.location.origin);
+  if (page && page > 1) url.searchParams.set('page', page);
+  return url.pathname + url.search;
 }
 
 // --- Image CDN ---

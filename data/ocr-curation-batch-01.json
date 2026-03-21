@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-03-21T18:59:31.339Z",
+  "appliedCount": 13,
+  "items": [
+    {
+      "docId": "doc-01",
+      "page": 6,
+      "globalPage": 6,
+      "source": "psm4",
+      "chars": 48
+    },
+    {
+      "docId": "doc-02",
+      "page": 29,
+      "globalPage": 41,
+      "source": "psm4",
+      "chars": 995
+    },
+    {
+      "docId": "doc-10",
+      "page": 9,
+      "globalPage": 472,
+      "source": "psm4",
+      "chars": 686
+    },
+    {
+      "docId": "doc-11",
+      "page": 11,
+      "globalPage": 486,
+      "source": "psm4",
+      "chars": 467
+    },
+    {
+      "docId": "doc-11",
+      "page": 25,
+      "globalPage": 500,
+      "source": "psm4",
+      "chars": 474
+    },
+    {
+      "docId": "doc-11",
+      "page": 65,
+      "globalPage": 540,
+      "source": "psm4",
+      "chars": 1234
+    },
+    {
+      "docId": "doc-11",
+      "page": 75,
+      "globalPage": 550,
+      "source": "psm4",
+      "chars": 1323
+    },
+    {
+      "docId": "doc-11",
+      "page": 77,
+      "globalPage": 552,
+      "source": "psm4",
+      "chars": 1083
+    },
+    {
+      "docId": "doc-11",
+      "page": 79,
+      "globalPage": 554,
+      "source": "psm4",
+      "chars": 544
+    },
+    {
+      "docId": "doc-11",
+      "page": 82,
+      "globalPage": 557,
+      "source": "psm4",
+      "chars": 192
+    },
+    {
+      "docId": "doc-12",
+      "page": 175,
+      "globalPage": 731,
+      "source": "psm4",
+      "chars": 410
+    },
+    {
+      "docId": "doc-17",
+      "page": 4,
+      "globalPage": 763,
+      "source": "psm4",
+      "chars": 112
+    },
+    {
+      "docId": "doc-23",
+      "page": 13,
+      "globalPage": 814,
+      "source": "psm4",
+      "chars": 387
+    }
+  ]
+}
