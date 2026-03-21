@@ -56,6 +56,47 @@
     contextEl.innerHTML = '<p>Sin eventos históricos cercanos registrados.</p>';
   }
 
+  // Structured data: DigitalDocument + update breadcrumb
+  const schemaDoc = {
+    '@context': 'https://schema.org',
+    '@type': 'DigitalDocument',
+    'name': doc.title,
+    'description': doc.description,
+    'dateCreated': doc.date,
+    'inLanguage': 'es',
+    'encodingFormat': 'image/jpeg',
+    'numberOfPages': doc.page_count,
+    'keywords': (doc.tags || []).join(', '),
+    'isPartOf': {
+      '@type': 'Dataset',
+      '@id': 'https://side.com.ar/#dataset',
+      'name': 'Documentos Desclasificados de la SIDE (1973–1983)'
+    },
+    'creator': {
+      '@type': 'GovernmentOrganization',
+      'name': 'Secretaría de Inteligencia de Estado (SIDE)'
+    },
+    'publisher': {
+      '@type': 'Person',
+      'name': 'Martin Aberastegue',
+      'url': 'https://www.martinaberastegue.com'
+    }
+  };
+  const schemaScript = document.createElement('script');
+  schemaScript.type = 'application/ld+json';
+  schemaScript.textContent = JSON.stringify(schemaDoc);
+  document.head.appendChild(schemaScript);
+
+  // Update breadcrumb schema with document name
+  const breadcrumbEl = document.getElementById('schema-breadcrumb');
+  if (breadcrumbEl) {
+    try {
+      const bc = JSON.parse(breadcrumbEl.textContent);
+      bc.itemListElement[2].name = doc.title;
+      breadcrumbEl.textContent = JSON.stringify(bc);
+    } catch (e) { /* ignore */ }
+  }
+
   // Tags
   const tagsEl = document.getElementById('doc-tags');
   if (doc.tags && doc.tags.length > 0) {

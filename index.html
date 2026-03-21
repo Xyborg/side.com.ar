@@ -26,6 +26,71 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/styles.css?v=4">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "#website",
+        "name": "Archivos SIDE — Documentos Desclasificados",
+        "url": "https://side.com.ar",
+        "inLanguage": "es",
+        "description": "Explorador de 26 documentos desclasificados de la Secretaría de Inteligencia de Estado de Argentina, período 1973-1983."
+      },
+      {
+        "@type": "Dataset",
+        "@id": "#dataset",
+        "name": "Documentos Desclasificados de la SIDE (1973–1983) — Primera Etapa",
+        "description": "26 documentos oficiales desclasificados (resoluciones, directivas, circulares y manuales) de la Secretaría de Inteligencia de Estado de Argentina, que revelan la estructura, las misiones y los mecanismos de control ideológico durante el período 1973–1983.",
+        "url": "https://side.com.ar",
+        "inLanguage": "es",
+        "temporalCoverage": "1973/1983",
+        "spatialCoverage": {
+          "@type": "Place",
+          "name": "Argentina"
+        },
+        "creator": {
+          "@type": "GovernmentOrganization",
+          "name": "Secretaría de Inteligencia de Estado (SIDE)",
+          "alternateName": "SIDE",
+          "location": {
+            "@type": "Place",
+            "name": "Argentina"
+          }
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Martin Aberastegue",
+          "url": "https://www.martinaberastegue.com"
+        },
+        "distribution": {
+          "@type": "DataDownload",
+          "contentUrl": "https://side.com.ar/documentos/",
+          "encodingFormat": "text/html"
+        },
+        "keywords": [
+          "SIDE",
+          "inteligencia",
+          "Argentina",
+          "desclasificación",
+          "dictadura militar",
+          "1976-1983",
+          "documentos históricos",
+          "archivos secretos"
+        ],
+        "measurementTechnique": "Digitalización de documentos originales en papel",
+        "variableMeasured": "26 documentos, 492 páginas",
+        "includedInDataCatalog": {
+          "@type": "DataCatalog",
+          "name": "Archivo Histórico de la SIDE"
+        },
+        "isBasedOn": "Guía sobre la Desclasificación de Documentos Históricos SIDE (1973-1983) — Primera Etapa, publicada por la Secretaría de Inteligencia de Estado, República Argentina"
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9RSX85TLS"></script>
   <script>
