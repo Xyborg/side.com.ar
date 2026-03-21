@@ -3,13 +3,16 @@
    ============================================= */
 
 (async function () {
-  const [documents, carpetas, themes] = await Promise.all([
+  const [documents, carpetas, themes, humanRightsMatrix] = await Promise.all([
     loadJSON('/data/documents.json'),
     loadJSON('/data/carpetas.json'),
-    loadJSON('/data/themes.json')
+    loadJSON('/data/themes.json'),
+    loadJSON('/data/human-rights-matrix.json')
   ]);
 
   const TOTAL_PAGES = documents.reduce((s, d) => s + d.page_count, 0);
+  const docsById = {};
+  documents.forEach(function (doc) { docsById[doc.id] = doc; });
 
   const CARPETA_COLORS = {
     1: '#5B3A29',
@@ -33,6 +36,48 @@
   function setInsight(id, text) {
     var el = document.getElementById(id);
     if (el) el.textContent = text;
+  }
+
+  function countMatrixValues(key) {
+    var counts = {};
+    humanRightsMatrix.forEach(function (entry) {
+      (entry[key] || []).forEach(function (value) {
+        counts[value] = (counts[value] || 0) + 1;
+      });
+    });
+    return counts;
+  }
+
+  function pagesForMatrixValue(key, value) {
+    return humanRightsMatrix.reduce(function (sum, entry) {
+      if ((entry[key] || []).indexOf(value) !== -1) {
+        var doc = docsById[entry.doc_id];
+        return sum + (doc ? doc.page_count : 0);
+      }
+      return sum;
+    }, 0);
+  }
+
+  function allDocsForMatrixValue(key, value) {
+    return humanRightsMatrix
+      .filter(function (entry) { return (entry[key] || []).indexOf(value) !== -1; })
+      .map(function (entry) { return docsById[entry.doc_id]; })
+      .filter(Boolean)
+      .sort(function (a, b) {
+        if (a.date === b.date) return a.number - b.number;
+        return a.date < b.date ? -1 : 1;
+      });
+  }
+
+  function docsMatchingTerms(terms, year) {
+    return documents.filter(function (doc) {
+      if (typeof year === 'number' && doc.year !== year) return false;
+      var text = [doc.title, doc.description, (doc.tags || []).join(' ')].join(' ').toLowerCase();
+      return terms.some(function (term) { return text.indexOf(term) !== -1; });
+    }).sort(function (a, b) {
+      if (a.date === b.date) return a.number - b.number;
+      return a.date < b.date ? -1 : 1;
+    });
   }
 
   // ================================================
@@ -61,6 +106,367 @@
     container.innerHTML = kpis.map(function (k) {
       return '<div class="kpi-card"><div class="kpi-value">' + k.value + '</div><div class="kpi-label">' + k.label + '</div></div>';
     }).join('');
+  })();
+
+  // ================================================
+  // Human Rights KPIs
+  // ================================================
+  (function () {
+    var container = document.getElementById('hr-kpi-row');
+    if (!container) return;
+
+    var profilingDocs = humanRightsMatrix.filter(function (entry) {
+      return entry.repressive_functions.indexOf('ideological_profiling') !== -1;
+    }).length;
+    var mediaDocs = humanRightsMatrix.filter(function (entry) {
+      return entry.repressive_functions.indexOf('media_monitoring') !== -1;
+    }).length;
+    var regionalDocs = humanRightsMatrix.filter(function (entry) {
+      return entry.repressive_functions.indexOf('regional_deployment') !== -1;
+    }).length;
+    var concealmentDocs = humanRightsMatrix.filter(function (entry) {
+      return entry.repressive_functions.indexOf('personnel_concealment') !== -1;
+    }).length;
+    var highRelevanceDocs = humanRightsMatrix.filter(function (entry) {
+      return entry.hr_relevance === 'high';
+    }).length;
+
+    var kpis = [
+      { value: profilingDocs, label: 'Docs con perfilado ideológico' },
+      { value: mediaDocs, label: 'Docs sobre publicaciones y medios' },
+      { value: regionalDocs, label: 'Docs sobre despliegue territorial' },
+      { value: concealmentDocs, label: 'Docs sobre encubrimiento institucional' },
+      { value: highRelevanceDocs + '/' + documents.length, label: 'Relevancia alta en DD.HH.' }
+    ];
+
+    container.innerHTML = kpis.map(function (k) {
+      return '<div class="kpi-card"><div class="kpi-value">' + k.value + '</div><div class="kpi-label">' + k.label + '</div></div>';
+    }).join('');
+  })();
+
+  // ================================================
+  // Human Rights Chart 1: Repressive functions
+  // ================================================
+  (function () {
+    var canvas = document.getElementById('chart-hr-functions');
+    if (!canvas) return;
+
+    var labelMap = {
+      organizational_control: 'Control organizacional',
+      personnel_concealment: 'Encubrimiento de personal',
+      regional_deployment: 'Despliegue regional',
+      ideological_profiling: 'Perfilado ideológico',
+      media_monitoring: 'Control de medios',
+      foreign_intelligence: 'Inteligencia exterior',
+      counter_subversion: 'Contrasubversión',
+      interagency_coordination: 'Coordinación interagencial'
+    };
+    var colorMap = {
+      organizational_control: '#5B3A29',
+      personnel_concealment: '#EF6C00',
+      regional_deployment: '#2E7D33',
+      ideological_profiling: '#C62828',
+      media_monitoring: '#8E1B1B',
+      foreign_intelligence: '#75AADB',
+      counter_subversion: '#6A1B9A',
+      interagency_coordination: '#455A64'
+    };
+
+    var counts = countMatrixValues('repressive_functions');
+    var sortedKeys = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
+
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: sortedKeys.map(function (key) { return labelMap[key] || key; }),
+        datasets: [{
+          data: sortedKeys.map(function (key) { return counts[key]; }),
+          backgroundColor: sortedKeys.map(function (key) { return colorMap[key] || '#75AADB'; })
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                var key = sortedKeys[ctx.dataIndex];
+                var pages = pagesForMatrixValue('repressive_functions', key);
+                return ctx.raw + ' documentos, ' + pages + ' páginas';
+              },
+              afterBody: function (items) {
+                var key = sortedKeys[items[0].dataIndex];
+                return allDocsForMatrixValue('repressive_functions', key).map(function (doc) {
+                  return '• Doc ' + doc.number + ': ' + doc.title;
+                });
+              }
+            }
+          }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { stepSize: 2 }, grid: { display: false } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    var topKey = sortedKeys[0];
+    setInsight(
+      'insight-hr-functions',
+      (labelMap[topKey] || topKey) + ' aparece en ' + counts[topKey] + ' documentos y concentra ' +
+      pagesForMatrixValue('repressive_functions', topKey) + ' páginas. La serie muestra que la represión no fue solo operativa: también fue normativa y burocrática.'
+    );
+  })();
+
+  // ================================================
+  // Human Rights Chart 2: Affected groups
+  // ================================================
+  (function () {
+    var canvas = document.getElementById('chart-hr-groups');
+    if (!canvas) return;
+
+    var labelMap = {
+      intelligence_personnel: 'Personal de inteligencia',
+      persons: 'Personas',
+      organizations: 'Organizaciones',
+      political_social_actors: 'Actores políticos y sociales',
+      publications: 'Publicaciones',
+      media: 'Medios de comunicación',
+      cultural_actors: 'Actores culturales',
+      regional_delegations: 'Delegaciones regionales',
+      foreign_targets: 'Sujetos u objetivos exteriores'
+    };
+    var colorMap = {
+      intelligence_personnel: '#5B3A29',
+      persons: '#C62828',
+      organizations: '#B71C1C',
+      political_social_actors: '#8E1B1B',
+      publications: '#2E7D33',
+      media: '#1B5E20',
+      cultural_actors: '#75AADB',
+      regional_delegations: '#546E7A',
+      foreign_targets: '#3949AB'
+    };
+
+    var counts = countMatrixValues('affected_groups');
+    var sortedKeys = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
+
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: sortedKeys.map(function (key) { return labelMap[key] || key; }),
+        datasets: [{
+          data: sortedKeys.map(function (key) { return counts[key]; }),
+          backgroundColor: sortedKeys.map(function (key) { return colorMap[key] || '#75AADB'; })
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                var key = sortedKeys[ctx.dataIndex];
+                var pages = pagesForMatrixValue('affected_groups', key);
+                return ctx.raw + ' documentos, ' + pages + ' páginas';
+              },
+              afterBody: function (items) {
+                var key = sortedKeys[items[0].dataIndex];
+                return allDocsForMatrixValue('affected_groups', key).map(function (doc) {
+                  return '• Doc ' + doc.number + ': ' + doc.title;
+                });
+              }
+            }
+          }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { stepSize: 2 }, grid: { display: false } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    var topKey = sortedKeys[0];
+    var mediaTotal = (counts.media || 0) + (counts.publications || 0);
+    setInsight(
+      'insight-hr-groups',
+      (labelMap[topKey] || topKey) + ' son el universo más recurrente del archivo, pero ' +
+      mediaTotal + ' documentos también alcanzan publicaciones o medios. La vigilancia se proyecta sobre ciudadanía, organizaciones y circuitos de producción cultural.'
+    );
+  })();
+
+  // ================================================
+  // Human Rights Chart 3: Rights impacted
+  // ================================================
+  (function () {
+    var canvas = document.getElementById('chart-hr-rights');
+    if (!canvas) return;
+
+    var labelMap = {
+      privacy: 'Privacidad',
+      expression: 'Libertad de expresión',
+      association: 'Libertad de asociación',
+      equality_non_discrimination: 'Igualdad y no discriminación',
+      due_process: 'Debido proceso',
+      judicial_oversight: 'Control judicial'
+    };
+    var colorMap = {
+      privacy: '#C62828',
+      expression: '#2E7D33',
+      association: '#1565C0',
+      equality_non_discrimination: '#6A1B9A',
+      due_process: '#EF6C00',
+      judicial_oversight: '#455A64'
+    };
+
+    var counts = countMatrixValues('rights_impacted');
+    var sortedKeys = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
+
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: sortedKeys.map(function (key) { return labelMap[key] || key; }),
+        datasets: [{
+          data: sortedKeys.map(function (key) { return counts[key]; }),
+          backgroundColor: sortedKeys.map(function (key) { return colorMap[key] || '#75AADB'; })
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                var key = sortedKeys[ctx.dataIndex];
+                var pages = pagesForMatrixValue('rights_impacted', key);
+                return ctx.raw + ' documentos, ' + pages + ' páginas';
+              },
+              afterBody: function (items) {
+                var key = sortedKeys[items[0].dataIndex];
+                return allDocsForMatrixValue('rights_impacted', key).map(function (doc) {
+                  return '• Doc ' + doc.number + ': ' + doc.title;
+                });
+              }
+            }
+          }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { stepSize: 2 }, grid: { display: false } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    var topTwo = sortedKeys.slice(0, 2).map(function (key) { return labelMap[key] || key; });
+    setInsight(
+      'insight-hr-rights',
+      topTwo.join(' y ') + ' aparecen como los derechos más comprometidos. El patrón dominante combina vigilancia sin control judicial, clasificación ideológica y afectación de libertades públicas.'
+    );
+  })();
+
+  // ================================================
+  // Human Rights Chart 4: Repressive vocabulary over time
+  // ================================================
+  (function () {
+    var canvas = document.getElementById('chart-hr-vocabulary');
+    if (!canvas) return;
+
+    var years = [];
+    for (var y = 1973; y <= 1983; y++) years.push(y);
+
+    var vocabularySeries = [
+      {
+        label: 'Encubrimiento',
+        color: '#EF6C00',
+        terms: ['encubrimiento', 'siglas', 'codificación', 'sistema numérico']
+      },
+      {
+        label: 'Delegaciones',
+        color: '#2E7D33',
+        terms: ['delegaciones', 'delegaciones regionales', 'delegaciones provinciales', 'delegación provincial', 'rosario', 'mendoza']
+      },
+      {
+        label: 'Contrasubversión',
+        color: '#6A1B9A',
+        terms: ['contrasubversión']
+      },
+      {
+        label: 'Calificación ideológica',
+        color: '#C62828',
+        terms: ['calificación ideológica', 'antecedentes ideológicos', 'fórmulas', 'corrientes ideológicas']
+      },
+      {
+        label: 'Comunicación social',
+        color: '#1565C0',
+        terms: ['comunicación social', 'asesoría literaria', 'publicaciones', 'medios de difusión', 'material bibliográfico']
+      }
+    ];
+
+    new Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: vocabularySeries.map(function (series) {
+          return {
+            label: series.label,
+            data: years.map(function (year) {
+              return docsMatchingTerms(series.terms, year).length;
+            }),
+            borderColor: series.color,
+            backgroundColor: series.color,
+            pointBackgroundColor: series.color,
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 5,
+            tension: 0.25,
+            fill: false
+          };
+        })
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'nearest',
+          intersect: true
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                return ctx.dataset.label + ': ' + ctx.raw + ' documento' + (ctx.raw !== 1 ? 's' : '');
+              },
+              afterBody: function (items) {
+                var item = items[0];
+                var year = parseInt(item.label, 10);
+                var series = vocabularySeries[item.datasetIndex];
+                return docsMatchingTerms(series.terms, year).map(function (doc) {
+                  return '• Doc ' + doc.number + ': ' + doc.title;
+                });
+              }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { beginAtZero: true, ticks: { stepSize: 1 } }
+        }
+      }
+    });
+
+    setInsight(
+      'insight-hr-vocabulary',
+      'El lenguaje del archivo se desplaza desde encubrimiento y delegaciones hacia calificación ideológica, contrasubversión y comunicación social, mostrando un aparato cada vez más orientado al control político e ideológico.'
+    );
   })();
 
   // ================================================

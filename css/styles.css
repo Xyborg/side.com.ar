@@ -1506,6 +1506,19 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   border-left: 3px solid var(--celeste);
 }
 
+.hr-section {
+  margin: 36px 0 30px;
+}
+
+.hr-section-header {
+  margin-bottom: 14px;
+}
+
+.hr-kpi-row {
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 18px;
+}
+
 /* Theme heatmap table */
 .theme-heatmap {
   width: 100%;
