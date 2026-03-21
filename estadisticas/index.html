@@ -147,6 +147,85 @@
     </div>
   </div>
 
+  <section class="hr-section">
+    <div class="hr-section-header">
+      <h2 class="section-title" style="font-size:22px;margin-bottom:8px;">Lectura desde derechos humanos</h2>
+      <p class="section-subtitle" style="margin-bottom:0;">Estas visualizaciones reorganizan el archivo como evidencia de vigilancia, perfilado ideológico, censura y expansión territorial de la inteligencia estatal.</p>
+    </div>
+
+    <div class="kpi-row hr-kpi-row" id="hr-kpi-row"></div>
+
+    <div class="stats-grid">
+      <div class="stats-card">
+        <h3><i class="fa fa-sitemap"></i> Funciones Represivas</h3>
+        <div style="height:300px;"><canvas id="chart-hr-functions"></canvas></div>
+        <div class="stats-insight" id="insight-hr-functions"></div>
+      </div>
+      <div class="stats-card">
+        <h3><i class="fa fa-users"></i> Grupos Afectados</h3>
+        <div style="height:300px;"><canvas id="chart-hr-groups"></canvas></div>
+        <div class="stats-insight" id="insight-hr-groups"></div>
+      </div>
+      <div class="stats-card">
+        <h3><i class="fa fa-balance-scale"></i> Derechos Comprometidos</h3>
+        <div style="height:300px;"><canvas id="chart-hr-rights"></canvas></div>
+        <div class="stats-insight" id="insight-hr-rights"></div>
+      </div>
+      <div class="stats-card">
+        <h3><i class="fa fa-line-chart"></i> Evolución de Vocabulario Represivo</h3>
+        <div style="height:300px;"><canvas id="chart-hr-vocabulary"></canvas></div>
+        <div class="stats-insight" id="insight-hr-vocabulary"></div>
+      </div>
+      <div class="stats-card stats-card-wide">
+        <h3><i class="fa fa-flag"></i> Derechos Vulnerados por Período Histórico</h3>
+        <div style="height:380px;"><canvas id="chart-hr-rights-period"></canvas></div>
+        <div class="stats-insight" id="insight-hr-rights-period"></div>
+      </div>
+      <div class="stats-card stats-card-wide">
+        <h3><i class="fa fa-random"></i> Funciones Represivas → Grupos Afectados</h3>
+        <p style="font-size:13px;color:#999;margin:0 0 10px;">El ancho de cada flujo es proporcional al número de documentos en que esa función afecta a ese grupo.</p>
+        <div class="sankey-layout">
+          <div id="sankey-container" class="sankey-container"></div>
+          <aside class="sankey-panel">
+            <div class="sankey-selection" id="sankey-selection">
+              Seleccioná una rama del diagrama para ver cómo una función represiva se proyecta sobre un grupo afectado y qué documentos sostienen esa relación.
+            </div>
+          </aside>
+        </div>
+        <div class="stats-insight" id="insight-sankey"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="institutional-network-section">
+    <div class="hr-section-header">
+      <h2 class="section-title" style="font-size:22px;margin-bottom:8px;">Red de Coordinación Institucional</h2>
+      <p class="section-subtitle" style="margin-bottom:0;">Esta visualización reconstruye, a partir de los documentos del archivo, cómo la SIDE se articuló con la CNI, fuerzas armadas, fuerzas de seguridad y organismos estatales para producir fichaje ideológico, censura y control territorial.</p>
+    </div>
+
+    <div class="stats-card">
+      <h3><i class="fa fa-share-alt"></i> SIDE, CNI y circuito de coordinación represiva</h3>
+      <p style="font-size:13px;color:#999;margin:0 0 12px;">Cada vínculo está respaldado por documentos del archivo. El grosor indica la densidad de evidencia y el color distingue el tipo de actor involucrado.</p>
+      <div class="institutional-network-layout">
+        <div class="institutional-network-container" id="institutional-network-container">
+          <div class="loading" style="height:560px;">Reconstruyendo red institucional</div>
+        </div>
+        <aside class="institutional-network-panel">
+          <div class="institutional-network-selection" id="institutional-network-selection">
+            Seleccioná un nodo o un vínculo para ver cómo se documenta esa coordinación dentro del archivo.
+          </div>
+          <div class="institutional-network-legend" id="institutional-network-legend"></div>
+        </aside>
+      </div>
+      <div class="stats-insight" id="insight-institutional-network"></div>
+    </div>
+  </section>
+
+  <section class="hr-section-header" style="margin-top:10px;">
+    <h2 class="section-title" style="font-size:22px;margin-bottom:8px;">Otras estadísticas del archivo</h2>
+    <p class="section-subtitle" style="margin-bottom:0;">A continuación se presentan visualizaciones descriptivas sobre volumen, clasificación, estructura, relaciones y distribución general de los documentos.</p>
+  </section>
+
   <!-- Archive Map -->
   <div class="archive-map-container" style="margin-bottom:30px;">
     <h3><i class="fa fa-th"></i> Mapa del Archivo — 987 Páginas</h3>
@@ -224,9 +303,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 <script src="/js/app.js?v=5"></script>
 <script src="/js/estadisticas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script src="/js/network.js"></script>
 
 </body>

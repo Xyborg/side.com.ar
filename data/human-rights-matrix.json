@@ -1,0 +1,236 @@
+[
+  {
+    "doc_id": "doc-01",
+    "repressive_functions": ["organizational_control"],
+    "affected_groups": ["intelligence_personnel", "political_social_actors"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["secret_regulation", "institutional_opacity"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-02",
+    "repressive_functions": ["personnel_concealment"],
+    "affected_groups": ["intelligence_personnel", "persons", "organizations"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["cover_identities", "internal_coding"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-03",
+    "repressive_functions": ["organizational_control"],
+    "affected_groups": ["intelligence_personnel", "political_social_actors"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["organizational_restructuring", "secret_annexes"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-04",
+    "repressive_functions": ["personnel_concealment"],
+    "affected_groups": ["intelligence_personnel", "persons"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["cover_identities", "internal_coding"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-05",
+    "repressive_functions": ["organizational_control"],
+    "affected_groups": ["intelligence_personnel", "political_social_actors"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["organizational_restructuring"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-06",
+    "repressive_functions": ["organizational_control", "counter_subversion"],
+    "affected_groups": ["persons", "organizations", "political_social_actors", "intelligence_personnel"],
+    "rights_impacted": ["privacy", "expression", "association", "due_process", "judicial_oversight"],
+    "methods": ["organizational_restructuring", "functional_glossary", "counter_subversion_doctrine"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-07",
+    "repressive_functions": ["personnel_concealment", "organizational_control"],
+    "affected_groups": ["intelligence_personnel", "persons"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["internal_coding", "bureaucratic_concealment"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-08",
+    "repressive_functions": ["organizational_control", "counter_subversion"],
+    "affected_groups": ["persons", "organizations", "political_social_actors", "media"],
+    "rights_impacted": ["privacy", "expression", "association", "due_process", "judicial_oversight"],
+    "methods": ["organizational_restructuring", "counter_subversion_doctrine", "psychological_operations"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-09",
+    "repressive_functions": ["personnel_concealment"],
+    "affected_groups": ["intelligence_personnel", "persons", "organizations"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["cover_identities", "procedural_clarification"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-10",
+    "repressive_functions": ["organizational_control", "foreign_intelligence"],
+    "affected_groups": ["foreign_targets", "persons", "organizations"],
+    "rights_impacted": ["privacy", "association", "judicial_oversight"],
+    "methods": ["organizational_restructuring", "external_surveillance"],
+    "territorial_scope": "transnational",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-11",
+    "repressive_functions": ["foreign_intelligence"],
+    "affected_groups": ["foreign_targets", "persons", "organizations"],
+    "rights_impacted": ["privacy", "association", "judicial_oversight"],
+    "methods": ["mission_definition", "external_surveillance"],
+    "territorial_scope": "transnational",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-12",
+    "repressive_functions": ["regional_deployment"],
+    "affected_groups": ["regional_delegations", "persons", "organizations", "political_social_actors"],
+    "rights_impacted": ["privacy", "association", "due_process", "judicial_oversight"],
+    "methods": ["territorial_coordination", "information_collection"],
+    "territorial_scope": "regional",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-13",
+    "repressive_functions": ["regional_deployment", "counter_subversion"],
+    "affected_groups": ["regional_delegations", "persons", "organizations", "political_social_actors"],
+    "rights_impacted": ["privacy", "association", "due_process", "judicial_oversight"],
+    "methods": ["territorial_coordination", "information_collection", "counter_subversion_doctrine"],
+    "territorial_scope": "regional",
+    "hr_relevance": "medium"
+  },
+  {
+    "doc_id": "doc-14",
+    "repressive_functions": ["regional_deployment"],
+    "affected_groups": ["regional_delegations", "persons", "organizations"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["mission_definition", "territorial_coordination"],
+    "territorial_scope": "regional",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-15",
+    "repressive_functions": ["regional_deployment", "counter_subversion"],
+    "affected_groups": ["regional_delegations", "persons", "organizations", "political_social_actors"],
+    "rights_impacted": ["privacy", "association", "due_process", "judicial_oversight"],
+    "methods": ["territorial_coordination", "counter_subversion_doctrine", "functional_linkages"],
+    "territorial_scope": "regional",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-16",
+    "repressive_functions": ["interagency_coordination"],
+    "affected_groups": ["persons", "organizations", "political_social_actors"],
+    "rights_impacted": ["privacy", "due_process", "judicial_oversight"],
+    "methods": ["resource_transfer", "centralized_coordination"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-17",
+    "repressive_functions": ["ideological_profiling", "interagency_coordination"],
+    "affected_groups": ["persons", "organizations", "political_social_actors"],
+    "rights_impacted": ["privacy", "association", "equality_non_discrimination", "due_process"],
+    "methods": ["antecedent_files", "ideological_formulas", "interagency_coordination"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-18",
+    "repressive_functions": ["ideological_profiling"],
+    "affected_groups": ["persons", "organizations", "political_social_actors"],
+    "rights_impacted": ["privacy", "association", "equality_non_discrimination", "due_process"],
+    "methods": ["ideological_formulas", "classification_rules"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-19",
+    "repressive_functions": ["ideological_profiling", "regional_deployment", "interagency_coordination"],
+    "affected_groups": ["regional_delegations", "persons", "organizations", "political_social_actors"],
+    "rights_impacted": ["privacy", "association", "equality_non_discrimination", "due_process", "judicial_oversight"],
+    "methods": ["territorial_coordination", "community_intelligence", "interagency_coordination"],
+    "territorial_scope": "regional",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-20",
+    "repressive_functions": ["ideological_profiling", "media_monitoring"],
+    "affected_groups": ["publications", "media", "cultural_actors"],
+    "rights_impacted": ["expression", "privacy", "equality_non_discrimination", "association"],
+    "methods": ["ideological_formulas", "media_monitoring", "content_classification"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-21",
+    "repressive_functions": ["media_monitoring"],
+    "affected_groups": ["media", "publications", "cultural_actors"],
+    "rights_impacted": ["expression", "privacy", "association"],
+    "methods": ["communication_control", "literary_advisory"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-22",
+    "repressive_functions": ["ideological_profiling"],
+    "affected_groups": ["persons", "organizations", "publications", "media"],
+    "rights_impacted": ["privacy", "expression", "association", "equality_non_discrimination", "due_process"],
+    "methods": ["regulatory_revision", "antecedent_files"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-23",
+    "repressive_functions": ["ideological_profiling", "media_monitoring"],
+    "affected_groups": ["publications", "media", "cultural_actors"],
+    "rights_impacted": ["expression", "privacy", "association", "equality_non_discrimination"],
+    "methods": ["literary_advisory", "content_classification", "ideological_formulas"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-24",
+    "repressive_functions": ["ideological_profiling", "media_monitoring"],
+    "affected_groups": ["publications", "media", "cultural_actors"],
+    "rights_impacted": ["expression", "privacy", "association", "equality_non_discrimination"],
+    "methods": ["content_classification", "ideological_formulas"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-25",
+    "repressive_functions": ["ideological_profiling"],
+    "affected_groups": ["persons", "organizations", "publications", "media"],
+    "rights_impacted": ["privacy", "expression", "association", "equality_non_discrimination", "due_process"],
+    "methods": ["ideological_formulas", "regulatory_revision", "glossary_control"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  },
+  {
+    "doc_id": "doc-26",
+    "repressive_functions": ["ideological_profiling", "media_monitoring", "interagency_coordination"],
+    "affected_groups": ["persons", "organizations", "publications", "media"],
+    "rights_impacted": ["privacy", "expression", "association", "equality_non_discrimination", "due_process"],
+    "methods": ["database_equivalences", "microfiche_records", "interagency_coordination"],
+    "territorial_scope": "national",
+    "hr_relevance": "high"
+  }
+]

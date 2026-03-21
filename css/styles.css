@@ -1506,6 +1506,188 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   border-left: 3px solid var(--celeste);
 }
 
+.hr-section {
+  margin: 36px 0 30px;
+}
+
+.hr-section-header {
+  margin-bottom: 14px;
+}
+
+.institutional-network-section {
+  margin: 10px 0 30px;
+}
+
+.institutional-network-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.institutional-network-container {
+  position: relative;
+  min-height: 560px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at top left, rgba(117, 170, 219, 0.12), transparent 32%),
+    linear-gradient(180deg, #fbfcfe 0%, #f3f6fa 100%);
+  overflow: hidden;
+}
+
+.institutional-network-container svg {
+  width: 100%;
+  height: 560px;
+}
+
+.institutional-network-tooltip {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  z-index: 10;
+  max-width: 320px;
+  padding: 10px 12px;
+  background: rgba(35, 45, 79, 0.96);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.45;
+  border-radius: 4px;
+}
+
+.institutional-network-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.institutional-network-selection,
+.institutional-network-legend {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--gris-medio);
+  line-height: 1.55;
+}
+
+.institutional-network-selection strong,
+.institutional-network-legend strong {
+  color: var(--azul);
+}
+
+.institutional-network-docs {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.institutional-network-docs a {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid rgba(35, 45, 79, 0.12);
+  background: rgba(117, 170, 219, 0.12);
+  color: var(--azul);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.institutional-network-docs a:hover {
+  background: rgba(117, 170, 219, 0.22);
+}
+
+.institutional-network-legend ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.institutional-network-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.institutional-network-legend li:last-child {
+  margin-bottom: 0;
+}
+
+.institutional-network-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.sankey-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(260px, 0.9fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.sankey-container {
+  position: relative;
+  min-height: 520px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, #fcfdff 0%, #f4f7fb 100%);
+  overflow: hidden;
+}
+
+.sankey-container svg {
+  width: 100%;
+  height: 520px;
+}
+
+.sankey-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sankey-selection {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--gris-medio);
+  line-height: 1.55;
+}
+
+.sankey-selection strong {
+  color: var(--azul);
+}
+
+.sankey-docs {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sankey-docs a {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid rgba(35, 45, 79, 0.12);
+  background: rgba(117, 170, 219, 0.12);
+  color: var(--azul);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sankey-docs a:hover {
+  background: rgba(117, 170, 219, 0.22);
+}
+
+.hr-kpi-row {
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 18px;
+}
+
 /* Theme heatmap table */
 .theme-heatmap {
   width: 100%;
@@ -1870,6 +2052,12 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   .stats-card { padding: 16px; }
   .stats-card h3 { font-size: 13px; margin-bottom: 12px; }
   .stats-insight { font-size: 12px; padding: 8px 10px; }
+  .sankey-layout { grid-template-columns: 1fr; }
+  .sankey-container,
+  .sankey-container svg { min-height: 420px; height: 420px; }
+  .institutional-network-layout { grid-template-columns: 1fr; }
+  .institutional-network-container,
+  .institutional-network-container svg { min-height: 420px; height: 420px; }
   .tag-explorer-layout { flex-direction: column; }
   .tag-explorer-sidebar { width: 100%; }
   .network-container svg { height: 350px; }
@@ -1886,6 +2074,13 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   .kpi-card .kpi-label { font-size: 10px; }
   .stats-card { padding: 14px; }
   .stats-card h3 { font-size: 12px; }
+  .sankey-container,
+  .sankey-container svg { min-height: 340px; height: 340px; }
+  .sankey-selection { padding: 12px; font-size: 12px; }
+  .institutional-network-container,
+  .institutional-network-container svg { min-height: 340px; height: 340px; }
+  .institutional-network-selection,
+  .institutional-network-legend { padding: 12px; font-size: 12px; }
   .theme-heatmap { font-size: 10px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tag-cloud { padding: 14px; gap: 4px 8px; }
   .archive-map-container { padding: 12px; }
