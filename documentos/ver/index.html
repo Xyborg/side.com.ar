@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/styles.css?v=5">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
   <!-- Structured Data (dynamic DigitalDocument schema injected by viewer.js) -->
   <script type="application/ld+json" id="schema-breadcrumb">
   {
@@ -109,17 +109,21 @@
         </div>
       </div>
       <div class="viewer-transcription" id="viewer-transcription">
-        <div class="transcription-header">
-          <button class="btn btn-default btn-sm" id="btn-toggle-transcription">
-            <i class="fa fa-file-text-o"></i> Transcripción
-          </button>
-          <span class="transcription-notice" id="transcription-notice"></span>
-        </div>
-        <div class="transcription-body" id="transcription-body" style="display:none;">
+        <h2 class="viewer-section-title"><i class="fa fa-file-text-o"></i> Transcripción <span class="transcription-notice" id="transcription-notice"></span></h2>
+        <div class="transcription-body" id="transcription-body">
           <p class="text-muted" style="font-size:12px;">
             Texto extraído automáticamente mediante OCR. Puede contener errores.
           </p>
           <div id="transcription-text"></div>
+        </div>
+      </div>
+      <div class="viewer-analysis" id="viewer-analysis" style="display:none;">
+        <h2 class="viewer-section-title"><i class="fa fa-balance-scale"></i> Análisis Documental <span class="analysis-relevance-badge" id="analysis-relevance"></span></h2>
+        <div class="analysis-body" id="analysis-body">
+          <p class="text-muted" style="font-size:12px;">
+            Análisis generado automáticamente mediante inteligencia artificial. Puede contener errores o interpretaciones inexactas.
+          </p>
+          <div id="analysis-sections"></div>
         </div>
       </div>
     </div>

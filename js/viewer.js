@@ -218,10 +218,93 @@
     }
   }
 
-  document.getElementById('btn-toggle-transcription').addEventListener('click', () => {
-    const body = document.getElementById('transcription-body');
-    body.style.display = body.style.display === 'none' ? 'block' : 'none';
-  });
+  // --- Document Analysis ---
+  const ANALYSIS_LABELS = {
+    sintesis_descriptiva: 'Síntesis Descriptiva',
+    analisis_institucional_politico: 'Análisis Institucional y Político',
+    analisis_derechos_humanos: 'Análisis de Derechos Humanos',
+    analisis_derecho_constitucional: 'Análisis de Derecho Constitucional',
+    analisis_derecho_internacional: 'Análisis de Derecho Internacional',
+    analisis_social: 'Análisis Social',
+    observaciones_archivisticas: 'Observaciones Archivísticas'
+  };
+
+  async function loadAnalysis(id) {
+    try {
+      const res = await fetch('/data/analysis/' + id + '.json');
+      if (!res.ok) return;
+      const data = await res.json();
+      const sections = data.sections;
+      if (!sections) return;
+
+      const container = document.getElementById('viewer-analysis');
+      const sectionsEl = document.getElementById('analysis-sections');
+      const relevanceEl = document.getElementById('analysis-relevance');
+      const bodyEl = document.getElementById('analysis-body');
+
+      // Relevance badge
+      if (sections.relevancia_derechos_humanos) {
+        const rel = sections.relevancia_derechos_humanos;
+        const nivel = rel.nivel || '';
+        relevanceEl.textContent = nivel;
+        relevanceEl.className = 'analysis-relevance-badge ' + nivel.toLowerCase();
+        relevanceEl.title = rel.justificacion || '';
+      }
+
+      // Build accordion sections
+      var html = '';
+      Object.keys(ANALYSIS_LABELS).forEach(function (key) {
+        if (!sections[key]) return;
+        html += '<div class="analysis-section">' +
+          '<div class="analysis-section-header" data-section="' + key + '">' +
+          '<span>' + ANALYSIS_LABELS[key] + '</span>' +
+          '<i class="fa fa-chevron-right chevron"></i>' +
+          '</div>' +
+          '<div class="analysis-section-body">' + escapeHtml(sections[key]) + '</div>' +
+          '</div>';
+      });
+
+      // Keywords
+      if (sections.palabras_clave && sections.palabras_clave.length > 0) {
+        html += '<div class="analysis-section">' +
+          '<div class="analysis-section-header" data-section="palabras_clave">' +
+          '<span>Palabras Clave</span>' +
+          '<i class="fa fa-chevron-right chevron"></i>' +
+          '</div>' +
+          '<div class="analysis-section-body"><div class="analysis-keywords">' +
+          sections.palabras_clave.map(function (k) { return '<span class="doc-tag">' + escapeHtml(k) + '</span>'; }).join('') +
+          '</div></div></div>';
+      }
+
+      // Relevance justification
+      if (sections.relevancia_derechos_humanos && sections.relevancia_derechos_humanos.justificacion) {
+        html += '<div class="analysis-section">' +
+          '<div class="analysis-section-header" data-section="relevancia">' +
+          '<span>Relevancia para Derechos Humanos</span>' +
+          '<i class="fa fa-chevron-right chevron"></i>' +
+          '</div>' +
+          '<div class="analysis-section-body">' + escapeHtml(sections.relevancia_derechos_humanos.justificacion) + '</div>' +
+          '</div>';
+      }
+
+      sectionsEl.innerHTML = html;
+      container.style.display = 'block';
+
+      // Accordion behavior
+      sectionsEl.addEventListener('click', function (e) {
+        var header = e.target.closest('.analysis-section-header');
+        if (!header) return;
+        var body = header.nextElementSibling;
+        var isOpen = header.classList.contains('open');
+        header.classList.toggle('open');
+        body.style.display = isOpen ? 'none' : 'block';
+      });
+    } catch (e) {
+      // Analysis not available — fail silently
+    }
+  }
+
+  loadAnalysis(docId);
 
   btnPrev.addEventListener('click', () => {
     if (currentPage > 1) { currentPage--; pz.reset(); updatePage(); }

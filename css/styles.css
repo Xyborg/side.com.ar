@@ -769,6 +769,77 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   font-family: 'Encode Sans', sans-serif;
 }
 
+/* --- Viewer Section Titles (Transcription & Analysis) --- */
+.viewer-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 12px 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.viewer-section-title .fa { font-size: 16px; color: var(--gris-claro); }
+
+/* --- Analysis Panel --- */
+.viewer-analysis { margin-top: 25px; }
+.analysis-body {
+  margin-top: 10px;
+  padding: 15px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.7;
+  font-family: 'Encode Sans', sans-serif;
+}
+.analysis-section { border: 1px solid #e0e0e0; border-radius: 4px; margin-bottom: 8px; background: #fff; }
+.analysis-section:last-child { margin-bottom: 0; }
+.analysis-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  user-select: none;
+  transition: background 0.15s;
+}
+.analysis-section-header:hover { background: #f5f5f5; }
+.analysis-section-header .chevron {
+  transition: transform 0.2s;
+  font-size: 11px;
+  color: #999;
+}
+.analysis-section-header.open .chevron { transform: rotate(90deg); }
+.analysis-section-body {
+  display: none;
+  padding: 12px 14px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  white-space: pre-wrap;
+}
+.analysis-relevance-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+.analysis-relevance-badge.alto { background: #fce4e4; color: #c0392b; }
+.analysis-relevance-badge.medio { background: #fef5e7; color: #d68910; }
+.analysis-relevance-badge.bajo { background: #eafaf1; color: #27ae60; }
+.analysis-keywords { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.analysis-keywords .doc-tag { margin: 0; }
+
 /* --- Timeline --- */
 .timeline-page { max-width: 1100px; margin: 0 auto; }
 
