@@ -17,111 +17,119 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://side.com.ar/estadisticas/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://side.com.ar/etiquetas/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://side.com.ar/acerca-desclasificacion/</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-01</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-01/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-02</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-02/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-03</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-03/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-04</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-04/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-05</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-05/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-06</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-06/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-07</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-07/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-08</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-08/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-09</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-09/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-10</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-10/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-11</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-11/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-12</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-12/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-13</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-13/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-14</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-14/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-15</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-15/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-16</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-16/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-17</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-17/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-18</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-18/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-19</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-19/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-20</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-20/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-21</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-21/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-22</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-22/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-23</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-23/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-24</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-24/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-25</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-25/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://side.com.ar/documentos/ver/?id=doc-26</loc>
+    <loc>https://side.com.ar/documentos/ver/doc-26/</loc>
     <priority>0.5</priority>
   </url>
 </urlset>
