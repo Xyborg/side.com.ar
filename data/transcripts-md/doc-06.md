@@ -369,7 +369,7 @@ te un sistema ágil que elimine las trabas burocráticas que atenten contra
 111-U
 
 ## Página 12
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 13
 A AS
@@ -429,7 +429,7 @@ Comprende la dirección, cuidado y conservación de los elementos bajo con
 1Y-U
 
 ## Página 14
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 15
 memo Secreto y Confidencial AS
@@ -447,7 +447,7 @@ i
 V-Y
 
 ## Página 16
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 17
 AA Á A _-_- _ -- A
@@ -486,7 +486,7 @@ a proponer.-
 Pág 1-69.
 
 ## Página 18
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 19
 PT - -- o-- e
@@ -2811,7 +2811,7 @@ ESTRICTAMENTE SECRETO Y CONFIDENCIAL
 Pág 37-69.
 
 ## Página 92
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 93
 ¡$qQPOOA A
@@ -3440,8 +3440,7 @@ que ingresa y egresa de la Dirección.
 6. Educación descentralizada.
 7. Medidas de Contrainteligencia referidas a las personas, documentación y material, a las instalaciones y a los sistemas técnicos emplea
 0 dos.
-8. Gobierno y administración del personal y material de su área de res-
-ponsabilidad.
+8. Gobierno y administración del personal y material de su área de responsabilidad.
 9. Administración de recursos financieros acordedos a su área y previsio
 nes económicas a proponer.
 Pág 47-69

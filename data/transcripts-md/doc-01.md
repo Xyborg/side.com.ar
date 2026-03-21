@@ -103,9 +103,18 @@ SECRETARIA DE INFORMACIONES DE ESTADO
 RESOLUCION "S" N 291/75
 
 ## Página 6
-403
-H 1
-A»
+AAA
+
+CS
+aga
+
+CODIFICADO
+
+FECHA
+ya
+¡ FIRMA |
+
+> O
 
 ## Página 7
 o SECRETO
@@ -192,4 +201,4 @@ o E LI | PERSONAL Le LOS ]
 Patiá l Serna
 
 ## Página 12
-[Sin transcripción OCR disponible]
+[Sin transcripción]

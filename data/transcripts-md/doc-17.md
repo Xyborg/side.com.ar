@@ -69,8 +69,13 @@ RESUELVE:
 1) todifícase el punto 58 =calificación- de las Normas paro el Funcionariento de la Comisión Asesora de Antecedentes, dáictala con
 
 ## Página 4
-2. e
-] Archivado en el Dep.COORDINACION DE ANTECEDENTES
+S
+
+F mm =
+e.
+ES COPIA FIEL DEL ORIGINAL
+Toni (A, E.) GULLENMO y
+Archivado en el Dep.COORDINACION DE ANTECEDENTES
 
 ## Página 5
 a. q¿E-X-x<> >>.:

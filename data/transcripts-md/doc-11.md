@@ -182,19 +182,27 @@ A o, " a eN]
 o IÓN: il - í
 
 ## Página 11
+a
+dancial'
+
+Bosco de Entelgncia de Euado
+
 SUBDIRECCION DE INTELIGENCIA EXTERIOR
+
 MISION
-1 Asistir y asesorar al Director en sus funciones y ta-
-E
-reas] a fin de contribuir al cumplimiento de la misión de la Dirección de Inteligencia Exterior,
-6 xo TAREAS
+A
+
+Asistir y asesorar al Director en sus funciones y tareasi a fin de contribuir al cumplimiento de la misión de la Di-
+
+rección de Inteligencia Exterior,
+
+TAREAS
+
 1. Reemplazar al Director en su ausencia.
-8
-2. Dirigir, coordinar y supervisar integrando la cadena ¿coman-.
-do, las tareas y actividades a desarrollar por cada uná; de
-las dependencias de la Dirección. ER
-Z
-se
+
+2. Dirigir, coordinar y supervisar integrando la cadena ¿comando, las tareas y actividades a desarrollar por cada uná; de
+las dependencias de la Dirección. El
+
 Pág 5-39
 
 ## Página 12
@@ -480,20 +488,24 @@ O A dls: ZE
 Ed su A! AS
 
 ## Página 25
-e
-- Beca de Enieencio de xdo
-
+IN se
+Presidencia de la Nación
+Ñ Beca de Enielencio de xdo
 6. Proponer las normas y difuridir las metodologías, técnicas
-
 y procedimienos referidos al manejo de la documentación.
-! A
+A
 7. Cumplimentar las medidas de contranteligencia dispuestas
-ES - pog¿la Superioridad.
-8. Realizar educación descentralizada con el personal de su
-a área y el resto de la Dirección.
+
+porla Superioridad.
+Sd
+
+eS 8. Realizar educación descentralizada con el personal de su
+
+área y el resto de la Dirección.
 
 9, Ejercer el gobierno y administración del personal y material de su área de responsabilidad.
-A
+
+Pa
 
 Pág 12-39
 
@@ -1431,30 +1443,39 @@ de a E
 CAES Ñ 7 z M z, - A E
 
 ## Página 65
-., CE
-E
-cumplimiento de la Misión del Departamento Operaciones de Inteligencia, reuniendo el material cartográfico y bibliográfico
+PRESIDENCIA DE LA NACION ARGENTINA
+" Becietanio de Inteligencia de tado
+cumplimiento de la Misión del Departamento Operaciones de Inte-
+
+ligencia, reuniendo el material cartográfico y bibliográfico
 de información pública nacional y/o extranjera.
+
 TAREAS
+
 1. Solicitar la adquisición en el país y/o en el exterior de
 las publicaciones requeridas por las distintas dependencias
 Mel Organismo, vía Departamento Operaciones de Inteligencia.
-o 2.¡;Recurrir a tales efectos a las Delegaciones en el exterior,
-: ¡Cancillería, Organismos Internacionales con sede en el país,
-a z A 2 A
-Akrerolíneas Argentinas, Empresas Nacionales, Provinciales o
+
+O 2. Recurrir a tales efectos a las Delegaciones en el exterior,
+
+Cancillería, Organismos Internacionales con sede en el país,
+
+Aerolíneas Argentinas, Empresas Nacionales, Provinciales o
 Municipales, Empresas Privadas Nacionales, etc.
-3. Planificar el pedido de nuevas suscripciones de publicacio-
-, nes y/o la renovación y/o anulación de otras requeridas por
-X las dependencias del Organismo, especialmente de Dirección
+
+3. Planificar el pedido de nuevas suscripciones de publicaciones y/o la renovación y/o anulación de otras requeridas por
+las dependencias del Organismo, especialmente de Dirección
+
 7 Inteligencia Exterior.
+
 4. Distribuir las publicaciones solicitadas y obtenidas, a las
-i
 áreas correspondientes.
-5, Controlar, contabilizar y registrar todo el material de pu-
-0 blicaciones que por su gestión o la de terceros reciba.
+
+5, Controlar, contabilizar y registrar todo el material de publicaciones que por su gestión o la de terceros reciba.
+
 6. Gestionar los fondos en moneda nacional o divisas extranjeras para el pago de los medios, compras y/o suscripciones
 efectuadas.
+
 Pág 32-39
 
 ## Página 66
@@ -1680,14 +1701,15 @@ Er, or ES ta A IN
 A A e Pe.
 
 ## Página 75
-O -ooooQ- o
+SECRETARIA DE INTELIGENCIA DE ESTADO
+
 formática.
+
 DIVISION ESCUCHA
 MISION
+
 Efectuar la interceptación de las comunicaciones radioeléctricas que satisfagan las necesidades de información
-a de esta Sectetaría, que emanen de países protagonistas, u Or- l
-Ye. 243. Zrnma |
-ganismos Irfernacionales utilizando sus medios técnicos.
+a de esta Secrietaría, que emanen de países protagonistas, u Organismos Irfernacionales utilizando sus medios técnicos.
 
 TAREAS
 
@@ -1728,36 +1750,51 @@ e ET a A a at oa
 pe a o MASON AS O A
 
 ## Página 77
-o-_-_- co oe - 222
-A...
-Do
+Ec
+
+a
+
+Deesidoncia de la Mación Aug
+" Besetaría de Enteligoncia de Catado
+
 catálogos, folletos, etc. en relación con equipos de Comunicaciones, nacionales y extranjeros.
+
 8. Fiscalizar las tareas del Taller de Reparaciones propio de
 la; División.
-| SECCIÓN RADIO (LIRE)
-| a MISION
+
+SECCIÓN RADIO (LIRE)
+
+MISION
+
 Efectuar la escucha e interceptación Radioeléctrica
-| de las Comunicaciones de países protagonistas de acuerdo al
+de las Comunicaciones de países protagonistas de acuerdo al
 "Plan de Escucha y Sondeo" establecido por el Jefe de la División.
-TAREAS E
-E
+
+TAREAS
+
 1. Analizar el tráfico interceptado haciendo estudio primario
 de la importancia de la información contenida, elevándola
-: a la Central de Tráfico del Departamento.
-l
-| 2. Efectuar un "barrido exploratorio" del espectro de radio-
-| 'a frecuencias, a fin de detectar nuevas emisiones internacio-
-I
-AZ nales.
-_- 3. Mantener un registro de Redes y Circuitos y llevar el co- |
-rrespondiente "Libro de Guardia".
+a la Central de Tráfico del Departamento.
 
-E..
-SECCION.-VIA SATELITE
+2. Efectuar un "barrido exploratorio" del espectro de radio-
+
+| 'a frecuencias, a fin de detectar nuevas emisiones internacio-
+
+XT nales.
+
+_- 3. Mantener un registro de Redes y Circuitos y llevar el correspondiente "Libro de Guardia".
+
+5
+
+Es
+SECCION. VIA SATELITE
+
 MISION
+
 Efectuar el control y copiado de la interceptación de
 las comunicaciones de los países protagonistas que se efectúan
 por el "Sistema de Comunicaciones Vía Satélite".
+
 Pág38-39
 
 ## Página 78
@@ -1769,15 +1806,24 @@ aer... TS:
 e,, 4 CS. A
 
 ## Página 79
+mn
+
+SECRETARIA DE INTELIGENCIA DE ESTADO
 111
+
 TAREAS
+
 1. Efectuar el copiado del tráfico diplomático y militar (cifrado y en claro) de los países protagonistas.
+
 2, Efecfuar el copiado de todo otro tipo de tráfico que haga
 al ínterés de la información deseada.
-A " 3. Entregar todo el material, previo análisis primario a la |
-a Central de Tráfico del Departamento. a
-ES
-4. Mantener un registro de redes y circuitos de correspongéles extranjeros (especialmente de los Servicios Diplomáticos y Fuerzas Armadas) que sirve de referencia.
+
+A 3. Entregar todo el material, previo análisis primario a la
+a Central de Tráfico del Departamento. 5
+
+4. Mantener un registro de redes y circuitos de correspong
+les extranjeros (especialmente de los Servicios Diplomáticos y Fuerzas Armadas) que sirve de referencia.
+
 Pág 39-39
 
 ## Página 80
@@ -1847,10 +1893,14 @@ AR-API-SIDE-
 
 ## Página 82
 Direccion OPERACIONES INFORMATIVAS
---- MANUAL= |
-De FUNCIONAMIENTO |
-SDE
-O Estado
+
+DEPARTAMENTO INSPECCION DELEGACIONES REGIONALES
+- Y ENLACES MINISTERIALES Y PROVINCIALES
+
+.- MANUAL==-
+ve FUNCIONAMIENTO
+
+' DE 1as DELEGACIONES REGIONALES »
 
 ## Página 83
 OS E - e! ca
@@ -2945,7 +2995,7 @@ Y
 IIA - TO HPA o.o-
 
 ## Página 139
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 140
 A _- - -__---_-- _-_____--JJJJJJJJHHHH_- C--_ A -_-_----_-_n-_-_ _ - --,

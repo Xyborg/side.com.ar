@@ -74,7 +74,7 @@ CN
 nos
 
 ## Página 4
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 5
 EN | SECRETO ME
@@ -326,7 +326,7 @@ yA
 y DEN
 
 ## Página 14
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 15
 PRESIDENCIA DE LA NACION ARGENTINA
@@ -359,7 +359,7 @@ DS
 MA
 
 ## Página 16
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 17
 o EPT A
@@ -481,7 +481,7 @@ s,
 E ¿Ml
 
 ## Página 22
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 23
 os.. A.: o -. Pz
@@ -602,29 +602,38 @@ AN e td E MS
 e ts e ES
 
 ## Página 29
-A
+Ls e SECRETO
 PRESIDENCIA DE LA NACION ARGENTINA
 SECRETARIA DE INTELIGENCIA DE ESTADO
-ruzmos armas, 20 AGÚ 1976
-VISTO, las modificaciones introducidas en la Orgánica de la Jecretaría, y
+uzmos armes, 20 AGO 1976
+VISTO, las modificaciones introlucidas cn la Orgánica de la Jecretaría, y
 CONSIDERANDO:
 ue hasta tanto se elabore y ponga en vigencia el
 € RISIDE 1976, es necesario disponer la norma cue legalice dicha
 modificación.
 POR ELLO,
-EL SECRETARIO DE IXIZITGBNCIA DA ZETADO
-ROBOT V +:
+EL SECRETARIO TRITITGBNCIA DE ZSTADO
+UI:
 Artículo 10 - Aprovar a partir e la fecia, la Creanización de
 la Secretaría que figura como Anexo 1 de la presente Resolución.
 Artículo 2% -- Dejar sin efecto la estructura orgánica 2stablecida por la Tesolución "38 RO £91 de Zecha 157.875 y su modifi-
 0 catoria la Resolución "E" 0 541 de fecha 173231750
-Artículo 30 - Dar a la presente Tesolución carde ler de "SHORETO",
-ARDICULO 4% - Co uníquese al Personal Superior del Organismo,
+
+Artículo 39 - Dar a la presente Tesolución carác ier de "SHORETO",
+
+ARDICULO 40 - Co uníquese al Personal Superior del Organismo
+A Ñi,
+
 hasta nivel Jefe de Jepartamento NN y archívese en C.-.le
-dl
-7 Grl. Br. OTTO CARLOS MALADINO
+
+a deja
+
+Len Grt. Br. OTTO CARLOS HALADINO
 6 o Secrefário de Inicliganciafde Estado
+
 RESOLUCION "S" N 643/76
+
+OOO
 
 ## Página 30
 E. | CODIFICAJO i

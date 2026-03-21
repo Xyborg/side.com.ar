@@ -1109,7 +1109,7 @@ Y
 IIA - TO HPA o.o-
 
 ## Página 58
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 59
 A _- - -__---_-- _-_____--JJJJJJJJHHHH_- C--_ A -_-_----_-_n-_-_ _ - --,
@@ -3093,7 +3093,7 @@ nentes son "Comunista y CGT", El circonstenciol es "infiltrención",
 En consecuencia se confeccionarán las siguientes fichas:
 
 ## Página 118
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 119
 Comunistas - on la CG - infiltración.
@@ -3284,7 +3284,7 @@ CHUECA par ñ DA
 Ra dd y UN
 
 ## Página 128
-[Sin transcripción OCR disponible]
+[Sin transcripción]
 
 ## Página 129
 CLASIFICACIÓN DE LA
@@ -4387,26 +4387,59 @@ En.. A
 
 ## Página 175
 A
+
 | Organización A LA QUE DEBEN
-! a
+
 : | AJUSTARSE LAS DELEGACIONES REGIONALES
-E a
-. 1 |
-; |.
+
+. 1
 l
 
-1
-o SIETE
-: MESA GRAL o CONTRA= | Lp" penios - |.
-E. y SaLiDas | INTELIGENCIA PUBLICOS *
-gar SERVICIO
-: ADMINISTRACION | (. * POLITICO Confidencial
-0 o
-! "SOCIAL OS OPERACIONES | |:
-ECONÓMICO INFORMATIVAS |"
-: y Reuigioso_ |*"
-| SOCIAL ES
-o FICHERO! an
+al
+MESA GRAL o
+ADMINISTRACION | £, *
+Me] COMUNICACIONES
+
+od
+
+SUB-JEFATURA
+
+Ta ano
+EOS Y
+CONTRA- Pu -
+INTELIGENCIA
+"SOCIAL et
+ECONOMICO
+
+EDUCACIONAL
+y RELIGIOSO
+
+COMUNICACION | «;-
+SOCIAL ES
+
+FICHERO
+
+mul
+
+A
+
+suB
+DELEGACIONES!
+
+Fa
+
+2d
+
+MEDIOS ño
+PUBLICOS *
+
+SERVICIO
+Confidencial
+
+MEDIOS
+TECNICOS
+OPERACIONES ||:
+INFORMATIVAS |
 
 ## Página 176
 A a A E os

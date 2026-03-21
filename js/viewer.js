@@ -192,8 +192,33 @@
   const btnToggleTranscript = document.getElementById('btn-toggle-transcript');
   const btnCopyTranscript = document.getElementById('btn-copy-transcript');
   const transcriptFooter = transcriptPanel ? transcriptPanel.querySelector('.viewer-transcript-footer') : null;
+  const transcriptDisclaimer = ensureTranscriptDisclaimer();
 
   const pz = initPanZoom(imgContainer);
+
+  function ensureTranscriptDisclaimer() {
+    if (!transcriptPanel) return null;
+
+    const legacyNotice = transcriptPanel.querySelector('.transcription-body .text-muted');
+    if (legacyNotice && /Texto extraído automáticamente mediante OCR/i.test(legacyNotice.textContent || '')) {
+      legacyNotice.remove();
+    }
+
+    const existing = transcriptPanel.querySelector('.transcription-disclaimer');
+    if (existing) return existing;
+
+    const disclaimer = document.createElement('p');
+    disclaimer.className = 'transcription-disclaimer';
+    disclaimer.textContent = 'Transcripción OCR corregida. Puede contener errores, especialmente en tablas, sellos y diagramas.';
+
+    if (transcriptBody) {
+      transcriptBody.insertBefore(disclaimer, transcriptBody.firstChild);
+    } else {
+      transcriptPanel.appendChild(disclaimer);
+    }
+
+    return disclaimer;
+  }
 
   function updatePageURL() {
     const next = new URL(window.location.href);
@@ -243,6 +268,7 @@
     transcriptVisible = visible;
     transcriptPanel.classList.toggle('is-collapsed', !visible);
     transcriptBody.hidden = !visible;
+    if (transcriptDisclaimer) transcriptDisclaimer.hidden = !visible;
     if (transcriptFooter) transcriptFooter.hidden = !visible;
     btnToggleTranscript.textContent = visible ? 'Ocultar transcripción' : 'Mostrar transcripción';
     btnToggleTranscript.setAttribute('aria-expanded', String(visible));

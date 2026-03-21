@@ -977,6 +977,16 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
 .viewer-transcription { margin-top: 15px; }
 .transcription-header { display: flex; align-items: center; gap: 10px; }
 .transcription-notice { font-size: 12px; color: var(--gris-claro); font-style: italic; }
+.transcription-disclaimer {
+  margin: 0 0 8px;
+  padding: 10px 12px;
+  background: #fff4d6;
+  border: 1px solid #ecd79d;
+  border-radius: 4px;
+  color: #6f5b20;
+  font-size: 12px;
+  line-height: 1.5;
+}
 .transcription-body {
   margin-top: 10px;
   padding: 15px;
@@ -987,8 +997,11 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   overflow-y: auto;
   font-size: 14px;
   line-height: 1.7;
-  white-space: pre-wrap;
   font-family: 'Encode Sans', sans-serif;
+}
+
+#transcription-text {
+  white-space: pre-wrap;
 }
 
 /* --- Viewer Section Titles (Transcription & Analysis) --- */
