@@ -3,15 +3,18 @@
    ============================================= */
 
 (async function () {
-  const [documents, carpetas] = await Promise.all([
+  const [documents, carpetas, transcriptIndex] = await Promise.all([
     loadJSON('/data/documents.json'),
-    loadJSON('/data/carpetas.json')
+    loadJSON('/data/carpetas.json'),
+    loadOptionalJSON('/data/search-index.json', [])
   ]);
 
   const grid = document.getElementById('documents-grid');
   const searchBox = document.getElementById('search-box');
   const sortSelect = document.getElementById('sort-select');
   const countLabel = document.getElementById('doc-count-label');
+  const transcriptResults = document.getElementById('transcript-results');
+  const docsById = Object.fromEntries(documents.map(doc => [doc.id, doc]));
 
   // Pre-populate from URL
   const urlCarpeta = getParam('carpeta');
@@ -23,6 +26,61 @@
     classifications: [],
     search: ''
   };
+
+  function getMatchingDocumentIds() {
+    let docs = [...documents];
+
+    if (filters.carpetas.length > 0) {
+      docs = docs.filter(d => filters.carpetas.includes(d.carpeta));
+    }
+
+    if (filters.years.length > 0) {
+      docs = docs.filter(d => filters.years.includes(d.year));
+    }
+
+    if (filters.classifications.length > 0) {
+      docs = docs.filter(d => filters.classifications.includes(d.classification));
+    }
+
+    return new Set(docs.map(doc => doc.id));
+  }
+
+  function buildSnippet(text, query) {
+    if (!text) return '';
+    const cleanText = text.replace(/\s+/g, ' ').trim();
+    if (!cleanText) return '';
+    const normalizedText = normalizeSearchText(cleanText);
+    const index = normalizedText.indexOf(query);
+    if (index === -1) return truncate(cleanText, 180);
+
+    const start = Math.max(0, index - 70);
+    const end = Math.min(cleanText.length, index + query.length + 90);
+    const snippet = cleanText.slice(start, end).trim();
+    return `${start > 0 ? '... ' : ''}${snippet}${end < cleanText.length ? ' ...' : ''}`;
+  }
+
+  function getTranscriptMatches() {
+    const query = normalizeSearchText(filters.search);
+    if (!query || !Array.isArray(transcriptIndex) || transcriptIndex.length === 0) return [];
+
+    const allowedDocIds = getMatchingDocumentIds();
+    return transcriptIndex
+      .filter(entry => {
+        if (!allowedDocIds.has(entry.docId)) return false;
+        const haystack = normalizeSearchText(`${entry.title || ''} ${entry.text || ''}`);
+        return haystack.includes(query);
+      })
+      .slice(0, 12)
+      .map(entry => {
+        const doc = docsById[entry.docId];
+        return {
+          ...entry,
+          doc,
+          snippet: buildSnippet(entry.text || '', query)
+        };
+      })
+      .filter(entry => entry.doc);
+  }
 
   // Render filter sidebar checkboxes
   function initFilters() {
@@ -116,12 +174,45 @@
     return docs;
   }
 
+  function renderTranscriptResults(matches) {
+    if (!transcriptResults) return;
+
+    if (!filters.search || matches.length === 0) {
+      transcriptResults.hidden = true;
+      transcriptResults.innerHTML = '';
+      return;
+    }
+
+    transcriptResults.hidden = false;
+    transcriptResults.innerHTML = `
+      <div class="transcript-results-header">
+        <h2>Coincidencias en transcripciones</h2>
+        <span>${matches.length} resultados</span>
+      </div>
+      <div class="transcript-results-list">
+        ${matches.map(match => `
+          <a class="transcript-result-card" href="${buildViewerURL(match.docId, match.page)}">
+            <div class="transcript-result-meta">
+              <span class="badge badge-carpeta badge-carpeta-${match.doc.carpeta}">Carpeta ${match.doc.carpeta}</span>
+              <span>Página ${match.page}</span>
+            </div>
+            <h3>${escapeHTML(match.doc.title)}</h3>
+            <p>${escapeHTML(match.snippet || 'Coincidencia en la transcripción del documento.')}</p>
+          </a>
+        `).join('')}
+      </div>
+    `;
+  }
+
   function render() {
     const docs = getFilteredDocs();
+    const transcriptMatches = getTranscriptMatches();
 
     if (countLabel) {
       countLabel.textContent = `${docs.length} de ${documents.length} documentos`;
     }
+
+    renderTranscriptResults(transcriptMatches);
 
     if (docs.length === 0) {
       grid.innerHTML = '<div class="empty-state"><p>No se encontraron documentos con los filtros seleccionados.</p></div>';

@@ -89,6 +89,23 @@
           <button class="btn btn-default btn-sm" id="btn-zoom-in" title="Acercar (+)"><i class="fa fa-search-plus"></i></button>
         </div>
       </div>
+
+      <section class="viewer-transcript panel panel-default" id="viewer-transcript-panel">
+        <div class="panel-heading viewer-transcript-header">
+          <div>
+            <span>Transcripción OCR corregida</span>
+            <small>La imagen original sigue siendo la referencia principal.</small>
+          </div>
+          <button class="btn btn-default btn-xs" id="btn-toggle-transcript" type="button" aria-expanded="true">Ocultar transcripción</button>
+        </div>
+        <div class="panel-body viewer-transcript-body" id="viewer-transcript-body">
+          <div class="loading">Cargando transcripción</div>
+        </div>
+        <div class="panel-footer viewer-transcript-footer">
+          <span id="viewer-transcript-page-label">Página 1</span>
+          <button class="btn btn-default btn-xs" id="btn-copy-transcript" type="button">Copiar texto</button>
+        </div>
+      </section>
     </div>
 
     <!-- Sidebar -->

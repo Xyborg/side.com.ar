@@ -27,8 +27,10 @@
   // State — use global page numbers from the 987-page compiled PDF
   const globalStart = doc.global_page_start || 1;
   const totalPages = doc.page_count;
-  let currentPage = 1; // local page (1-based within this doc)
-  let zoom = 1;
+  const requestedPage = parseInt(getParam('page') || '1', 10);
+  let currentPage = Number.isFinite(requestedPage) ? Math.min(Math.max(requestedPage, 1), totalPages) : 1;
+  let transcriptData = null;
+  let transcriptVisible = true;
 
   // Populate metadata
   document.getElementById('doc-title').textContent = doc.title;
@@ -86,8 +88,59 @@
   const btnZoomIn = document.getElementById('btn-zoom-in');
   const btnZoomOut = document.getElementById('btn-zoom-out');
   const btnZoomReset = document.getElementById('btn-zoom-reset');
+  const transcriptPanel = document.getElementById('viewer-transcript-panel');
+  const transcriptBody = document.getElementById('viewer-transcript-body');
+  const transcriptPageLabel = document.getElementById('viewer-transcript-page-label');
+  const btnToggleTranscript = document.getElementById('btn-toggle-transcript');
+  const btnCopyTranscript = document.getElementById('btn-copy-transcript');
 
   const pz = initPanZoom(imgContainer);
+
+  function updatePageURL() {
+    const next = new URL(window.location.href);
+    next.searchParams.set('id', docId);
+    if (currentPage > 1) {
+      next.searchParams.set('page', currentPage);
+    } else {
+      next.searchParams.delete('page');
+    }
+    window.history.replaceState({}, '', next.pathname + next.search);
+  }
+
+  function getTranscriptEntry(pageNum) {
+    if (!transcriptData || !Array.isArray(transcriptData.pages)) return null;
+    return transcriptData.pages.find(entry => entry.page === pageNum) || null;
+  }
+
+  function renderTranscript() {
+    const globalPage = globalStart + currentPage - 1;
+    transcriptPageLabel.textContent = `Página ${currentPage} · Original ${globalPage}`;
+
+    if (!transcriptData || !Array.isArray(transcriptData.pages)) {
+      transcriptBody.innerHTML = '<div class="viewer-transcript-empty"><p>La transcripción de este documento todavía no está disponible.</p></div>';
+      btnCopyTranscript.disabled = true;
+      return;
+    }
+
+    const entry = getTranscriptEntry(currentPage);
+    if (!entry || !entry.text || !entry.text.trim()) {
+      transcriptBody.innerHTML = '<div class="viewer-transcript-empty"><p>No hay texto transcripto para esta página.</p></div>';
+      btnCopyTranscript.disabled = true;
+      return;
+    }
+
+    transcriptBody.innerHTML = `<pre class="viewer-transcript-text">${escapeHTML(entry.text)}</pre>`;
+    btnCopyTranscript.disabled = false;
+  }
+
+  function setTranscriptVisibility(visible) {
+    transcriptVisible = visible;
+    transcriptPanel.classList.toggle('is-collapsed', !visible);
+    transcriptBody.hidden = !visible;
+    transcriptPanel.querySelector('.viewer-transcript-footer').hidden = !visible;
+    btnToggleTranscript.textContent = visible ? 'Ocultar transcripción' : 'Mostrar transcripción';
+    btnToggleTranscript.setAttribute('aria-expanded', String(visible));
+  }
 
   function getPageImagePath(pageNum) {
     return pageImageURL(globalStart + pageNum - 1);
@@ -117,6 +170,8 @@
     }
 
     pz.applyTransform();
+    updatePageURL();
+    renderTranscript();
   }
 
   btnPrev.addEventListener('click', () => {
@@ -136,6 +191,23 @@
   });
 
   btnZoomReset.addEventListener('click', () => pz.reset());
+  btnToggleTranscript.addEventListener('click', () => setTranscriptVisibility(!transcriptVisible));
+  btnCopyTranscript.addEventListener('click', async () => {
+    const entry = getTranscriptEntry(currentPage);
+    if (!entry || !entry.text) return;
+    try {
+      await navigator.clipboard.writeText(entry.text);
+      btnCopyTranscript.textContent = 'Texto copiado';
+      window.setTimeout(() => {
+        btnCopyTranscript.textContent = 'Copiar texto';
+      }, 1500);
+    } catch (err) {
+      btnCopyTranscript.textContent = 'No se pudo copiar';
+      window.setTimeout(() => {
+        btnCopyTranscript.textContent = 'Copiar texto';
+      }, 1500);
+    }
+  });
 
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
@@ -158,5 +230,7 @@
   const breadcrumb = document.getElementById('breadcrumb-title');
   if (breadcrumb) breadcrumb.textContent = doc.title;
 
+  transcriptData = await loadOptionalJSON(`/data/transcripts/${doc.id}.json`, null);
+  setTranscriptVisibility(true);
   updatePage();
 })();
