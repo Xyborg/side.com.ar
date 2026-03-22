@@ -468,7 +468,7 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
 
 .findings-section {
   margin-bottom: 48px;
-  padding: 28px 30px;
+  padding: 32px 30px;
   background:
     linear-gradient(180deg, rgba(250,248,245,0.95) 0%, rgba(245,241,236,0.98) 100%);
   border: 1px solid rgba(35,45,79,0.08);
@@ -487,12 +487,17 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   color: var(--gris-medio);
 }
 
+.findings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 6px;
+}
+
 .finding-card {
-  height: 100%;
-  margin-bottom: 18px;
-  padding: 20px 22px;
+  padding: 22px 24px;
   background: rgba(255,255,255,0.92);
-  border-top: 3px solid var(--azul);
+  border-left: 3px solid var(--azul);
   box-shadow: 0 6px 18px rgba(35,45,79,0.06);
 }
 
@@ -513,7 +518,7 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
 }
 
 .findings-actions {
-  margin-top: 10px;
+  margin-top: 18px;
   text-align: center;
 }
 
@@ -2092,6 +2097,9 @@ a:hover { color: var(--azul-light); text-decoration: underline; }
   .hero-stat .number { font-size: 32px; }
   .findings-section {
     padding: 22px 18px;
+  }
+  .findings-grid {
+    grid-template-columns: 1fr;
   }
   .finding-card {
     padding: 18px;
