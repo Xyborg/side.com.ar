@@ -136,7 +136,7 @@ La información proviene de la *Guía sobre la Desclasificación de Documentos H
 
 Sitio creado por [Martin Aberastegue](https://www.martinaberastegue.com).
 
-## Colaboradores
+## Contribuidores
 
 - [Carlos Dugarte](https://github.com/cardugarte)
 - [Daniel Oliva](https://github.com/dbianco)
