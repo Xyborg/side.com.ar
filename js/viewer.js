@@ -222,7 +222,7 @@
       if (!res.ok) throw new Error('not found');
       const data = await res.json();
 
-      textEl.textContent = data.text || 'Sin texto disponible.';
+      textEl.textContent = normalizeOCR(data.text) || 'Sin texto disponible.';
       noticeEl.textContent = data.confidence === 'low'
         ? '(calidad baja — posible diagrama)' : '';
     } catch (e) {

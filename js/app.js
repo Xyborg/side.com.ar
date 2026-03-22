@@ -78,6 +78,19 @@ function carpetaBadge(carpetaNum) {
   return `<span class="badge badge-carpeta badge-carpeta-${carpetaNum}">Carpeta ${carpetaNum}</span>`;
 }
 
+// --- Normalize OCR text for display ---
+function normalizeOCR(text) {
+  if (!text) return text;
+  // 1. Rejoin hyphenated words split across lines
+  var s = text.replace(/-\n([a-záéíóúüñ])/g, '$1');
+  // 2. Join lines only when the next line starts with a lowercase letter
+  //    (indicates sentence continuation, not a new section/item)
+  s = s.replace(/\n(?=[a-záéíóúüñ])/g, ' ');
+  // 3. Clean up multiple spaces
+  s = s.replace(/ {2,}/g, ' ');
+  return s;
+}
+
 // --- Truncate text ---
 function truncate(text, max) {
   if (!text || text.length <= max) return text;
